@@ -1,0 +1,18 @@
+.mainWrap {
+  background: url('../../assets/images/main_bg.jpg') no-repeat center bottom;
+  min-height: 100vh;
+}
+.center {
+  text-align: center;
+}
+.center a {
+  display: inline-block;
+  margin-top: 69px;
+}
+.form {
+  background: var(--color-white);
+  margin: 24px auto;
+  padding: 32px;
+  width: 400px;
+  border-radius: 16px;
+}

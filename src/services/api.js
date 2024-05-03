@@ -1,6 +1,6 @@
 const ROOT = `https://openmind-api.vercel.app/6-16/`;
-const postId = async (data = '') => {
-  if (!data) {
+const postId = async (nameData = '') => {
+  if (!nameData) {
     return;
   }
   const response = await fetch(`${ROOT}subjects/`, {
@@ -8,7 +8,7 @@ const postId = async (data = '') => {
     headers: {
       'Content-Type': 'application/json', // JSON 콘텐츠임을 명시
     },
-    body: JSON.stringify({ name: data }),
+    body: JSON.stringify({ name: nameData }),
   });
   if (!response.ok) {
     if (response.status === '') {
@@ -20,8 +20,8 @@ const postId = async (data = '') => {
   window.localStorage.setItem('id', result.id);
 };
 
-const postAnswer = async (questionId, data = '') => {
-  if (!data) {
+const postAnswer = async (questionId, contentData = '') => {
+  if (!contentData) {
     return;
   }
   const response = await fetch(`${ROOT}questions/${questionId}/answers/`, {
@@ -29,7 +29,7 @@ const postAnswer = async (questionId, data = '') => {
     headers: {
       'Content-Type': 'application/json', // JSON 콘텐츠임을 명시
     },
-    body: JSON.stringify({ content: data, isRejected: false }),
+    body: JSON.stringify({ content: contentData, isRejected: false }),
   });
 
   if (!response.ok) {

@@ -1,4 +1,4 @@
-import arrowRightIcon from '../../assets/images/ic_arrow_right.png';
+import arrowRightIcon from '../../assets/images/ic_arrow_right.svg';
 import styles from '../css/Button.module.css';
 
 const Button = ({ onClick, children, variant, size }) => {

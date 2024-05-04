@@ -1,48 +1,112 @@
 .button {
-  font-size: 16px;
-  font-weight: 400;
   line-height: 22px;
   border-radius: 8px;
   padding: 12px 24px 12px 24px;
   gap: 8px;
-  cursor: pointer;
   border: none;
   display: flex;
   align-items: center;
-}
-
-.outline {
-  border: 1px solid #542f1a;
-  color: #542f1a;
-  background-color: #f5f1ee;
   height: 46px;
 }
 
+.outline {
+  border: 1px solid var(--color-brown40);
+  color: var(--color-brown40);
+  background-color: var(--color-brown10);
+}
+
 .fill {
-  width: 336px;
   justify-content: center;
 }
 
 .fill,
 .round {
-  color: #ffffff;
-  background-color: #542f1a;
+  color: var(--color-white);
+  background-color: var(--color-brown40);
 }
 
 .round {
   border-radius: 200px;
 }
 
-@media (max-width: 743px) {
-  .outline {
-    height: 34px;
-    font-size: 14px;
-    line-height: 18px;
-    padding: 8px 12px 8px 12px;
+.fill.small {
+  width: 336px;
+}
+
+.fill.medium {
+  width: 532px;
+}
+
+.fill.large {
+  width: 560px;
+}
+
+.outline.small {
+  width: 161px;
+}
+
+.round.large {
+  width: 208px;
+  height: 54px;
+  border-radius: 200px;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.round.small {
+  width: 100px;
+  height: 35px;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+/* 태블릿 */
+@media (max-width: 1199px) {
+  .fill.large {
+    width: 548px;
   }
 
-  .fill {
+  .outline.large {
+    width: 166px;
+  }
+}
+
+/* 모바일 */
+@media (max-width: 767px) {
+  .fill.small {
     width: 257px;
-    height: 46px;
+  }
+
+  .fill.medium {
+    width: 279px;
+    gap: 10px;
+  }
+
+  .fill.large {
+    width: 203px;
+    gap: 10px;
+  }
+
+  .outline.small {
+    width: 123px;
+    font-size: 14px;
+    line-height: 18px;
+    height: 34px;
+    padding: 8px 12px 8px 12px;
+    gap: 4px;
+  }
+
+  .outline.large {
+    width: 127px;
+  }
+
+  .round.large {
+    width: 123px;
+  }
+
+  .round.small {
+    width: 70px;
+    height: 25px;
+    font-size: 10px;
   }
 }

@@ -13,6 +13,7 @@ export default defineConfig({
       { find: '@services', replacement: '/src/services' },
       { find: '@api', replacement: '/src/services/api' },
       { find: '@utils', replacement: '/src/utils' },
+      { find: '@assets', replacement: '/src/assets' },
     ],
   },
 });

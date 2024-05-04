@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 
-import styles from '../components/css/ListPage.module.css';
-import Logo from '../components/ui/Logo';
+import ProfileListContainer from '@containers/ProfileListContainer';
+import styles from '@css/ListPage.module.css';
+import Logo from '@ui/Logo';
 
 function ListPage() {
   return (
@@ -14,6 +15,7 @@ function ListPage() {
           {/* <Button /> */}
         </div>
         <h2>누구에게 질문할까요?</h2>
+        <ProfileListContainer />
       </div>
     </main>
   );

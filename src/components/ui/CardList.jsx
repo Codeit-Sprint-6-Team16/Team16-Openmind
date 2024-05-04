@@ -1,17 +1,13 @@
 import styles from '@css/CardList.module.css';
 import Card from '@ui/Card';
 
-const CardList = () => {
+const CardList = ({ profileList }) => {
   return (
     <div className={styles.CardList}>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      {profileList &&
+        profileList.map((profile) => {
+          return <Card profile={profile} />;
+        })}
     </div>
   );
 };

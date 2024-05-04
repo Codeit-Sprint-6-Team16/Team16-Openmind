@@ -1,0 +1,48 @@
+.button {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  border-radius: 8px;
+  padding: 12px 24px 12px 24px;
+  gap: 8px;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+}
+
+.outline {
+  border: 1px solid #542f1a;
+  color: #542f1a;
+  background-color: #f5f1ee;
+  height: 46px;
+}
+
+.fill {
+  width: 336px;
+  justify-content: center;
+}
+
+.fill,
+.round {
+  color: #ffffff;
+  background-color: #542f1a;
+}
+
+.round {
+  border-radius: 200px;
+}
+
+@media (max-width: 743px) {
+  .outline {
+    height: 34px;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 8px 12px 8px 12px;
+  }
+
+  .fill {
+    width: 257px;
+    height: 46px;
+  }
+}

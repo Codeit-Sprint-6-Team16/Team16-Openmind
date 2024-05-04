@@ -4,7 +4,7 @@ import { getAnswerers } from '@services/api/api';
 import CardList from '@ui/CardList';
 import { isTabletMini } from '@utils/windowSize';
 
-function ProfileListContainer() {
+function ProfileListBoxContainer() {
   const [profileList, setProfileList] = useState([]);
   const [order, setOrder] = useState('name');
   const [limit, setLimit] = useState(isTabletMini ? 6 : 8);
@@ -55,4 +55,4 @@ function ProfileListContainer() {
   );
 }
 
-export default ProfileListContainer;
+export default ProfileListBoxContainer;

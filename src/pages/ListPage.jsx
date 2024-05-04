@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import ProfileListContainer from '@containers/ProfileListContainer';
+import ProfileListBoxContainer from '@containers/ProfileListBoxContainer';
 import styles from '@css/ListPage.module.css';
 import Logo from '@ui/Logo';
 
@@ -15,7 +15,7 @@ function ListPage() {
           {/* <Button /> */}
         </div>
         <h2>누구에게 질문할까요?</h2>
-        <ProfileListContainer />
+        <ProfileListBoxContainer />
       </div>
     </main>
   );

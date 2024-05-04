@@ -1,8 +1,8 @@
 import testMessageimg from '../../assets/images/image_messages_test.svg';
 import testprofileimg from '../../assets/images/image_test.svg';
-import styles from '@css/Card.module.css';
+import styles from '@css/ProfileCard.module.css';
 
-const Card = ({ profile }) => {
+const ProfileCard = ({ profile }) => {
   return (
     <div className={styles.Card}>
       <div className={styles.card_profile}>
@@ -18,4 +18,4 @@ const Card = ({ profile }) => {
   );
 };
 
-export default Card;
+export default ProfileCard;

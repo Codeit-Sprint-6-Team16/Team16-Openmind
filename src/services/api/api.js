@@ -8,17 +8,16 @@ const postId = async (nameData = '') => {
   try {
     response = await fetch(`${BASE_URL}subjects/`, {
       method: 'POST',
-      // headers: {
-      //   'Content-Type': 'application/json', // JSON 콘텐츠임을 명시
-      // },
+      headers: {
+        'Content-Type': 'application/json', // JSON 콘텐츠임을 명시
+      },
       body: JSON.stringify({ name: nameData }),
     });
-
-    // window.localStorage.setItem('id', result.id);
   } catch (error) {
     console.error(error);
     throw error;
   }
+
   if (!response?.ok) {
     const error = new Error(`HTTP error! status: ${response.status}`);
     error.name = 'HttpError';
@@ -28,18 +27,19 @@ const postId = async (nameData = '') => {
   }
   console.log(result);
   const result = await response.json();
+  window.localStorage.setItem('id', result.id);
 };
 
-const getpost = async () => {
-  try {
-    const result = await postId('정지');
-  } catch (error) {
-    if (error.name === 'TypeError') {
-      return console.log(error.name);
-    } else if (error.name) console.log(error.status);
-  }
-};
-getpost();
+// const getPost = async () => {
+//   try {
+//     const result = await postId('정지');
+//   } catch (error) {
+//     if (error.name === 'TypeError') {
+//       return console.log(error.name);
+//     } else if (error.name) {
+//       console.log(error.status);}
+//   }
+// };
 
 const postAnswer = async (questionId, contentData = '') => {
   if (!contentData) {
@@ -54,13 +54,16 @@ const postAnswer = async (questionId, contentData = '') => {
       },
       body: JSON.stringify({ content: contentData, isRejected: false }),
     });
-  } catch (error) {}
-
-  if (!response.ok) {
-    if (response.status === 0) {
-      return console.error(response.text());
-    }
-    return response.status;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+  if (!response?.ok) {
+    const error = new Error(`HTTP error! status: ${response.status}`);
+    error.name = 'HttpError';
+    error.status = response.status;
+    console.error(error);
+    throw error;
   }
 };
 

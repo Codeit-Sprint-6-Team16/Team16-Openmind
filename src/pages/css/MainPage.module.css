@@ -1,6 +1,11 @@
 .mainWrap {
   background: url('../../assets/images/main_bg.jpg') no-repeat center bottom;
   min-height: 100vh;
+  padding: 45px 0 300px;
+}
+.right {
+  display: flex;
+  justify-content: flex-end;
 }
 .center {
   text-align: center;
@@ -15,4 +20,7 @@
   padding: 32px;
   width: 400px;
   border-radius: 16px;
+}
+.form button {
+  margin-top: 16px;
 }

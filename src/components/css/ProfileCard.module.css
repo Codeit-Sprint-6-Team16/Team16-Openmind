@@ -1,5 +1,4 @@
 .Card {
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -18,9 +17,6 @@
 
 .card_profile > p {
   margin: 0;
-}
-
-.card_profile > p {
   font-size: 20px;
   font-weight: 400;
   color: #000000;

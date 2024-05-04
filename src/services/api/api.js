@@ -1,6 +1,6 @@
 const BASE_URL = 'https://openmind-api.vercel.app/6-16/';
 
-const postId = async (nameData = '') => {
+export const postId = async (nameData = '') => {
   if (!nameData) {
     return;
   }
@@ -25,21 +25,10 @@ const postId = async (nameData = '') => {
     console.error(error);
     throw error;
   }
-  console.log(result);
   const result = await response.json();
   window.localStorage.setItem('id', result.id);
+  return result;
 };
-
-// const getPost = async () => {
-//   try {
-//     const result = await postId('정지');
-//   } catch (error) {
-//     if (error.name === 'TypeError') {
-//       return console.log(error.name);
-//     } else if (error.name) {
-//       console.log(error.status);}
-//   }
-// };
 
 const postAnswer = async (questionId, contentData = '') => {
   if (!contentData) {

@@ -1,4 +1,4 @@
-.CardList {
+.ProfileList {
   display: grid;
   grid-template-columns: repeat(4, 2fr);
   max-width: 940px;
@@ -8,14 +8,14 @@
 }
 
 @media (min-width: 768px) and (max-width: 883px) {
-  .CardList {
+  .ProfileList {
     grid-template-columns: repeat(3, 2fr);
     max-width: 700px;
   }
 }
 
 @media (min-width: 375px) and (max-width: 767px) {
-  .CardList {
+  .ProfileList {
     grid-template-columns: repeat(2, 2fr);
     max-width: 327px;
     padding: 0 24px;

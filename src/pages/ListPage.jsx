@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 
-import styles from '../components/css/ListPage.module.css';
-import Logo from '../components/ui/Logo';
+import styles from './css/ListPage.module.css';
+import Button from '@ui/Button';
+import CardList from '@ui/CardList';
+import Logo from '@ui/Logo';
 
 function ListPage() {
   return (
@@ -9,11 +11,12 @@ function ListPage() {
       <div className="inner">
         <div className={styles.header}>
           <Link to="/">
-            <Logo />
+            <Logo logoSize={'small'} />
           </Link>
-          {/* <Button /> */}
+          <Button variant={'outline'}>답변하러 가기</Button>
         </div>
-        <h2>누구에게 질문할까요?</h2>
+        <h2 className={styles.title}>누구에게 질문할까요?</h2>
+        <CardList />
       </div>
     </main>
   );

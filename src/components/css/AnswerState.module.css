@@ -1,0 +1,18 @@
+.AnswerState {
+  border-radius: 8px;
+  padding: 4px 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.AnswerState.brown {
+  width: 78px;
+  color: var(--color-brown40);
+  border: 1px solid var(--color-brown40);
+}
+
+.AnswerState.gray {
+  width: 63px;
+  color: var(--color-gray40);
+  border: 1px solid var(--color-gray40);
+}

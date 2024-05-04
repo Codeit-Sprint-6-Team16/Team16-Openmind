@@ -1,0 +1,26 @@
+.Profile {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.Profile > img {
+  width: 136px;
+  height: 136px;
+}
+
+.Profile > p {
+  font-size: 32px;
+}
+
+@media all and (max-width: 767px) {
+  .Profile > img {
+    width: 104px;
+    height: 104px;
+  }
+
+  .Profile > p {
+    font-size: 24px;
+  }
+}

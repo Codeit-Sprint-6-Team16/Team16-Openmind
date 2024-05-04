@@ -1,5 +1,61 @@
 const BASE_URL = 'https://openmind-api.vercel.app/6-16/';
 
+export const postId = async (nameData = '') => {
+  if (!nameData) {
+    return;
+  }
+  let response;
+  try {
+    response = await fetch(`${BASE_URL}subjects/`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json', // JSON 콘텐츠임을 명시
+      },
+      body: JSON.stringify({ name: nameData }),
+    });
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+
+  if (!response?.ok) {
+    const error = new Error(`HTTP error! status: ${response.status}`);
+    error.name = 'HttpError';
+    error.status = response.status;
+    console.error(error);
+    throw error;
+  }
+  const result = await response.json();
+  window.localStorage.setItem('id', result.id);
+  return result;
+};
+
+const postAnswer = async (questionId, contentData = '') => {
+  if (!contentData) {
+    return;
+  }
+  let response;
+  try {
+    response = await fetch(`${BASE_URL}questions/${questionId}/answers/`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json', // JSON 콘텐츠임을 명시
+      },
+      body: JSON.stringify({ content: contentData, isRejected: false }),
+    });
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+  if (!response?.ok) {
+    const error = new Error(`HTTP error! status: ${response.status}`);
+    error.name = 'HttpError';
+    error.status = response.status;
+    console.error(error);
+    throw error;
+  }
+};
+
 const getAnswerer = async (answererId = 0) => {
   const url = BASE_URL + `subjects/${answererId}/`;
   const response = await fetch(url);

@@ -24,10 +24,11 @@ function MainPage() {
             <Link to="/">
               <Logo />
             </Link>
-            <form className={styles.form}>
-              <Input />
-              <Button variant={'fill'}>질문받기</Button>
-            </form>
+            <IdFormContainer />
+//             <form className={styles.form}>
+//               <Input />
+//               <Button variant={'fill'}>질문받기</Button>
+//             </form>
           </div>
         </div>
       </div>

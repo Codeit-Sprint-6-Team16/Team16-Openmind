@@ -1,12 +1,12 @@
 import styles from './css/QuestionPage.module.css';
 import Button from '@ui/Button';
 import FeedList from '@ui/FeedList';
-import Profile from '@ui/Profile';
+import ProfileBox from '@ui/ProfileBox';
 
 function QuestionPage() {
   return (
     <main className="wrapper">
-      <Profile />
+      <ProfileBox />
       <div className="inner">
         <div className={styles.boxWrap}>
           <FeedList />

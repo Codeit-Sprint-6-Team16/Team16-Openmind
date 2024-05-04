@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 
 import Logo from './Logo';
-import styles from '@css/Profile.module.css';
+import styles from '@css/ProfileBox.module.css';
 
-function Profile() {
+function ProfileBox() {
   return (
     <div className={styles.profileWrap}>
       <div className={styles.center}>
@@ -17,4 +17,4 @@ function Profile() {
   );
 }
 
-export default Profile;
+export default ProfileBox;

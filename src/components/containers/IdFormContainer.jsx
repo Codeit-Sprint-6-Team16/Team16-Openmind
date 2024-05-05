@@ -8,7 +8,7 @@ import Input from '@ui/Input';
 const IdFormContainer = () => {
   const [name, setName] = useState('');
 
-  const getPost = async () => {
+  const registerId = async () => {
     let result;
     try {
       result = await postId(name);
@@ -28,7 +28,7 @@ const IdFormContainer = () => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    getPost();
+    registerId();
     setName('');
   };
 

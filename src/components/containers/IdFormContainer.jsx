@@ -9,10 +9,11 @@ const IdFormContainer = () => {
   const [name, setName] = useState('');
 
   const getPost = async () => {
+    let result;
     try {
-      const result = await postId(name);
+      result = await postId(name);
+      window.localStorage.setItem('ID', result.id);
       alert('ID 등록완료');
-      return result.id;
     } catch (error) {
       if (error.name === 'TypeError') alert('네트워크 에러');
       else if (error.name === 'HttpError')
@@ -27,8 +28,7 @@ const IdFormContainer = () => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    const id = getPost();
-    window.localStorage.setItem('Id', id);
+    getPost();
     setName('');
   };
 

@@ -4,8 +4,14 @@ const postId = async (nameData = '') => {
   if (!nameData) {
     return;
   }
+
   let response;
   try {
+    if (localStorage.getItem('ID')) {
+      const error = new Error('Id가 존재합니다.');
+      error.name = 'IdError';
+      throw error;
+    }
     response = await fetch(`${BASE_URL}subjects/`, {
       method: 'POST',
       headers: {
@@ -25,13 +31,8 @@ const postId = async (nameData = '') => {
     console.error(error);
     throw error;
   }
-  if (window.localStorage.getItem('Id')) {
-    const error = new Error('Id가 존재합니다.');
-    error.name = 'IdError';
-    throw error;
-  }
+
   const result = await response.json();
-  window.localStorage.setItem('id', result.id);
   return result;
 };
 

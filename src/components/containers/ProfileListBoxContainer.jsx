@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { getAnswerers } from '@services/api/api';
-import CardList from '@ui/CardList';
+// import CardList from '@ui/CardList';
 import { isTabletMini } from '@utils/windowSize';
 
 function ProfileListBoxContainer() {

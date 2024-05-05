@@ -1,6 +1,6 @@
 const BASE_URL = 'https://openmind-api.vercel.app/6-16/';
 
-export const postId = async (nameData = '') => {
+const postId = async (nameData = '') => {
   if (!nameData) {
     return;
   }
@@ -23,6 +23,11 @@ export const postId = async (nameData = '') => {
     error.name = 'HttpError';
     error.status = response.status;
     console.error(error);
+    throw error;
+  }
+  if (window.localStorage.getItem('Id')) {
+    const error = new Error('Id가 존재합니다.');
+    error.name = 'IdError';
     throw error;
   }
   const result = await response.json();
@@ -118,22 +123,6 @@ const postQuestion = async (answererId = 0, content = '') => {
       'Content-Type': 'application/json', // JSON 콘텐츠임을 명시
     },
     body: JSON.stringify({ content: content }),
-  });
-
-  const error = checkResponse(response);
-  if (error) return console.error(error);
-};
-
-const postAnswer = async (questionId, contentData = '') => {
-  if (!contentData) {
-    return;
-  }
-  const response = await fetch(`${BASE_URL}questions/${questionId}/answers/`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json', // JSON 콘텐츠임을 명시
-    },
-    body: JSON.stringify({ content: contentData, isRejected: false }),
   });
 
   const error = checkResponse(response);

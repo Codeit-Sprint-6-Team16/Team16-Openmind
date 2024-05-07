@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import styles from '../../pages/css/MainPage.module.css';
-import { postId } from '@services/api/api';
+import { postId } from '@services/api/post';
 import Button from '@ui/Button';
 import Input from '@ui/Input';
 
@@ -18,7 +18,7 @@ const IdFormContainer = () => {
       if (error.name === 'TypeError') alert('네트워크 에러');
       else if (error.name === 'HttpError')
         alert(`${error.name}: ${error.status}`);
-      else if (error.name === 'IdError') alert(error.message);
+      else if (error.name === 'Id Error!') alert(error.message);
     }
   };
 

@@ -30,7 +30,6 @@ const postId = async (nameData = '') => {
     throw error;
   }
   const result = await response.json();
-  window.localStorage.setItem('ID', result.id);
   return result;
 };
 

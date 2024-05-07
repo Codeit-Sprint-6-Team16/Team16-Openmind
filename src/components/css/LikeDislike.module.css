@@ -1,0 +1,38 @@
+.LikeDislike {
+  max-width: 620px;
+  height: 43px;
+  display: flex;
+  gap: 32px;
+  align-items: end;
+  font-size: 14px;
+  font-weight: 500;
+  border-top: 1px solid var(--color-gray30);
+}
+
+.like {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.unlike {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.like.skyblue {
+  color: var(--color-blue);
+}
+
+.like.gray {
+  color: var(--color-gray40);
+}
+
+.unlike.black {
+  color: var(--color-black);
+}
+
+.unlike.gray {
+  color: var(--color-gray40);
+}

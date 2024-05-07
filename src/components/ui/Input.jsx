@@ -1,7 +1,6 @@
 import personIcon from '../../assets/images/icon_person.svg';
 import styles from '@css/Input.module.css';
 
-
 function Input({ name, onChangeHandler }) {
   return (
     <div className={styles.input}>

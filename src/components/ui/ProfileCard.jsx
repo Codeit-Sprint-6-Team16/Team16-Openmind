@@ -1,5 +1,4 @@
 import messageicon from '../../assets/images/image_messages_icon.svg';
-import testprofileimg from '../../assets/images/image_test.svg';
 import styles from '@css/ProfileCard.module.css';
 
 const ProfileCard = ({ profile }) => {

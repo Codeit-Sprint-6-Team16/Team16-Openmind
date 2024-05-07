@@ -1,14 +1,12 @@
 import { Link } from 'react-router-dom';
 
 import styles from './css/ListPage.module.css';
+import ProfileContainer from '@containers/ProfileContainer';
 import ProfileListBoxContainer from '@containers/ProfileListBoxContainer';
 import Button from '@ui/Button';
-// import CardList from '@ui/CardList';
 import Logo from '@ui/Logo';
 import PaginationBar from '@ui/PaginationBar';
 import ToggleMenu from '@ui/ToggleMenu';
-
-// import CardList from '@ui/CardList';
 
 function ListPage() {
   return (

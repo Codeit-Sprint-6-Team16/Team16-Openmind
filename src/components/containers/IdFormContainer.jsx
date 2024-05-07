@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import styles from '../css/MainPage.module.css';
-import { postId } from '@services/api/api';
+import styles from '/src/pages/css/MainPage.module.css';
+import { postId } from '@services/api/post';
 import Button from '@ui/Button';
 import Input from '@ui/Input';
 

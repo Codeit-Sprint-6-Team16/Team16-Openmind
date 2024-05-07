@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 
-import styles from './css/MainPage.module.css';
+import styles from '/src/pages/css/MainPage.module.css';
+
 import IdFormContainer from '@containers/IdFormContainer';
 import Button from '@ui/Button';
 import Logo from '@ui/Logo';

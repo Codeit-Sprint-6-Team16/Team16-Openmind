@@ -72,4 +72,4 @@ const getQuestionList = async (answererId = 0, offset = 0, limit = 3) => {
 };
 
 getQuestionList(5934);
-// export { getProfile, getAnswerers, getQuestionList };
+export { getProfile, getAnswerers, getQuestionList };

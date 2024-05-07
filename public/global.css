@@ -44,11 +44,15 @@ button {
   cursor: pointer;
 }
 button,
-input {
+input,
+textarea {
   box-sizing: border-box;
   outline: 0;
   border: 0;
   font-family: 'Pretendard';
+}
+textarea {
+  resize: none;
 }
 a {
   text-decoration: none;

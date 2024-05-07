@@ -4,8 +4,6 @@ import styles from './css/ListPage.module.css';
 import ProfileListBoxContainer from '@containers/ProfileListBoxContainer';
 import Button from '@ui/Button';
 import Logo from '@ui/Logo';
-import PaginationBar from '@ui/PaginationBar';
-import ToggleMenu from '@ui/ToggleMenu';
 
 function ListPage() {
   return (

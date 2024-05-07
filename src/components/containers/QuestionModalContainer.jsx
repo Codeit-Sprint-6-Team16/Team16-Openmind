@@ -1,8 +1,14 @@
+import { useState } from 'react';
+
+import Button from '@ui/Button';
+import QuestionModal from '@ui/QuestionModal';
+
 import { postQuestion } from '@services/api/post';
 
 function QuestionModalContainer(props) {
   const [profile, setProfile] = useState();
   const [value, setValue] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
 
   const loadProfile = async () => {
     try {
@@ -29,12 +35,20 @@ function QuestionModalContainer(props) {
       }
     }
   };
+  
+  const openModalHandler = () => {
+    setIsOpen(true);
+  };
+
+  const closeModalHandler = () => {
+    setIsOpen(false);
+  };
 
   const handleChange = (e) => {
     setValue(e.target.value);
   };
 
-  const handleClick = () => {
+  const handleSubmit = () => {
     sendQuestion(value);
   };
 
@@ -43,12 +57,12 @@ function QuestionModalContainer(props) {
   }, []);
 
   return (
-    <QuestionModal
-      profile={profile}
-      value={value}
-      onChange={handleChange}
-      onClick={handleClick}
-    />
+    <>
+      <Button variant={'round'} onClick={openModalHandler}>
+        질문 작성하기
+      </Button>
+      {isOpen && <QuestionModal closeModal={closeModalHandler} profile={profile} value={value} onSubmit={handleSubmit} onClick={handleClick} />}
+    </>
   );
 }
 

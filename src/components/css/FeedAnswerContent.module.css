@@ -1,0 +1,50 @@
+.FeedAnswerContent {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.section_image {
+  display: flex;
+  flex-direction: column;
+  min-width: 48px;
+  min-height: 48px;
+}
+
+.section_profile {
+  display: flex;
+  gap: 8px;
+}
+
+.section_profile_name {
+  font-size: 18px;
+}
+
+.section_weeks {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-gray40);
+}
+
+.section_content {
+  font-size: 16px;
+}
+
+@media all and (max-width: 767px) {
+  .FeedAnswerContent {
+    margin-bottom: 24px;
+  }
+
+  .section_image {
+    width: 32px;
+    height: 32px;
+  }
+
+  .section_profile_name {
+    font-size: 14px;
+  }
+
+  .section_weeks {
+    font-weight: 500;
+  }
+}

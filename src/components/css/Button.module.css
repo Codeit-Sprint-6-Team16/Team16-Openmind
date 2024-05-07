@@ -9,6 +9,11 @@
   height: 46px;
 }
 
+.button:disabled {
+  background-color: var(--color-brown30);
+  cursor: none;
+}
+
 .outline {
   border: 1px solid var(--color-brown40);
   color: var(--color-brown40);
@@ -27,18 +32,6 @@
 
 .round {
   border-radius: 200px;
-}
-
-.fill.small {
-  width: 336px;
-}
-
-.fill.medium {
-  width: 532px;
-}
-
-.fill.large {
-  width: 560px;
 }
 
 .outline.small {
@@ -62,10 +55,6 @@
 
 /* 태블릿 */
 @media (max-width: 1199px) {
-  .fill.large {
-    width: 548px;
-  }
-
   .outline.large {
     width: 166px;
   }
@@ -73,20 +62,6 @@
 
 /* 모바일 */
 @media (max-width: 767px) {
-  .fill.small {
-    width: 257px;
-  }
-
-  .fill.medium {
-    width: 279px;
-    gap: 10px;
-  }
-
-  .fill.large {
-    width: 203px;
-    gap: 10px;
-  }
-
   .outline.small {
     width: 123px;
     font-size: 14px;

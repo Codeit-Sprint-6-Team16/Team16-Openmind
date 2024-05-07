@@ -27,7 +27,7 @@ const putAnswer = async (answerId, content = '', isRejected = false) => {
 };
 
 const patchAnswer = async ({ answerId, content = '', isRejected = null }) => {
-  if (!content && isRejected) return;
+  if (!content && isRejected === null) return;
 
   let response;
   try {

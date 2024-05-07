@@ -1,0 +1,28 @@
+.QuestionCount {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  padding-bottom: 16px;
+}
+
+.QuestionCount > p {
+  font-size: 20px;
+  font-family: 'Actor';
+  color: var(--color-brown40);
+}
+
+.QuestionCount > img {
+  width: 24px;
+  height: 24px;
+}
+
+@media all and (max-width: 767px) {
+  .QuestionCount > p {
+    font-size: 18px;
+  }
+
+  .QuestionCount > img {
+    width: 22px;
+    height: 22px;
+  }
+}

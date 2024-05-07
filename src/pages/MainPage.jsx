@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 
-import styles from './css/MainPage.module.css';
+import styles from '/src/pages/css/MainPage.module.css';
+
+import IdFormContainer from '@containers/IdFormContainer';
 import Button from '@ui/Button';
-import Input from '@ui/Input';
 import Logo from '@ui/Logo';
 
 function MainPage() {
@@ -25,10 +26,6 @@ function MainPage() {
               <Logo />
             </Link>
             <IdFormContainer />
-//             <form className={styles.form}>
-//               <Input />
-//               <Button variant={'fill'}>질문받기</Button>
-//             </form>
           </div>
         </div>
       </div>

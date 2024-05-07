@@ -3,13 +3,14 @@ import { useEffect, useState } from 'react';
 import ToggleMenuContainer from './ToggleMenuContainer';
 import { getAnswerers } from '@services/api/get.js';
 import PaginationBar from '@ui/PaginationBar';
+
 import ProfileList from '@ui/ProfileList';
 import { isTabletMini } from '@utils/windowSize';
 
 function ProfileListBoxContainer() {
   const [profileList, setProfileList] = useState([]);
   const [order, setOrder] = useState('name');
-  const [limit, setLimit] = useState(isTabletMini ? 6 : 8);
+  const [limit, setLimit] = useState(() => (isTabletMini() ? 6 : 8));
 
   const loadProfiles = async (options) => {
     try {

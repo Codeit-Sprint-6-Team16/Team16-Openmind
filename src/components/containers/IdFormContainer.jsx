@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-import styles from '../css/MainPage.module.css';
+import styles from '/src/pages/css/MainPage.module.css';
+
 import { postId } from '@services/api/post';
 import Button from '@ui/Button';
 import Input from '@ui/Input';
@@ -8,17 +9,17 @@ import Input from '@ui/Input';
 const IdFormContainer = () => {
   const [name, setName] = useState('');
 
-  const getPost = async () => {
+  const registerId = async () => {
+    let result;
     try {
-      const result = await postId(name);
-      window.localStorage.setItem('id', result.id);
+      result = await postId(name);
+      window.localStorage.setItem('ID', result.id);
       alert('ID 등록완료');
     } catch (error) {
-      if (error.name === 'TypeError') {
-        alert('네트워크 에러');
-      } else if (error.name === 'HttpError') {
+      if (error.name === 'TypeError') alert('네트워크 에러');
+      else if (error.name === 'HttpError')
         alert(`${error.name}: ${error.status}`);
-      }
+      else if (error.name === 'Id Error!') alert(error.message);
     }
   };
 
@@ -28,7 +29,7 @@ const IdFormContainer = () => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    getPost();
+    registerId();
     setName('');
   };
 

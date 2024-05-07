@@ -1,4 +1,4 @@
-import { BASE_URL } from './api.js';
+import { BASE_URL } from './api';
 
 const getProfile = async (answererId = 0) => {
   let response;
@@ -50,7 +50,7 @@ const getQuestionList = async (answererId = 0, offset = 0, limit = 3) => {
   try {
     const url =
       BASE_URL +
-      `subjects/${answererId}/questions/?limit=${limit}&offset=${offset}`;
+      `subjects/${answererId}/questions/?offset=${offset}&limit=${limit}`;
     response = await fetch(url);
   } catch (error) {
     console.error(error);
@@ -66,7 +66,7 @@ const getQuestionList = async (answererId = 0, offset = 0, limit = 3) => {
   }
 
   const body = await response.json();
-  return body.results;
+  return body;
 };
 
 export { getProfile, getAnswerers, getQuestionList };

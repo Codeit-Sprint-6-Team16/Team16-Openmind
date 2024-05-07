@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate, useNavigation, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import { getQuestionList } from '@api/get.js';
 import { deleteProfile } from '@services/api/delete';

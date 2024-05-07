@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 
 import { getAnswerers } from '@services/api/get.js';
-import CardList from '@ui/ProfileList';
+
+import ProfileList from '@ui/ProfileList';
 import { isTabletMini } from '@utils/windowSize';
 
 function ProfileListBoxContainer() {
@@ -49,7 +50,7 @@ function ProfileListBoxContainer() {
   return (
     <div>
       {/* 정렬버튼에 prop으로 order state내려줍니다 */}
-      <CardList profileList={profileList} />
+      <ProfileList profileList={profileList} />
       {/* 페이지네이션 */}
     </div>
   );

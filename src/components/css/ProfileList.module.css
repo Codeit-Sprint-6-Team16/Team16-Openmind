@@ -3,7 +3,6 @@
   grid-template-columns: repeat(4, 2fr);
   max-width: 940px;
   gap: 20px;
-  /* padding: 0 32px; */
   margin: 0 auto;
 }
 
@@ -18,6 +17,5 @@
   .ProfileList {
     grid-template-columns: repeat(2, 2fr);
     max-width: 327px;
-    padding: 0 24px;
   }
 }

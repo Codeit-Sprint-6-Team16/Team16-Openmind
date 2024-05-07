@@ -1,4 +1,4 @@
-import messageicon from '../../assets/images/image_messages_icon.svg';
+import messageIcon from '../../assets/images/image_messages_icon.svg';
 import styles from '@css/ProfileCard.module.css';
 
 const ProfileCard = ({ profile }) => {
@@ -9,23 +9,11 @@ const ProfileCard = ({ profile }) => {
         <p>{profile.name}</p>
       </div>
       <div className={styles.card_content}>
-        <img src={messageicon} />
+        <img src={messageIcon} />
         <span className={styles.card_content_text}>받은 질문</span>
         <span>{profile.questionCount}</span>
       </div>
     </div>
-
-    // <div className={styles.Card}>
-    //   <div className={styles.card_profile}>
-    //   <img src={profile} />
-    //   <p>{name}</p>
-    //  </div>
-    // <div className={styles.card_content}>
-    //   <img src={messageicon} />
-    //   <span className={styles.card_content_text}>{content}</span>
-    //   <span>{count}</span>
-    // </div>
-    // </div>
   );
 };
 

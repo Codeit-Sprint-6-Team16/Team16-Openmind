@@ -2,7 +2,13 @@ import { BASE_URL } from './api';
 
 const postId = async (nameData = '') => {
   if (!nameData) return;
-
+  if (localStorage.getItem('ID')) {
+    const error = new Error();
+    error.name = 'Id Error!';
+    error.message = '이미 아이디가 존재합니다.';
+    throw error;
+  }
+  
   let response;
   try {
     response = await fetch(`${BASE_URL}subjects/`, {
@@ -25,7 +31,6 @@ const postId = async (nameData = '') => {
     throw error;
   }
   const result = await response.json();
-  window.localStorage.setItem('id', result.id);
   return result;
 };
 

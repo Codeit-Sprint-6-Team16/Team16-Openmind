@@ -19,5 +19,4 @@ const Button = ({ onClick, isDisabled, children, variant, type, size }) => {
     </button>
   );
 };
-
 export default Button;

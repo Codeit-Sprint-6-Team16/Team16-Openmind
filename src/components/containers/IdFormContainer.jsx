@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-import styles from '../css/MainPage.module.css';
-import { postId } from '@services/api/api';
+import { postId } from '@services/api/post';
 import Button from '@ui/Button';
+import IdForm from '@ui/IdForm';
 import Input from '@ui/Input';
 
 const IdFormContainer = () => {
@@ -33,12 +33,19 @@ const IdFormContainer = () => {
   };
 
   return (
-    <form className={styles.form} onSubmit={onSubmitHandler}>
-      <Input onChangeHandler={onChangeInputHandler} name={name} />
-      <Button type="submit" isDisabled={!name}>
-        질문받기
-      </Button>
-    </form>
+    <IdForm>
+      <form onSubmit={onSubmitHandler}>
+        <Input onChangeHandler={onChangeInputHandler} name={name} />
+        <Button
+          variant={'fill'}
+          size={'small'}
+          type="submit"
+          isDisabled={!name}
+        >
+          질문받기
+        </Button>
+      </form>
+    </IdForm>
   );
 };
 

@@ -14,13 +14,3 @@
   display: inline-block;
   margin-top: 69px;
 }
-.form {
-  background: var(--color-white);
-  margin: 24px auto;
-  padding: 32px;
-  width: 400px;
-  border-radius: 16px;
-}
-.form button {
-  margin-top: 16px;
-}

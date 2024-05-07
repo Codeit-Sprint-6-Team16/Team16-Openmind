@@ -6,7 +6,7 @@ const ProfileList = ({ profileList }) => {
     <div className={styles.ProfileList}>
       {profileList &&
         profileList.map((profile) => {
-          return <ProfileCard profile={profile} />;
+          return <ProfileCard profile={profile} key={profile.id} />;
         })}
     </div>
   );

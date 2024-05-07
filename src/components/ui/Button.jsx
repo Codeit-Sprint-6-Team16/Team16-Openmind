@@ -1,7 +1,7 @@
 import arrowRightIcon from '../../assets/images/ic_arrow_right.svg';
-import styles from '../css/Button.module.css';
+import styles from '@css/Button.module.css';
 
-const Button = ({ onClick, type, children, variant, size, isDisabled }) => {
+const Button = ({ onClick, isDisabled, children, variant, type, size }) => {
   const buttonClassName = `${styles.button} ${styles[variant] || ''}`;
   const sizeClassName = `${styles[size] || ''}`;
 
@@ -9,7 +9,7 @@ const Button = ({ onClick, type, children, variant, size, isDisabled }) => {
     <button
       type={type}
       disabled={isDisabled}
-      className={buttonClassName}
+      className={`${buttonClassName} ${sizeClassName}`}
       onClick={onClick}
     >
       {children}
@@ -19,5 +19,4 @@ const Button = ({ onClick, type, children, variant, size, isDisabled }) => {
     </button>
   );
 };
-
 export default Button;

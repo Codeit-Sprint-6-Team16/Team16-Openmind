@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 
+import ToggleMenuContainer from './ToggleMenuContainer';
 import { getAnswerers } from '@services/api/get.js';
+import PaginationBar from '@ui/PaginationBar';
 
 import ProfileList from '@ui/ProfileList';
 import { isTabletMini } from '@utils/windowSize';
@@ -49,9 +51,9 @@ function ProfileListBoxContainer() {
 
   return (
     <div>
-      {/* 정렬버튼에 prop으로 order state내려줍니다 */}
+      <ToggleMenuContainer onClick={handleOrder} />
       <ProfileList profileList={profileList} />
-      {/* 페이지네이션 */}
+      <PaginationBar />
     </div>
   );
 }

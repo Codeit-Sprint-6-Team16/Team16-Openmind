@@ -51,7 +51,6 @@ const getQuestionList = async (answererId = 0, offset = 0, limit = 3) => {
     const url =
       BASE_URL +
       `subjects/${answererId}/questions/?limit=${limit}&offset=${offset}`;
-    console.log(url);
     response = await fetch(url);
   } catch (error) {
     console.error(error);
@@ -67,9 +66,7 @@ const getQuestionList = async (answererId = 0, offset = 0, limit = 3) => {
   }
 
   const body = await response.json();
-
   return body.results;
 };
 
-getQuestionList(5934);
 export { getProfile, getAnswerers, getQuestionList };

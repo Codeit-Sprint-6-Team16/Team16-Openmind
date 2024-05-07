@@ -8,7 +8,7 @@ const postId = async (nameData = '') => {
     error.message = '이미 아이디가 존재합니다.';
     throw error;
   }
-  
+
   let response;
   try {
     response = await fetch(`${BASE_URL}subjects/`, {

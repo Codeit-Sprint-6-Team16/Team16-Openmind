@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { getQuestionList } from '@api/get.js';
 import { deleteProfile } from '@services/api/delete';
 
-const AnswerPageContainer = ({ profile }) => {
+const AnswerFeedContainer = ({ profile }) => {
   const { id } = useParams();
   const [questions, setQuestions] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
@@ -53,4 +53,4 @@ const AnswerPageContainer = ({ profile }) => {
   );
 };
 
-export default AnswerPageContainer;
+export default AnswerFeedContainer;

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import SnsLink from '@ui/SnsLink';
 import Toast from '@ui/Toast';
@@ -10,17 +10,11 @@ function ToastContainer() {
     try {
       await navigator.clipboard.writeText(window.location.href);
       setToast(true);
+      setTimeout(() => setToast(false), 5000);
     } catch (error) {
       console.log(error);
     }
   };
-
-  useEffect(() => {
-    const timer = setTimeout(() => setToast(false), 5000);
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [toast]);
 
   return (
     <>

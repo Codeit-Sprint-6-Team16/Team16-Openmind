@@ -1,7 +1,5 @@
-import styles from './css/AnswerPage.module.css';
-import AnswerFeedContainer from '@containers/AnswerFeedContainer';
-import Button from '@ui/Button';
-import QuestionFeed from '@ui/QuestionFeed';
+// import AnswerFeedContainer from '@containers/AnswerFeedContainer';
+import AnswerFeed from '@ui/AnswerFeed';
 import QuestionProfile from '@ui/QuestionProfile';
 
 function AnswerPage() {
@@ -9,7 +7,8 @@ function AnswerPage() {
     <main className="wrapper">
       <QuestionProfile />
       <div className="inner">
-        <AnswerFeedContainer />
+        {/* <AnswerFeedContainer /> */}
+        <AnswerFeed />
       </div>
     </main>
   );

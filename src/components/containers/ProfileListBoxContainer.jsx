@@ -64,19 +64,14 @@ function ProfileListBoxContainer() {
     };
   }, []);
 
-//   return <ProfileListBox profileList={profileList} handleOrder={handleOrder} />;
   return (
-    <>
-      <ToggleMenuContainer onClick={orderClickHandler} />
-      <ProfileList profileList={profileList} />
-      {pages && pages[pages.length - 1] !== 1 && (
-        <PaginationBar
-          onClick={paginationClickHandler}
-          pages={pages}
-          currentPage={currentPage}
-        />
-      )}
-    </>
+    <ProfileListBox
+      profileList={profileList}
+      onOrderClick={orderClickHandler}
+      onPaginationClick={paginationClickHandler}
+      pages={pages}
+      currentPage={currentPage}
+    />
   );
 }
 

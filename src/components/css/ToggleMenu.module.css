@@ -1,3 +1,8 @@
+.toggleMenu {
+  display: flex;
+  justify-content: center;
+}
+
 .iconButton {
   border: 1px solid var(--color-gray40);
   cursor: pointer;
@@ -8,6 +13,7 @@
   position: relative;
   align-items: center;
   width: 79px;
+  margin: 12px 0 30px 0;
 }
 
 .iconButton:hover {
@@ -15,8 +21,10 @@
 }
 
 ul.popup {
+  background-color: var(--color-white);
   width: 79px;
   padding: 4px 0px 4px 0px;
+  margin-top: 50px;
   margin-bottom: 5px;
   list-style: none;
   position: absolute;
@@ -58,4 +66,10 @@ button {
 .MeatballButton img {
   width: 26px;
   height: 26px;
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+  .iconButton {
+    margin: 0;
+  }
 }

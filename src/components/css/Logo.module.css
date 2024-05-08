@@ -1,3 +1,10 @@
 .small {
   height: 57px;
 }
+
+@media (min-width: 375px) and (max-width: 767px) {
+  .mobileSize {
+    width: 248px;
+    height: 98px;
+  }
+}

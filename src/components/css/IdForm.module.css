@@ -2,9 +2,11 @@
   background: var(--color-white);
   margin: 24px auto;
   padding: 32px;
-  width: 400px;
+  max-width: 400px;
+  width: 100%;
   border-radius: 16px;
 }
 .form button {
   margin-top: 16px;
+  width: 100%;
 }

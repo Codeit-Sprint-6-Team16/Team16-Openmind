@@ -4,53 +4,75 @@ import unlikeBlack from '@assets/images/image_unlike_black.svg';
 import unlikeGray from '@assets/images/image_unlike_gray.svg';
 import styles from '@css/Reaction.module.css';
 
-const Reaction = ({ count = 12 }) => {
+const Reaction = ({ question, onClick }) => {
+  const { like, dislike } = question;
+
   return (
     <div className={styles.LikeDislike}>
       <div
-        className={`${styles.like} ${count === 0 ? styles.gray : styles.skyblue}`}
+        className={`${styles.like} ${like === 0 ? styles.gray : styles.skyblue}`}
       >
-        {count === 0 ? (
-          <>
+        {like === 0 ? (
+          <button
+            type="button"
+            onClick={() => {
+              onClick('like');
+            }}
+          >
             <img
               className={styles.image}
               src={likeGray}
               alt="좋아요버튼비활성화"
             />
             <p>좋아요</p>
-          </>
+          </button>
         ) : (
-          <>
+          <button
+            type="button"
+            onClick={() => {
+              onClick('like');
+            }}
+          >
             <img
               className={styles.image}
               src={likeSkyblue}
               alt="좋아요버튼활성화"
             />
-            <p>좋아요 {count}</p>
-          </>
+            <p>좋아요 {like}</p>
+          </button>
         )}
       </div>
       <div
-        className={`${styles.unlike} ${count === 0 ? styles.gray : styles.black}`}
+        className={`${styles.unlike} ${dislike === 0 ? styles.gray : styles.black}`}
       >
-        {count === 0 ? (
-          <>
+        {dislike === 0 ? (
+          <button
+            type="button"
+            onClick={() => {
+              onClick('dislike');
+            }}
+          >
             <img
               className={styles.image}
               src={unlikeGray}
               alt="싫어요비활성화"
             />
             <p>싫어요</p>
-          </>
+          </button>
         ) : (
-          <>
+          <button
+            type="button"
+            onClick={() => {
+              onClick('dislike');
+            }}
+          >
             <img
               className={styles.image}
               src={unlikeBlack}
               alt="싫어요활성화"
             />
-            <p>싫어요 {count}</p>
-          </>
+            <p>싫어요 {dislike}</p>
+          </button>
         )}
       </div>
     </div>

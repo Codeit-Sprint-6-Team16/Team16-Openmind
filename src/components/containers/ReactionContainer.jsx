@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import { postReaction } from '@services/api/post';
+import Reaction from '@ui/Reaction';
 
 function ReactionContainer({ question }) {
   const [updatedQuestion, setUpdatedQuestion] = useState(question);

@@ -18,11 +18,11 @@ function ReactionContainer({ question }) {
     }
   };
 
-  const handleClick = () => {
+  const onClickHandler = () => {
     sendReaction(type);
   };
 
-  return <Reaction question={updatedQuestion} onClick={handleClick} />;
+  return <Reaction question={updatedQuestion} onClick={onClickHandler} />;
 }
 
 export default ReactionContainer;

@@ -1,6 +1,5 @@
-const BREAK_POINT = 870;
+const BREAK_POINT = 867;
 
 export function isTabletMini() {
-  console.log(window.innerWidth < BREAK_POINT ? true : false);
-  return window.innerWidth < BREAK_POINT ? true : false;
+  return window.innerWidth <= BREAK_POINT ? true : false;
 }

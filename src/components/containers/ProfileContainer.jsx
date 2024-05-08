@@ -1,12 +1,14 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 import { getProfile } from '@services/api/get.js';
 import Profile from '@ui/Profile';
 
 function ProfileContainer() {
   const [profile, setProfile] = useState();
+  const { id } = useParams();
 
-  const loadProfile = async (id) => {
+  const loadProfile = async () => {
     try {
       const response = await getProfile(id);
       setProfile(response);
@@ -20,8 +22,7 @@ function ProfileContainer() {
   };
 
   useEffect(() => {
-    const id = window.localStorage.getItem('id');
-    loadProfile(id);
+    loadProfile();
   }, []);
 
   return <Profile profile={profile} />;

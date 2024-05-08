@@ -1,15 +1,23 @@
 import styles from '../css/PaginationBar.module.css';
 
-const PaginationBar = () => {
-  const pages = [1, 2, 3, 4, 5];
-  const currentPage = 1;
-
+const PaginationBar = ({ onClick, pages, currentPage }) => {
   return (
     <div className={styles.paginationBar}>
-      <button className={styles.paginationButton}>{'<'}</button>
+      <button
+        className={styles.paginationButton}
+        onClick={() => {
+          onClick(currentPage !== 1 ? currentPage - 1 : null);
+        }}
+      >
+        {'<'}
+      </button>
+
       {pages.map((page) => (
         <button
           key={page}
+          onClick={() => {
+            onClick(page);
+          }}
           className={
             currentPage === page
               ? styles.currentPageButton
@@ -19,7 +27,17 @@ const PaginationBar = () => {
           {page}
         </button>
       ))}
-      <button className={styles.paginationButton}>{'>'}</button>
+
+      <button
+        className={styles.paginationButton}
+        onClick={() => {
+          onClick(
+            currentPage !== pages[pages.length - 1] ? currentPage + 1 : null,
+          );
+        }}
+      >
+        {'>'}
+      </button>
     </div>
   );
 };

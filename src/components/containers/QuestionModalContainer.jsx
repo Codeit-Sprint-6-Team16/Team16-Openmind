@@ -1,17 +1,20 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
+import { getProfile } from '@services/api/get';
 import { postQuestion } from '@services/api/post';
 import Button from '@ui/Button';
 import QuestionModal from '@ui/QuestionModal';
 
 function QuestionModalContainer(props) {
   const [profile, setProfile] = useState();
-  const [value, setValue] = useState('');
+  const [content, setContent] = useState('');
   const [isOpen, setIsOpen] = useState(false);
+  const { id } = useParams();
 
   const loadProfile = async () => {
     try {
-      const response = await getProfile(window.localStorage.getItem('id'));
+      const response = await getProfile(id);
       setProfile(response);
     } catch (error) {
       if (error.name === 'TypeError') {
@@ -35,6 +38,9 @@ function QuestionModalContainer(props) {
     }
   };
 
+  // let { id } = useParams();
+  // console.log(id);
+
   const openModalHandler = () => {
     setIsOpen(true);
   };
@@ -43,12 +49,12 @@ function QuestionModalContainer(props) {
     setIsOpen(false);
   };
 
-  const handleChange = (e) => {
-    setValue(e.target.value);
+  const onChangeHandler = (e) => {
+    setContent(e.target.value);
   };
 
-  const handleSubmit = () => {
-    sendQuestion(value);
+  const onSubmitHandler = () => {
+    sendQuestion(content);
   };
 
   useEffect(() => {
@@ -64,9 +70,9 @@ function QuestionModalContainer(props) {
         <QuestionModal
           closeModal={closeModalHandler}
           profile={profile}
-          value={value}
-          onSubmit={handleSubmit}
-          onClick={handleClick}
+          value={content}
+          onSubmit={onSubmitHandler}
+          onChange={onChangeHandler}
         />
       )}
     </>

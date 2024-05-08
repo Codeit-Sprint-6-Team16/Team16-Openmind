@@ -1,7 +1,7 @@
 import profileImg from '@assets/images/image_profile.svg';
-import styles from '@css/FeedAnswerContent.module.css';
+import styles from '@css/AnswerPresenter.module.css';
 
-const FeedAnswerContent = ({
+const AnswerPresenter = ({
   profileImage = profileImg,
   profileName = '아초는고양이',
   weeksAgo = 2,
@@ -23,4 +23,4 @@ const FeedAnswerContent = ({
   );
 };
 
-export default FeedAnswerContent;
+export default AnswerPresenter;

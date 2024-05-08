@@ -1,6 +1,6 @@
 import styles from './css/AnswerPage.module.css';
 import Button from '@ui/Button';
-import FeedList from '@ui/FeedList';
+import QuestionFeed from '@ui/QuestionFeed';
 import QuestionProfile from '@ui/QuestionProfile';
 
 function AnswerPage() {
@@ -12,7 +12,7 @@ function AnswerPage() {
           <div className={styles.right}>
             <Button variant={'round'}>삭제하기</Button>
           </div>
-          <FeedList />
+          <QuestionFeed />
         </div>
       </div>
     </main>

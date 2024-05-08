@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import { postReaction } from '@services/api/post';
+import Reaction from '@ui/Reaction';
 
 function ReactionContainer({ question }) {
   const [updatedQuestion, setUpdatedQuestion] = useState(question);
@@ -18,11 +19,11 @@ function ReactionContainer({ question }) {
     }
   };
 
-  const handleClick = () => {
+  const onClickHandler = () => {
     sendReaction(type);
   };
 
-  return <Reaction question={updatedQuestion} onClick={handleClick} />;
+  return <Reaction question={updatedQuestion} onClick={onClickHandler} />;
 }
 
 export default ReactionContainer;

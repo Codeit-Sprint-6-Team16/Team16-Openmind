@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 
 import styles from './css/ListPage.module.css';
 import ProfileListBoxContainer from '@containers/ProfileListBoxContainer';
+import ReplyButtonContainer from '@containers/ReplyButtonContainer';
 import Button from '@ui/Button';
 import Logo from '@ui/Logo';
 
@@ -13,7 +14,7 @@ function ListPage() {
           <Link to="/">
             <Logo logoSize={'small'} />
           </Link>
-          <Button variant={'outline'}>답변하러 가기</Button>
+          <ReplyButtonContainer />
         </div>
         <h2 className={styles.title}>누구에게 질문할까요?</h2>
         <ProfileListBoxContainer />

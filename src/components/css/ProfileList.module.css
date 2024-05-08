@@ -6,7 +6,7 @@
   margin: 0 auto;
 }
 
-@media (min-width: 768px) and (max-width: 870px) {
+@media (min-width: 768px) and (max-width: 867px) {
   .ProfileList {
     grid-template-columns: repeat(3, 2fr);
     max-width: 700px;

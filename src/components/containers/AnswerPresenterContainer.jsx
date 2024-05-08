@@ -1,12 +1,15 @@
-import { getProfile } from '@services/api/get.js';
-import AnswerBox from '@ui/AnswerBox';
+import { useParams } from 'react-router-dom';
 
-function AnswerPresenterContainer(question) {
+import { getProfile } from '@services/api/get.js';
+import AnswerPresenter from '@ui/AnswerPresenter';
+
+function AnswerPresenterContainer({ question }) {
   const [profile, setProfile] = useState();
+  const { id } = useParams();
 
   const loadProfile = async () => {
     try {
-      const response = await getProfile(window.localStorage.getItem('id'));
+      const response = await getProfile(id);
       setProfile(response);
     } catch (error) {
       if (error.name === 'TypeError') {
@@ -21,7 +24,7 @@ function AnswerPresenterContainer(question) {
     loadProfile();
   }, []);
 
-  return <AnswerBox question={question} profile={profile} />;
+  return <AnswerPresenter question={question} profile={profile} />;
 }
 
 export default AnswerPresenterContainer;

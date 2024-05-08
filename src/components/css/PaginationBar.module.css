@@ -5,10 +5,6 @@
   margin-top: 40px;
 }
 
-.paginationButton[disabled] {
-  cursor: none;
-}
-
 .paginationButton,
 .currentPageButton {
   border: none;
@@ -24,7 +20,8 @@
   background-color: rgba(0, 0, 0, 0);
 }
 
-.currentPageButton {
+.currentPageButton,
+.paginationButton:hover {
   color: var(--color-brown40);
 }
 

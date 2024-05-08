@@ -9,6 +9,7 @@
   flex-direction: column;
   min-width: 48px;
   min-height: 48px;
+  border-radius: 100%;
 }
 
 .section_profile {

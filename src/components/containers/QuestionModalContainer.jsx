@@ -1,9 +1,8 @@
 import { useState } from 'react';
 
+import { postQuestion } from '@services/api/post';
 import Button from '@ui/Button';
 import QuestionModal from '@ui/QuestionModal';
-
-import { postQuestion } from '@services/api/post';
 
 function QuestionModalContainer(props) {
   const [profile, setProfile] = useState();
@@ -35,7 +34,7 @@ function QuestionModalContainer(props) {
       }
     }
   };
-  
+
   const openModalHandler = () => {
     setIsOpen(true);
   };
@@ -61,7 +60,15 @@ function QuestionModalContainer(props) {
       <Button variant={'round'} onClick={openModalHandler}>
         질문 작성하기
       </Button>
-      {isOpen && <QuestionModal closeModal={closeModalHandler} profile={profile} value={value} onSubmit={handleSubmit} onClick={handleClick} />}
+      {isOpen && (
+        <QuestionModal
+          closeModal={closeModalHandler}
+          profile={profile}
+          value={value}
+          onSubmit={handleSubmit}
+          onClick={handleClick}
+        />
+      )}
     </>
   );
 }

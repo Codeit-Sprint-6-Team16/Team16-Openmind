@@ -1,6 +1,5 @@
 import styles from './css/AnswerPage.module.css';
-import Button from '@ui/Button';
-import QuestionFeed from '@ui/QuestionFeed';
+import AnswerFeed from '@ui/AnswerFeed';
 import QuestionProfile from '@ui/QuestionProfile';
 
 function AnswerPage() {
@@ -8,12 +7,7 @@ function AnswerPage() {
     <main className="wrapper">
       <QuestionProfile />
       <div className="inner">
-        <div className={styles.boxWrap}>
-          <div className={styles.right}>
-            <Button variant={'round'}>삭제하기</Button>
-          </div>
-          <QuestionFeed />
-        </div>
+        <AnswerFeed />
       </div>
     </main>
   );

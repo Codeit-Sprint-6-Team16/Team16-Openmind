@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import Logo from './Logo';
 import Profile from './Profile';
-import SnsLink from './SnsLink';
+import ToastContainer from '@containers/ToastContainer';
 import styles from '@css/QuestionProfile.module.css';
 
 function QuestionProfile() {
@@ -13,7 +13,7 @@ function QuestionProfile() {
           <Logo logoSize={'small'} />
         </Link>
         <Profile />
-        <SnsLink />
+        <ToastContainer />
       </div>
     </div>
   );

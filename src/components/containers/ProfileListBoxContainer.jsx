@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import ToggleMenuContainer from './ToggleMenuContainer';
 import { getAnswerers } from '@services/api/get.js';
-import PaginationBar from '@ui/PaginationBar';
-import ProfileList from '@ui/ProfileList';
+import ProfileListBox from '@ui/ProfileListBox';
 import { isTabletMini } from '@utils/windowSize';
 
 function ProfileListBoxContainer() {
@@ -48,13 +46,7 @@ function ProfileListBoxContainer() {
     };
   }, []);
 
-  return (
-    <>
-      <ToggleMenuContainer onClick={handleOrder} />
-      <ProfileList profileList={profileList} />
-      <PaginationBar />
-    </>
-  );
+  return <ProfileListBox profileList={profileList} handleOrder={handleOrder} />;
 }
 
 export default ProfileListBoxContainer;

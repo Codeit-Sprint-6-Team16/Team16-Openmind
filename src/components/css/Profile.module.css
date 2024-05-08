@@ -8,6 +8,7 @@
 .Profile > img {
   width: 136px;
   height: 136px;
+  border-radius: 100%;
 }
 
 .Profile > p {

@@ -6,5 +6,5 @@
 .right {
   display: flex;
   justify-content: flex-end;
-  margin-top: 58px;
+  margin-bottom: 10px;
 }

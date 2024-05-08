@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 
 import styles from './css/ListPage.module.css';
 import ProfileListBoxContainer from '@containers/ProfileListBoxContainer';
+
 import Button from '@ui/Button';
 import Logo from '@ui/Logo';
 

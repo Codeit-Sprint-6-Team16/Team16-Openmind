@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { postAnswer } from '@services/api/post';
 
-const AnswerContentContainer = ({ questionId, profile }) => {
+const AnswerFormContainer = ({ questionId, profile }) => {
   const [content, setContent] = useState('');
   const submitAnswer = async () => {
     try {
@@ -20,4 +20,4 @@ const AnswerContentContainer = ({ questionId, profile }) => {
   return <div></div>;
 };
 
-export default AnswerContentContainer;
+export default AnswerFormContainer;

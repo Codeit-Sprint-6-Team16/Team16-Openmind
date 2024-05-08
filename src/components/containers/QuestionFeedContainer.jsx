@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { getQuestionList } from '@services/api/get.js';
 
-function QuestionListContainer(props) {
+function QuestionFeedContainer(props) {
   const [questionList, setQuestionList] = useState([]);
   const [offset, setOffset] = useState(0);
 
@@ -30,4 +30,4 @@ function QuestionListContainer(props) {
   return <QuestionList questionList={questionList} />;
 }
 
-export default QuestionListContainer;
+export default QuestionFeedContainer;

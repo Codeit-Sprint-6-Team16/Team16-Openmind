@@ -1,7 +1,7 @@
-import styles from '@css/FeedList.module.css';
+import styles from '@css/QuestionFeed.module.css';
 import Feed from '@ui/Feed';
 
-function FeedList() {
+function QuestionFeed() {
   return (
     <div className={styles.boxWrap}>
       <Feed />
@@ -9,4 +9,4 @@ function FeedList() {
   );
 }
 
-export default FeedList;
+export default QuestionFeed;

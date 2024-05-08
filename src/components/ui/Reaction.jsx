@@ -2,9 +2,9 @@ import likeGray from '@assets/images/image_like_gray.svg';
 import likeSkyblue from '@assets/images/image_like_skyblue.svg';
 import unlikeBlack from '@assets/images/image_unlike_black.svg';
 import unlikeGray from '@assets/images/image_unlike_gray.svg';
-import styles from '@css/LikeDislike.module.css';
+import styles from '@css/Reaction.module.css';
 
-const LikeDislike = ({ count = 12 }) => {
+const Reaction = ({ count = 12 }) => {
   return (
     <div className={styles.LikeDislike}>
       <div
@@ -57,4 +57,4 @@ const LikeDislike = ({ count = 12 }) => {
   );
 };
 
-export default LikeDislike;
+export default Reaction;

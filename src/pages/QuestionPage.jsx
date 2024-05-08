@@ -1,6 +1,6 @@
 import styles from './css/QuestionPage.module.css';
 import QuestionModalContainer from '@containers/QuestionModalContainer';
-import FeedList from '@ui/FeedList';
+import QuestionFeed from '@ui/QuestionFeed';
 import QuestionProfile from '@ui/QuestionProfile';
 
 function QuestionPage() {
@@ -9,7 +9,7 @@ function QuestionPage() {
       <QuestionProfile />
       <div className="inner">
         <div className={styles.boxWrap}>
-          <FeedList />
+          <QuestionFeed />
           <div className={styles.right}>
             <QuestionModalContainer />
           </div>

@@ -13,9 +13,10 @@ function ListPage() {
           <Link to="/">
             <Logo logoSize={'small'} />
           </Link>
-          <Button variant={'outline'}>답변하러 가기</Button>
+          <Button variant={'outline'} size={'large'}>
+            답변하러 가기
+          </Button>
         </div>
-        <h2 className={styles.title}>누구에게 질문할까요?</h2>
         <ProfileListBoxContainer />
       </div>
     </main>

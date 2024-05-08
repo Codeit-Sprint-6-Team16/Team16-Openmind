@@ -5,6 +5,7 @@
   gap: 8px;
   border: none;
   display: flex;
+  justify-content: center;
   align-items: center;
   height: 46px;
 }
@@ -34,7 +35,8 @@
   border-radius: 200px;
 }
 
-.outline.small {
+.outline.small,
+.outline.large {
   width: 161px;
 }
 
@@ -53,26 +55,27 @@
   line-height: 25px;
 }
 
-/* 태블릿 */
-@media (max-width: 1199px) {
+@media (min-width: 768px) and (max-width: 870px) {
   .outline.large {
     width: 166px;
   }
 }
 
-/* 모바일 */
-@media (max-width: 767px) {
+@media (min-width: 375px) and (max-width: 767px) {
   .outline.small {
     width: 123px;
     font-size: 14px;
     line-height: 18px;
     height: 34px;
-    padding: 8px 12px 8px 12px;
+    padding: 0;
     gap: 4px;
   }
 
   .outline.large {
     width: 127px;
+    height: 34px;
+    padding: 0;
+    margin-top: 20px;
   }
 
   .round.large {

@@ -36,12 +36,7 @@ const IdFormContainer = () => {
     <IdForm>
       <form onSubmit={onSubmitHandler}>
         <Input onChangeHandler={onChangeInputHandler} name={name} />
-        <Button
-          variant={'fill'}
-          size={'small'}
-          type="submit"
-          isDisabled={!name}
-        >
+        <Button variant={'fill'} type="submit" isDisabled={!name}>
           질문받기
         </Button>
       </form>

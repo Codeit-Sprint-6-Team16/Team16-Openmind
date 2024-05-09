@@ -2,14 +2,9 @@ import Button from './Button';
 import Textarea from './Textarea';
 import EscIcon from '@assets/images/ic_esc.svg';
 import QuestionIcon from '@assets/images/ic_question.svg';
-import sampleImage from '@assets/images/image_profile.svg';
 import styles from '@css/QuestionModal.module.css';
 
-function QuestionModal({
-  profileImage = sampleImage,
-  profileName = '아초는고양이',
-  closeModal,
-}) {
+function QuestionModal({ profile, closeModal, value, onSubmit, onChange }) {
   return (
     <div className={styles.modalWrap}>
       <div className={styles.dim} onClick={closeModal}></div>
@@ -24,11 +19,15 @@ function QuestionModal({
         </div>
         <div className={styles.profileInfo}>
           <span>To.</span>
-          <img src={profileImage} alt="프로필 이미지" />
-          {profileName}
+          <img src={profile.imageSource} alt="프로필 이미지" />
+          {profile.name}
         </div>
-        <Textarea placeholder={'질문을 입력해주세요'} />
-        <Button variant={'fill'} size={'medium'}>
+        <Textarea
+          placeholder={'질문을 입력해주세요'}
+          value={value}
+          onChange={onChange}
+        />
+        <Button variant={'fill'} onClick={onSubmit} isDisabled={!value}>
           질문 보내기
         </Button>
       </div>

@@ -1,11 +1,13 @@
 import styles from '@css/Textarea.module.css';
 
-function Textarea({ placeholder = '' }) {
+function Textarea({ placeholder = '', value, onChange }) {
   return (
     <>
       <textarea
         className={styles.textarea}
         placeholder={placeholder}
+        value={value}
+        onChange={onChange}
       ></textarea>
     </>
   );

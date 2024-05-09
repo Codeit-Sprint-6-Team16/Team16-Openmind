@@ -1,4 +1,5 @@
 import meatballImg from '../../assets/images/ic_meatball.svg';
+import styles from '../css/ToggleMenu.module.css';
 
 const MEATBALL_OPTIONS = {
   EDIT: { label: '수정하기', value: 'edit' },
@@ -7,7 +8,7 @@ const MEATBALL_OPTIONS = {
   DELETE_QUESTION: { label: '질문 삭제', value: 'deleteQuestion' },
 };
 
-const MeatballMenu = ({ onClick }) => {
+const MeatballMenu = ({ isOpen, onClick, onToggleMenu }) => {
   return (
     <div className={styles.toggleMenu}>
       <button className={styles.MeatballButton} onClick={onToggleMenu}>
@@ -16,29 +17,29 @@ const MeatballMenu = ({ onClick }) => {
 
       {isOpen && (
         <ul className={styles.popup}>
-          <li className={styles.disabled}>
-            <button onClick={() => onClick(MEATBALL_OPTIONS.EDIT.value)}>
-              수정하기
-            </button>
+          <li
+            className={styles.disabled}
+            onClick={() => onClick(MEATBALL_OPTIONS.EDIT.value)}
+          >
+            수정하기
           </li>
-          <li className={styles.disabled}>
-            <button
-              onClick={() => onClick(MEATBALL_OPTIONS.DELETE_ANSWER.value)}
-            >
-              답변 삭제
-            </button>
+          <li
+            className={styles.disabled}
+            onClick={() => onClick(MEATBALL_OPTIONS.DELETE_ANSWER.value)}
+          >
+            삭제
           </li>
-          <li className={styles.disabled}>
-            <button
-              onClick={() => onClick(MEATBALL_OPTIONS.REJECT_ANSWER.value)}
-            >
-              답변 거절
-            </button>
+          <li
+            className={styles.disabled}
+            onClick={() => onClick(MEATBALL_OPTIONS.REJECT_ANSWER.value)}
+          >
+            답변 거절
           </li>
-          <li className={styles.disabled}>
-            <button onClick={() => onClick(OPTIONS.DELETE_QUESTION.value)}>
-              질문 삭제
-            </button>
+          <li
+            className={styles.disabled}
+            onClick={() => onClick(OPTIONS.DELETE_QUESTION.value)}
+          >
+            질문 삭제
           </li>
         </ul>
       )}

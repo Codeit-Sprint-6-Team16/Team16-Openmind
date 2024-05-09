@@ -109,6 +109,8 @@ const postReaction = async (questionId, type = 'like') => {
     console.error(error);
     throw error;
   }
+  const result = await response.json();
+  return result;
 };
 
 export { postId, postQuestion, postAnswer, postReaction };

@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { getProfile, getQuestionList } from '@services/api/get.js';
 import QuestionFeed from '@ui/QuestionFeed';
 
-function QuestionFeedContainer(props) {
+function QuestionFeedContainer() {
   const [questionList, setQuestionList] = useState([]);
   const [offset, setOffset] = useState(0);
   const [profile, setProfile] = useState();

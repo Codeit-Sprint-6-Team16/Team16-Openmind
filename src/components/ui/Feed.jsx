@@ -1,10 +1,12 @@
 import QuestionBox from './QuestionBox';
 import styles from '@css/Feed.module.css';
 
-function Feed() {
+function Feed({ questionList }) {
   return (
     <div className={styles.box}>
-      <QuestionBox />
+      {questionList.map((question) => (
+        <QuestionBox question={question} key={question.id} />
+      ))}
     </div>
   );
 }

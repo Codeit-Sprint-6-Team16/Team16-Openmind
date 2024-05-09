@@ -1,15 +1,18 @@
-import AnswerPresenter from './AnswerPresenter';
 import AnswerState from './AnswerState';
 import QuestionName from './QuestionName';
-import Reaction from './Reaction';
+import AnswerPresenterContainer from '@containers/AnswerPresenterContainer';
+import ReactionContainer from '@containers/ReactionContainer';
 
-const QuestionBox = () => {
+const QuestionBox = ({ question }) => {
+  // const { id, subjectId, content, like, dislike, createdAt, team, answer } =
+  //   question;
+
   return (
     <div>
-      <AnswerState />
-      <QuestionName />
-      <AnswerPresenter />
-      <Reaction />
+      <AnswerState question={question} />
+      <QuestionName question={question} />
+      <AnswerPresenterContainer question={question} />
+      <ReactionContainer question={question} />
     </div>
   );
 };

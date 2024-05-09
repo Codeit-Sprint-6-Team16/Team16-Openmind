@@ -9,30 +9,18 @@
   border-top: 1px solid var(--color-gray30);
 }
 
-.like {
+.reactionButton {
   display: flex;
   gap: 6px;
   align-items: center;
+  background-color: unset;
+  color: var(--color-gray40);
 }
 
-.unlike {
-  display: flex;
-  gap: 6px;
-  align-items: center;
-}
-
-.like.skyblue {
+.skyblue {
   color: var(--color-blue);
 }
 
-.like.gray {
-  color: var(--color-gray40);
-}
-
-.unlike.black {
+.black {
   color: var(--color-black);
-}
-
-.unlike.gray {
-  color: var(--color-gray40);
 }

@@ -3,3 +3,10 @@
   margin: 0 auto;
   padding: 145px 0 24px;
 }
+
+@media all and (max-width: 719px) {
+  .box {
+    width: auto;
+    margin: 0 24px;
+  }
+}

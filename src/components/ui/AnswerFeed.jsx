@@ -6,7 +6,7 @@ import QuestionCount from './QuestionCount';
 import AnswerBoxContainer from '@containers/AnswerBoxContainer';
 import styles from '@css/AnswerFeed.module.css';
 
-function AnswerFeed({ questionList, profile }) {
+function AnswerFeed({ questionList, profile, removeIDhandler }) {
   const count = {
     questionCount: 5,
   };
@@ -14,7 +14,7 @@ function AnswerFeed({ questionList, profile }) {
   return (
     <FeedBox>
       <div className={styles.right}>
-        <Button variant={'round'} size={'small'}>
+        <Button variant={'round'} size={'small'} onClick={removeIDhandler}>
           삭제하기
         </Button>
       </div>

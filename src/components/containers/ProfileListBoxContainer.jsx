@@ -71,6 +71,7 @@ function ProfileListBoxContainer() {
       onPaginationClick={paginationClickHandler}
       pages={pages}
       currentPage={currentPage}
+      order={order}
     />
   );
 }

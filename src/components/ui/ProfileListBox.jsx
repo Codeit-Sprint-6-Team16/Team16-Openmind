@@ -9,12 +9,13 @@ const ProfileListBox = ({
   onPaginationClick,
   pages,
   currentPage,
+  order,
 }) => {
   return (
     <>
       <div className={styles.title_wrapper}>
         <h2 className={styles.title}>누구에게 질문할까요?</h2>
-        <ToggleMenuContainer onClick={onOrderClick} />
+        <ToggleMenuContainer onClick={onOrderClick} order={order} />
       </div>
       <ProfileList profileList={profileList} />
       {pages && pages[pages.length - 1] !== 1 && (

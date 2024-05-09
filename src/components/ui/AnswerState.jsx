@@ -1,11 +1,13 @@
 import styles from '../css/AnswerState.module.css';
 
 const AnswerState = ({ question }) => {
-  const { id } = question;
+  const { answer } = question;
 
   return (
-    <div className={`${styles.AnswerState} ${id ? styles.brown : styles.gray}`}>
-      <p>{id ? '답변 완료' : '미답변'}</p>
+    <div
+      className={`${styles.AnswerState} ${answer === null ? styles.gray : styles.brown}`}
+    >
+      <p>{answer === null ? '미답변' : '답변 완료'}</p>
     </div>
   );
 };

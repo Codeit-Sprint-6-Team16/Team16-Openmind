@@ -1,7 +1,7 @@
 // import profileImg from '@assets/images/image_profile.svg';
 import styles from '@css/AnswerPresenter.module.css';
 
-const AnswerPresenter = ({ profile, question }) => {
+const AnswerPresenter = ({ question, profile }) => {
   const { imageSource, name, createdAt } = profile;
 
   return (

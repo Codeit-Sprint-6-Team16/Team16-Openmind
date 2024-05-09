@@ -4,8 +4,9 @@ import unlikeBlack from '@assets/images/image_unlike_black.svg';
 import unlikeGray from '@assets/images/image_unlike_gray.svg';
 import styles from '@css/Reaction.module.css';
 
-const Reaction = ({ question = {}, onClick }) => {
-  const { like = 12, dislike = 3 } = question;
+const Reaction = ({ question, onClick }) => {
+  // const { like = 12, dislike = 3 } = question;
+  const { like, dislike } = question;
 
   return (
     <div className={styles.LikeDislike}>

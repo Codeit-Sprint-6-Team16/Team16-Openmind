@@ -1,5 +1,4 @@
-// import AnswerFeedContainer from '@containers/AnswerFeedContainer';
-import AnswerFeed from '@ui/AnswerFeed';
+import AnswerFeedContainer from '@containers/AnswerFeedContainer';
 import QuestionProfile from '@ui/QuestionProfile';
 
 function AnswerPage() {
@@ -7,8 +6,7 @@ function AnswerPage() {
     <main className="wrapper">
       <QuestionProfile />
       <div className="inner">
-        {/* <AnswerFeedContainer /> */}
-        <AnswerFeed />
+        <AnswerFeedContainer />
       </div>
     </main>
   );

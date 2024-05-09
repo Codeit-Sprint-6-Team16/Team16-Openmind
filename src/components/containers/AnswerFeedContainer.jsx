@@ -8,8 +8,9 @@ import AnswerFeed from '@ui/AnswerFeed';
 const AnswerFeedContainer = ({}) => {
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(false);
-  const [questions, setQuestions] = useState([]);
+  const [questionList, setQuestionList] = useState([]); // questionList로 통일!
   const [errorMessage, setErrorMessage] = useState('');
+  const [profile, setProfile] = useState();
   const navigation = useNavigate();
 
   const getQuestions = async () => {
@@ -17,7 +18,7 @@ const AnswerFeedContainer = ({}) => {
       setIsLoading(true);
       const questionsData = await getQuestionList(id);
       console.log(questionsData);
-      setQuestions(questionsData);
+      setQuestionList(questionsData);
     } catch (error) {
       if (error.name === 'TypeError') {
         setErrorMessage('네트워크를 확인하세요');
@@ -45,15 +46,29 @@ const AnswerFeedContainer = ({}) => {
     }
   };
 
+  const loadProfile = async () => {
+    try {
+      const response = await getProfile(id);
+      setProfile(response);
+    } catch (error) {
+      if (error.name === 'TypeError') {
+        return console.log(error.name);
+      } else if (error.name) {
+        console.log(error.status);
+      }
+    }
+  };
+
   useEffect(() => {
     getQuestions();
+    loadProfile();
   }, []);
 
   return !isLoading ? (
     <>
       {errorMessage && <div>{errorMessage}</div>}
 
-      <AnswerFeed />
+      <AnswerFeed questionList={questionList} profile={profile} />
     </>
   ) : (
     <div>로딩중</div>

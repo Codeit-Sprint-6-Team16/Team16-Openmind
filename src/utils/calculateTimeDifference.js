@@ -8,3 +8,6 @@ export const timeDifference = (createdAt) => {
   const day = Math.floor(timeDifferenceInSeconds / 86400);
   return { day: day, hours: hours };
 };
+// 년, 주, 일, 시, 분, 초
+//
+// `${day}일전` `${hours}시간전`

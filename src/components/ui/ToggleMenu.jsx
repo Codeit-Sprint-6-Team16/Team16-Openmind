@@ -6,11 +6,13 @@ const OPTIONS = {
   NEWEST: { label: '최신순', value: 'newest' },
 };
 
-const ToggleMenu = ({ isOpen, onClick, onToggleMenu }) => {
+const ToggleMenu = ({ isOpen, onClick, onToggleMenu, order }) => {
   return (
     <div className={styles.toggleMenu}>
       <button className={styles.iconButton} onClick={onToggleMenu}>
-        <span className={styles.iconText}>이름순</span>
+        <span className={styles.iconText}>
+          {order === 'name' ? '이름순' : '최신순'}
+        </span>
         <img src={arrowUpImg} alt="화살표 이미지"></img>
       </button>
       {isOpen && (

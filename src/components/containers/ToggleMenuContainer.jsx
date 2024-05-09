@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 import ToggleMenu from '@ui/ToggleMenu';
 
-const ToggleMenuContainer = ({ onClick }) => {
+const ToggleMenuContainer = ({ onClick, order }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const onToggleMenu = useCallback((e) => {
@@ -24,7 +24,12 @@ const ToggleMenuContainer = ({ onClick }) => {
   }, [isOpen]);
 
   return (
-    <ToggleMenu isOpen={isOpen} onClick={onClick} onToggleMenu={onToggleMenu} />
+    <ToggleMenu
+      isOpen={isOpen}
+      onClick={onClick}
+      onToggleMenu={onToggleMenu}
+      order={order}
+    />
   );
 };
 

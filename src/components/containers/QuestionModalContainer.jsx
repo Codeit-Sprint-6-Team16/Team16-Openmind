@@ -6,7 +6,7 @@ import { postQuestion } from '@services/api/post';
 import Button from '@ui/Button';
 import QuestionModal from '@ui/QuestionModal';
 
-function QuestionModalContainer(props) {
+function QuestionModalContainer() {
   const [profile, setProfile] = useState();
   const [content, setContent] = useState('');
   const [isOpen, setIsOpen] = useState(false);

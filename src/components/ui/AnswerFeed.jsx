@@ -1,14 +1,12 @@
-// import AnswerPresenter from './AnswerPresenter';
-// import AnswerState from './AnswerState';
-// import MeatballMenu from './MeatballMenu';
-// import QuestionName from './QuestionName';
 import Button from './Button';
 import Feed from './Feed';
 import FeedBox from './FeedBox';
+import FeedCard from './FeedCard';
 import QuestionCount from './QuestionCount';
+import AnswerBoxContainer from '@containers/AnswerBoxContainer';
 import styles from '@css/AnswerFeed.module.css';
 
-function AnswerFeed() {
+function AnswerFeed({ questionList, profile }) {
   const count = {
     questionCount: 5,
   };
@@ -22,10 +20,15 @@ function AnswerFeed() {
       </div>
       <Feed>
         <QuestionCount profile={count} />
-        {/* <AnswerState />
-        <MeatballMenu />
-        <QuestionName />
-        <AnswerPresenter /> */}
+        <FeedCard>
+          {questionList?.map((question) => (
+            <AnswerBoxContainer
+              question={question}
+              profile={profile}
+              key={question.id}
+            />
+          ))}
+        </FeedCard>
       </Feed>
     </FeedBox>
   );

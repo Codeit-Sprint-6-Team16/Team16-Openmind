@@ -1,4 +1,6 @@
-const AnswerBoxContainer = (question) => {
+import AnswerBox from '@ui/AnswerBox';
+
+const AnswerBoxContainer = ({ question, profile }) => {
   /* 
   받아야 될 데이터
   id": 9937,
@@ -26,7 +28,7 @@ const AnswerBoxContainer = (question) => {
   const rejectAnswerHandler = () => {};
 
   // answer 데이터의 여부에 따라 조건부 렌더링
-  return <div>AnswerBox</div>;
+  return <AnswerBox />;
 };
 
 export default AnswerBoxContainer;

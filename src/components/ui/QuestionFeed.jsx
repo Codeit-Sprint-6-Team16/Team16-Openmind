@@ -1,17 +1,28 @@
+import FeedBox from './FeedBox';
+import FeedCard from './FeedCard';
+import QuestionBox from './QuestionBox';
 import QuestionCount from './QuestionCount';
-import Reaction from './Reaction';
 import styles from '@css/QuestionFeed.module.css';
 import Feed from '@ui/Feed';
 
-function QuestionFeed({ questionList, questionCount }) {
+function QuestionFeed({ questionList, profile }) {
   console.log(questionList);
 
   return (
-    <div className={styles.boxWrap}>
-      <Feed questionList={questionList}>
-        <QuestionCount questionCount={questionCount} />
+    <FeedBox>
+      <Feed>
+        <QuestionCount profile={profile} />
+        <FeedCard>
+          {questionList?.map((question) => (
+            <QuestionBox
+              question={question}
+              profile={profile}
+              key={question.id}
+            />
+          ))}
+        </FeedCard>
       </Feed>
-    </div>
+    </FeedBox>
   );
 }
 

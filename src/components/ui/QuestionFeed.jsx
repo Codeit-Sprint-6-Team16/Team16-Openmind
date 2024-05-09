@@ -6,7 +6,7 @@ import styles from '@css/QuestionFeed.module.css';
 import Feed from '@ui/Feed';
 
 function QuestionFeed({ questionList, profile }) {
-  console.log(questionList);
+  // console.log(questionList);
 
   return (
     <FeedBox>

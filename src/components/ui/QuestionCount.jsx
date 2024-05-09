@@ -1,9 +1,7 @@
 import messageIconBrown from '../../assets/images/image_messages_icon_brown.svg';
 import styles from '../css/QuestionCount.module.css';
 
-const QuestionCount = ({ profile }) => {
-  const { questionCount } = profile;
-
+const QuestionCount = ({ questionCount = 2 }) => {
   return (
     <div className={styles.QuestionCount}>
       <img src={messageIconBrown} />

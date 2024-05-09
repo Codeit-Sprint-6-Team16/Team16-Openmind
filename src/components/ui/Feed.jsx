@@ -1,12 +1,7 @@
-import QuestionBox from './QuestionBox';
 import styles from '@css/Feed.module.css';
 
-function Feed() {
-  return (
-    <div className={styles.box}>
-      <QuestionBox />
-    </div>
-  );
+function Feed({ children }) {
+  return <div className={styles.box}>{children}</div>;
 }
 
 export default Feed;

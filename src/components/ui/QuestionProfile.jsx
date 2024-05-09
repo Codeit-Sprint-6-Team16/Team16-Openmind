@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import Logo from './Logo';
-import Profile from './Profile';
+import ProfileContainer from '@containers/ProfileContainer';
 import ToastContainer from '@containers/ToastContainer';
 import styles from '@css/QuestionProfile.module.css';
 
@@ -12,7 +12,7 @@ function QuestionProfile() {
         <Link to="/">
           <Logo logoSize={'small'} />
         </Link>
-        <Profile />
+        <ProfileContainer />
         <ToastContainer />
       </div>
     </div>

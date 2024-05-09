@@ -26,6 +26,9 @@
   justify-content: space-between;
   margin-bottom: 40px;
 }
+.modalTop button {
+  background-color: var(--color-white);
+}
 .title {
   font-size: 24px;
   display: flex;
@@ -35,13 +38,14 @@
 .profileInfo {
   display: flex;
   align-items: center;
-  gap: 3px;
+  gap: 4px;
 }
 .profileInfo span {
   font-size: 18px;
 }
 .profileInfo img {
   width: 28px;
+  border-radius: 100%;
 }
 .modal textarea {
   margin: 12px 0;

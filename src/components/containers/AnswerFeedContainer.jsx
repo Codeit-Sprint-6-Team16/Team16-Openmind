@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import { getQuestionList } from '@api/get.js';
+import { getProfile, getQuestionList } from '@api/get.js';
 import { deleteProfile } from '@services/api/delete';
 import AnswerFeed from '@ui/AnswerFeed';
 
@@ -68,7 +68,11 @@ const AnswerFeedContainer = ({}) => {
     <>
       {errorMessage && <div>{errorMessage}</div>}
 
-      <AnswerFeed questionList={questionList} profile={profile} />
+      <AnswerFeed
+        questionList={questionList}
+        profile={profile}
+        removeIdHandler={removeIdHandler}
+      />
     </>
   ) : (
     <div>로딩중</div>

@@ -1,7 +1,9 @@
+import { useState } from 'react';
+
 import likeGray from '@assets/images/image_like_gray.svg';
 import likeSkyblue from '@assets/images/image_like_skyblue.svg';
-import unlikeBlack from '@assets/images/image_unlike_black.svg';
-import unlikeGray from '@assets/images/image_unlike_gray.svg';
+import dislikeBlack from '@assets/images/image_unlike_black.svg';
+import dislikeGray from '@assets/images/image_unlike_gray.svg';
 import styles from '@css/Reaction.module.css';
 
 const Reaction = ({ like, dislike, isLiked, isDisLiked, onClick }) => {

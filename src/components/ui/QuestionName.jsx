@@ -1,5 +1,6 @@
 import styles from '@css/QuestionName.module.css';
-import { timeDifference } from '@utils/calculateTimeDifference';
+
+// import { timeDifference } from '@utils/calculateTimeDifference';
 
 const QuestionName = ({ question }) => {
   const { createdAt, content } = question;

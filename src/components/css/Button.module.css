@@ -12,7 +12,6 @@
 
 .button:disabled {
   background-color: var(--color-brown30);
-  cursor: none;
 }
 
 .outline {
@@ -23,6 +22,7 @@
 
 .fill {
   justify-content: center;
+  width: 100%;
 }
 
 .fill,
@@ -55,7 +55,7 @@
   line-height: 25px;
 }
 
-@media (min-width: 768px) and (max-width: 870px) {
+@media (min-width: 768px) and (max-width: 867px) {
   .outline.large {
     width: 166px;
   }
@@ -69,6 +69,7 @@
     height: 34px;
     padding: 0;
     gap: 4px;
+    margin: 24px auto;
   }
 
   .outline.large {

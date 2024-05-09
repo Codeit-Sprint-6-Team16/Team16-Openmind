@@ -1,6 +1,10 @@
 .small {
   height: 57px;
 }
+.mobileSize {
+  display: flex;
+  margin: 0 auto;
+}
 
 @media (min-width: 375px) and (max-width: 767px) {
   .mobileSize {

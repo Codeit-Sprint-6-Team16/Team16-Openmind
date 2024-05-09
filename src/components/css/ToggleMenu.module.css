@@ -5,14 +5,15 @@
 
 .iconButton {
   border: 1px solid var(--color-gray40);
+  background-color: var(--color-white);
   cursor: pointer;
   padding: 8px 12px 8px 12px;
   border-radius: 8px;
-  gap: 4px;
   display: flex;
   position: relative;
   align-items: center;
   width: 79px;
+  font-weight: 500;
   margin: 12px 0 30px 0;
 }
 
@@ -25,36 +26,29 @@ ul.popup {
   width: 79px;
   padding: 4px 0px 4px 0px;
   margin-top: 50px;
-  margin-bottom: 5px;
-  list-style: none;
   position: absolute;
   border: 1px solid var(--color-gray30);
   border-radius: 8px;
   text-align: center;
-  overflow: hidden;
 }
 
-ul.popup li.disabled {
-  background-color: var(--color-white);
+ul.popup li {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+li.disabled {
   user-select: none;
-  cursor: default;
   padding: 6px 16px 6px 16px;
-  gap: 8px;
 }
 
-.popup li button.active {
+li:hover {
   color: var(--color-blue);
 }
 
 .toggleMenu ul.popup a:hover {
   text-decoration: none;
-}
-
-button {
-  border: none;
-  background-color: var(--color-white);
-  font-weight: 500;
-  font-size: 14px;
 }
 
 .iconButton img {
@@ -64,11 +58,14 @@ button {
 
 .MeatballButton img {
   width: 26px;
-  height: 26px;
 }
 
 @media (min-width: 375px) and (max-width: 767px) {
   .iconButton {
     margin: 0;
+  }
+
+  ul.popup {
+    margin-top: 38px;
   }
 }

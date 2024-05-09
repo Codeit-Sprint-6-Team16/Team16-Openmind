@@ -13,7 +13,7 @@ const ReplyButtonContainer = () => {
     navigate('/');
   };
   return (
-    <Button variant={'outline'} onClick={onClickHandler}>
+    <Button variant={'outline'} size={'large'} onClick={onClickHandler}>
       답변하러 가기
     </Button>
   );

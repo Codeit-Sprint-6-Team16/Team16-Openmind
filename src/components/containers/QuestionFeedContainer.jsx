@@ -13,7 +13,7 @@ function QuestionFeedContainer(props) {
   const loadQuestions = async ({ id, offset, limit }) => {
     try {
       const response = await getQuestionList(id, offset, limit);
-      setQuestionList(response.results);
+      setQuestionList(response);
     } catch (error) {
       if (error.name === 'TypeError') {
         return console.log(error.name);
@@ -48,7 +48,10 @@ function QuestionFeedContainer(props) {
     });
   }, [offset]);
 
-  return <QuestionFeed questionList={questionList} profile={profile} />;
+  return (
+    questionList &&
+    profile && <QuestionFeed questionList={questionList} profile={profile} />
+  );
 }
 
 export default QuestionFeedContainer;

@@ -1,4 +1,4 @@
-.FeedAnswerContent {
+.AnswerPresenter {
   display: flex;
   gap: 12px;
   margin-bottom: 32px;
@@ -7,8 +7,11 @@
 .section_image {
   display: flex;
   flex-direction: column;
-  min-width: 48px;
-  min-height: 48px;
+  width: 48px;
+  height: 48px;
+}
+
+.section_image > img {
   border-radius: 100%;
 }
 
@@ -19,6 +22,7 @@
 
 .section_profile_name {
   font-size: 18px;
+  font-family: 'Actor';
 }
 
 .section_weeks {

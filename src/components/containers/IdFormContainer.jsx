@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { postId } from '@services/api/post';
 import Button from '@ui/Button';
@@ -7,13 +8,14 @@ import Input from '@ui/Input';
 
 const IdFormContainer = () => {
   const [name, setName] = useState('');
-
+  const navigate = useNavigate();
   const registerId = async () => {
     let result;
     try {
       result = await postId(name);
-      window.localStorage.setItem('ID', result.id);
+      localStorage.setItem('ID', result.id);
       alert('ID 등록완료');
+      navigate(`/post/${localStorage.getItem('ID')}/answer`);
     } catch (error) {
       if (error.name === 'TypeError') alert('네트워크 에러');
       else if (error.name === 'HttpError')

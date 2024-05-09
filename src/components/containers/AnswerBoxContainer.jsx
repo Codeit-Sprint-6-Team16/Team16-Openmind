@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import { deleteAnswer } from '@services/api/delete';
+import { patchAnswer } from '@services/api/putch';
 import AnswerBox from '@ui/AnswerBox';
 
 const AnswerBoxContainer = ({ question, profile }) => {
@@ -35,6 +36,21 @@ const AnswerBoxContainer = ({ question, profile }) => {
       setIsLoading(false);
     }
   };
+  const rejectAnswer = async () => {
+    try {
+      setIsLoading(true);
+      const result = await patchAnswer({
+        answerId: question.id,
+        content: question.content,
+        isRejected: true,
+      });
+    } catch (error) {
+      if (error.name === 'TypeError') alert(error.message);
+      else if (error.name === 'HttpError') alert(error.status);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const editAnswerHandler = () => {
     if (!question.isRejected && question.answer !== null) {
@@ -46,7 +62,11 @@ const AnswerBoxContainer = ({ question, profile }) => {
       removeAnswer();
     }
   };
-  const rejectAnswerHandler = () => {};
+  const rejectQuestionHandler = () => {
+    if (!question.isRejected) {
+      rejectAnswer();
+    }
+  };
 
   // answer 데이터의 여부에 따라 조건부 렌더링
   return (
@@ -54,6 +74,7 @@ const AnswerBoxContainer = ({ question, profile }) => {
       question={question}
       profile={profile}
       removeAnswerHandler={removeAnswerHandler}
+      rejectQuestionHandler={rejectQuestionHandler}
     />
   );
 };

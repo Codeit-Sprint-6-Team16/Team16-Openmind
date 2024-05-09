@@ -1,26 +1,33 @@
-import AnswerPresenter from './AnswerPresenter';
-import AnswerState from './AnswerState';
-import MeatballMenu from './MeatballMenu';
+// import AnswerPresenter from './AnswerPresenter';
+// import AnswerState from './AnswerState';
+// import MeatballMenu from './MeatballMenu';
+// import QuestionName from './QuestionName';
+import Button from './Button';
+import Feed from './Feed';
+import FeedBox from './FeedBox';
 import QuestionCount from './QuestionCount';
-import QuestionName from './QuestionName';
 import styles from '@css/AnswerFeed.module.css';
-import Button from '@ui/Button';
-import Feed from '@ui/Feed';
 
 function AnswerFeed() {
+  const count = {
+    questionCount: 5,
+  };
+
   return (
-    <div className={styles.boxWrap}>
+    <FeedBox>
       <div className={styles.right}>
-        <Button variant={'round'}>삭제하기</Button>
+        <Button variant={'round'} size={'small'}>
+          삭제하기
+        </Button>
       </div>
       <Feed>
-        <QuestionCount />
-        <AnswerState />
+        <QuestionCount profile={count} />
+        {/* <AnswerState />
         <MeatballMenu />
         <QuestionName />
-        <AnswerPresenter />
+        <AnswerPresenter /> */}
       </Feed>
-    </div>
+    </FeedBox>
   );
 }
 

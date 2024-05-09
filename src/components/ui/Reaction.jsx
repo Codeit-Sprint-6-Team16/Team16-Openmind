@@ -4,55 +4,32 @@ import unlikeBlack from '@assets/images/image_unlike_black.svg';
 import unlikeGray from '@assets/images/image_unlike_gray.svg';
 import styles from '@css/Reaction.module.css';
 
-const Reaction = ({ count = 12 }) => {
+const Reaction = ({ question, onClick }) => {
+  // const { like = 12, dislike = 3 } = question;
+  const { like, dislike } = question;
+
   return (
     <div className={styles.LikeDislike}>
-      <div
-        className={`${styles.like} ${count === 0 ? styles.gray : styles.skyblue}`}
+      <button
+        type="button"
+        className={`${styles.reactionButton} ${like > 0 ? styles.skyblue : ''}`}
+        onClick={() => {
+          onClick('like');
+        }}
       >
-        {count === 0 ? (
-          <>
-            <img
-              className={styles.image}
-              src={likeGray}
-              alt="좋아요버튼비활성화"
-            />
-            <p>좋아요</p>
-          </>
-        ) : (
-          <>
-            <img
-              className={styles.image}
-              src={likeSkyblue}
-              alt="좋아요버튼활성화"
-            />
-            <p>좋아요 {count}</p>
-          </>
-        )}
-      </div>
-      <div
-        className={`${styles.unlike} ${count === 0 ? styles.gray : styles.black}`}
+        <img src={like > 0 ? likeSkyblue : likeGray} alt="좋아요" />
+        <p>좋아요 {like > 0 ? like : ''}</p>
+      </button>
+      <button
+        type="button"
+        className={`${styles.reactionButton} ${dislike > 0 ? styles.black : ''}`}
+        onClick={() => {
+          onClick('dislike');
+        }}
       >
-        {count === 0 ? (
-          <>
-            <img
-              className={styles.image}
-              src={unlikeGray}
-              alt="싫어요비활성화"
-            />
-            <p>싫어요</p>
-          </>
-        ) : (
-          <>
-            <img
-              className={styles.image}
-              src={unlikeBlack}
-              alt="싫어요활성화"
-            />
-            <p>싫어요 {count}</p>
-          </>
-        )}
-      </div>
+        <img src={dislike > 0 ? unlikeBlack : unlikeGray} alt="싫어요" />
+        <p>싫어요 {dislike > 0 ? dislike : ''}</p>
+      </button>
     </div>
   );
 };

@@ -1,12 +1,13 @@
 import styles from '../css/AnswerState.module.css';
 
-// props로 isAnswerState 이라는 불린 값을 받는다고 가정
-const AnswerState = ({ isAnswerState }) => {
+const AnswerState = ({ question }) => {
+  const { answer } = question;
+
   return (
     <div
-      className={`${styles.AnswerState} ${isAnswerState ? styles.brown : styles.gray}`}
+      className={`${styles.AnswerState} ${answer === null ? styles.gray : styles.brown}`}
     >
-      <p>{isAnswerState ? '답변 완료' : '미답변'}</p>
+      <p>{answer === null ? '미답변' : '답변 완료'}</p>
     </div>
   );
 };

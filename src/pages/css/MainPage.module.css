@@ -6,7 +6,8 @@
 }
 .right {
   display: flex;
-  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
 }
 .center {
   text-align: center;
@@ -14,4 +15,10 @@
 .center a {
   display: inline-block;
   margin-top: 69px;
+}
+
+@media (max-width: 767px) {
+  .mainWrap {
+    background-size: 130%;
+  }
 }

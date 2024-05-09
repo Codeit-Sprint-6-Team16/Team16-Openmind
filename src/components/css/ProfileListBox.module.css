@@ -5,7 +5,7 @@
   line-height: 1.1em;
 }
 
-@media (min-width: 768px) and (max-width: 870px) {
+@media (min-width: 768px) and (max-width: 867px) {
   .title {
     line-height: 48.12px;
   }

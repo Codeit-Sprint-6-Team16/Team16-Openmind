@@ -20,11 +20,11 @@ function MainPage() {
             >
               질문하러 가기
             </Button>
-          </div>
-          <div className={styles.center}>
             <Link to="/">
               <Logo logoSize={'mobileSize'} />
             </Link>
+          </div>
+          <div className={styles.center}>
             <IdFormContainer />
           </div>
         </div>

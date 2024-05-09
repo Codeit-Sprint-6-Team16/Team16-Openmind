@@ -55,7 +55,7 @@
   line-height: 25px;
 }
 
-@media (min-width: 768px) and (max-width: 870px) {
+@media (min-width: 768px) and (max-width: 867px) {
   .outline.large {
     width: 166px;
   }
@@ -69,6 +69,8 @@
     height: 34px;
     padding: 0;
     gap: 4px;
+    order: 2;
+    margin: 24px auto;
   }
 
   .outline.large {

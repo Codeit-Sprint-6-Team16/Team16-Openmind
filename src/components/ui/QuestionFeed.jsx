@@ -6,14 +6,12 @@ import styles from '@css/QuestionFeed.module.css';
 import Feed from '@ui/Feed';
 
 function QuestionFeed({ questionList, profile }) {
-  console.log(questionList);
-
   return (
     <FeedBox>
       <Feed>
         <QuestionCount profile={profile} />
         <FeedCard>
-          {questionList?.map((question) => (
+          {questionList.map((question) => (
             <QuestionBox
               question={question}
               profile={profile}

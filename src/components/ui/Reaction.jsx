@@ -4,31 +4,34 @@ import unlikeBlack from '@assets/images/image_unlike_black.svg';
 import unlikeGray from '@assets/images/image_unlike_gray.svg';
 import styles from '@css/Reaction.module.css';
 
-const Reaction = ({ question, onClick }) => {
-  // const { like = 12, dislike = 3 } = question;
-  const { like, dislike } = question;
+const Reaction = ({ like, dislike, isLiked, isDisLiked, onClick }) => {
+  const onClickLikeHandler = () => {
+    onClick('like');
+  };
+
+  const onClickDislikeHandler = () => {
+    onClick('dislike');
+  };
 
   return (
     <div className={styles.LikeDislike}>
       <button
         type="button"
-        className={`${styles.reactionButton} ${like > 0 ? styles.skyblue : ''}`}
-        onClick={() => {
-          onClick('like');
-        }}
+        className={`${styles.reactionButton} ${isLiked ? styles.skyblue : ''}`}
+        onClick={onClickLikeHandler}
       >
-        <img src={like > 0 ? likeSkyblue : likeGray} alt="좋아요" />
-        <p>좋아요 {like > 0 ? like : ''}</p>
+        <img src={isLiked ? likeSkyblue : likeGray} alt="좋아요" />
+        {/* <p>좋아요 {like > 0 ? like : ''}</p> */}
+        <p>좋아요 {like}</p>
       </button>
       <button
         type="button"
-        className={`${styles.reactionButton} ${dislike > 0 ? styles.black : ''}`}
-        onClick={() => {
-          onClick('dislike');
-        }}
+        className={`${styles.reactionButton} ${isDisLiked ? styles.black : ''}`}
+        onClick={onClickDislikeHandler}
       >
-        <img src={dislike > 0 ? unlikeBlack : unlikeGray} alt="싫어요" />
-        <p>싫어요 {dislike > 0 ? dislike : ''}</p>
+        <img src={isDisLiked ? unlikeBlack : unlikeGray} alt="싫어요" />
+        {/* <p>싫어요 {dislike > 0 ? dislike : ''}</p> */}
+        <p>싫어요 {dislike}</p>
       </button>
     </div>
   );

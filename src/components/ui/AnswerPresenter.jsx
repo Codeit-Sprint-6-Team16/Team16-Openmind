@@ -14,7 +14,7 @@ const AnswerPresenter = ({ question, profile }) => {
           <div className={styles.section_profile_name}>{name}</div>
           <p className={styles.section_weeks}>{createdAt}주전</p>
         </div>
-        <div className={styles.section_content}>{question.answer.content}</div>
+        <div className={styles.section_content}>{question.answer?.content}</div>
       </div>
     </div>
   );

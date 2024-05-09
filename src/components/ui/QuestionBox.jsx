@@ -8,7 +8,9 @@ const QuestionBox = ({ question, profile }) => {
     <div>
       <AnswerState question={question} />
       <QuestionName question={question} />
-      <AnswerPresenter question={question} profile={profile} />
+      {question.answer && (
+        <AnswerPresenter question={question} profile={profile} />
+      )}
       <ReactionContainer question={question} />
     </div>
   );

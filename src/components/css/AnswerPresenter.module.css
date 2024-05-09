@@ -7,8 +7,11 @@
 .section_image {
   display: flex;
   flex-direction: column;
-  min-width: 48px;
-  min-height: 48px;
+  width: 48px;
+  height: 48px;
+}
+
+.section_image > img {
   border-radius: 100%;
 }
 

@@ -16,9 +16,16 @@
   display: inline-block;
   margin-top: 69px;
 }
+.inner_order {
+  display: flex;
+  flex-direction: column;
+}
 
 @media (max-width: 767px) {
   .mainWrap {
     background-size: 130%;
+  }
+  .right {
+    order: 2;
   }
 }

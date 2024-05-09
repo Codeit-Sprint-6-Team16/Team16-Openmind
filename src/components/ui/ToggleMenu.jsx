@@ -17,13 +17,17 @@ const ToggleMenu = ({ isOpen, onClick, onToggleMenu, order }) => {
       </button>
       {isOpen && (
         <ul className={styles.popup}>
-          <li className={styles.disabled}>
-            <button onClick={() => onClick(OPTIONS.NEWEST.value)}>
-              최신순
-            </button>
+          <li
+            className={styles.disabled}
+            onClick={() => onClick(OPTIONS.NEWEST.value)}
+          >
+            최신순
           </li>
-          <li className={styles.disabled}>
-            <button onClick={() => onClick(OPTIONS.NAME.value)}>이름순</button>
+          <li
+            className={styles.disabled}
+            onClick={() => onClick(OPTIONS.NAME.value)}
+          >
+            이름순
           </li>
         </ul>
       )}

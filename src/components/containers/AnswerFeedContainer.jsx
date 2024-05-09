@@ -9,15 +9,14 @@ const AnswerFeedContainer = ({}) => {
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(false);
   const [questionList, setQuestionList] = useState([]); // questionList로 통일!
-  const [errorMessage, setErrorMessage] = useState('');
   const [profile, setProfile] = useState();
+  const [errorMessage, setErrorMessage] = useState('');
   const navigation = useNavigate();
 
   const getQuestions = async () => {
     try {
       setIsLoading(true);
       const questionsData = await getQuestionList(id);
-      console.log(questionsData);
       setQuestionList(questionsData);
     } catch (error) {
       if (error.name === 'TypeError') {

@@ -1,6 +1,10 @@
+import { useState } from 'react';
+
+import { deleteAnswer } from '@services/api/delete';
 import AnswerBox from '@ui/AnswerBox';
 
 const AnswerBoxContainer = ({ question, profile }) => {
+  const [isLoading, setIsLoading] = useState(false);
   /* 
   받아야 될 데이터
   id": 9937,
@@ -19,16 +23,39 @@ const AnswerBoxContainer = ({ question, profile }) => {
   "rejected"
   */
 
+  // Loading이 끝나면 이 컴퍼너트 부터 재 렌더링
+  const removeAnswer = async () => {
+    try {
+      setIsLoading(true);
+      const result = await deleteAnswer(question.answer.id);
+    } catch (error) {
+      if (error.name === 'TypeError') alert(error.message);
+      else if (error.name === 'HttpError') alert(error.status);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const editAnswerHandler = () => {
     if (!question.isRejected && question.answer !== null) {
       // setTextarea(answer.content)
     }
   };
-  const removeAnswerHandler = () => {};
+  const removeAnswerHandler = () => {
+    if (!question.isRejected && question.answer !== null) {
+      removeAnswer();
+    }
+  };
   const rejectAnswerHandler = () => {};
 
   // answer 데이터의 여부에 따라 조건부 렌더링
-  return <AnswerBox />;
+  return (
+    <AnswerBox
+      question={question}
+      profile={profile}
+      removeAnswerHandler={removeAnswerHandler}
+    />
+  );
 };
 
 export default AnswerBoxContainer;

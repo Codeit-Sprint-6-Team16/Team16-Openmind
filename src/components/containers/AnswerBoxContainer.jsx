@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { deleteAnswer } from '@services/api/delete';
+import { deleteAnswer, deleteQuestion } from '@services/api/delete';
 import { patchAnswer } from '@services/api/putch';
 import AnswerBox from '@ui/AnswerBox';
 
@@ -25,6 +25,18 @@ const AnswerBoxContainer = ({ question, profile }) => {
   */
 
   // Loading이 끝나면 이 컴퍼너트 부터 재 렌더링
+  const removeQuestion = async () => {
+    try {
+      setIsLoading(true);
+      const result = await deleteQuestion(question.id);
+    } catch (error) {
+      if (error.name === 'TypeError') alert(error.message);
+      else if (error.name === 'HttpError') alert(error.status);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const removeAnswer = async () => {
     try {
       setIsLoading(true);
@@ -51,11 +63,20 @@ const AnswerBoxContainer = ({ question, profile }) => {
       setIsLoading(false);
     }
   };
+  const MEATBALL_OPTIONS = {
+    EDIT: { label: '수정하기', value: 'edit' },
+    DELETE_ANSWER: { label: '답변 삭제', value: 'deleteAnswer' },
+    REJECT_ANSWER: { label: '답변 거절', value: 'rejectAnswer' },
+    DELETE_QUESTION: { label: '질문 삭제', value: 'deleteQuestion' },
+  };
 
   const editAnswerHandler = () => {
     if (!question.isRejected && question.answer !== null) {
-      // setTextarea(answer.content)
+      setContent(question.answer.content);
     }
+  };
+  const removeQuestionHandler = () => {
+    deleteQuestion();
   };
   const removeAnswerHandler = () => {
     if (!question.isRejected && question.answer !== null) {
@@ -73,6 +94,7 @@ const AnswerBoxContainer = ({ question, profile }) => {
     <AnswerBox
       question={question}
       profile={profile}
+      editAnswerHandler={editAnswerHandler}
       removeAnswerHandler={removeAnswerHandler}
       rejectQuestionHandler={rejectQuestionHandler}
     />

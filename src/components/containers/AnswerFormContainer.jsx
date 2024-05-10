@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { postAnswer } from '@services/api/post';
 
-const AnswerFormContainer = ({}) => {
+const AnswerFormContainer = ({ editAnswerHandler }) => {
   /*
   "rejected"
   "subjectId": 6023,
@@ -19,6 +19,7 @@ const AnswerFormContainer = ({}) => {
       else if (error.name === 'HttpError') alert(error.status);
     }
   };
+  const editS = () => {};
   const submitAnswerHandler = () => {
     submitAnswer();
   };

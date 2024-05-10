@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import ToggleMenu from '@ui/ToggleMenu';
+import MeatballMenu from '@ui/MeatballMenu';
 
-const ToggleMenuContainer = ({ onClick, order }) => {
+const MeatballMenuContainer = ({ onClick, order }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const onToggleMenu = useCallback((e) => {
@@ -24,13 +24,13 @@ const ToggleMenuContainer = ({ onClick, order }) => {
   }, [isOpen]);
 
   return (
-    <ToggleMenu
+    <MeatballMenu
       isOpen={isOpen}
-      onClick={onClick}
       onToggleMenu={onToggleMenu}
+      onClick={onClick}
       order={order}
     />
   );
 };
 
-export default ToggleMenuContainer;
+export default MeatballMenuContainer;

@@ -1,25 +1,37 @@
 import React, { useState } from 'react';
 
 import { postAnswer } from '@services/api/post';
+import { patchAnswer } from '@services/api/putch';
 
-const AnswerFormContainer = ({ editAnswerHandler }) => {
-  /*
-  "rejected"
-  "subjectId": 6023,
-  "answer": null
-  수정모드나 새로 작성하는 그를 경우로 대비해야 될 듯 
-  */
+const AnswerFormContainer = ({ question }) => {
   const [content, setContent] = useState('');
   const submitAnswer = async () => {
     try {
-      const result = postAnswer(questionId, content);
+      const result = postAnswer(question.id, content);
       setContent('');
     } catch (error) {
       if (error.name === 'TypeError') alert(error.message);
       else if (error.name === 'HttpError') alert(error.status);
+    } finally {
+      window.location.reload();
     }
   };
-  const editS = () => {};
+  const submitEditedAnswer = async () => {
+    try {
+      const result = await patchAnswer({
+        ...question.answer,
+        content: content,
+      });
+    } catch (error) {
+      if (error.name === 'TypeError') alert(error.message);
+      else if (error.name === 'HttpError') alert(error.status);
+    } finally {
+      window.location.reload();
+    }
+  };
+  const submitEditedAnswerHandler = () => {
+    submitEditedAnswer();
+  };
   const submitAnswerHandler = () => {
     submitAnswer();
   };

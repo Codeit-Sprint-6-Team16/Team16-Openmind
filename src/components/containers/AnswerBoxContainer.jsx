@@ -48,6 +48,7 @@ const AnswerBoxContainer = ({ question, profile }) => {
       setIsLoading(false);
     }
   };
+
   const rejectAnswer = async () => {
     try {
       setIsLoading(true);
@@ -63,25 +64,20 @@ const AnswerBoxContainer = ({ question, profile }) => {
       setIsLoading(false);
     }
   };
-  const MEATBALL_OPTIONS = {
-    EDIT: { label: '수정하기', value: 'edit' },
-    DELETE_ANSWER: { label: '답변 삭제', value: 'deleteAnswer' },
-    REJECT_ANSWER: { label: '답변 거절', value: 'rejectAnswer' },
-    DELETE_QUESTION: { label: '질문 삭제', value: 'deleteQuestion' },
-  };
-  const meatballMenuHandlers = (optionsValue) => {
+
+  const meatballMenuHandler = (optionsValue) => {
     switch (optionsValue) {
       case 'edit':
         editAnswerHandler();
         break;
       case 'deleteAnswer':
-        rejectAnswer();
+        removeAnswerHandler();
         break;
       case 'rejectAnswer':
         rejectQuestionHandler();
         break;
       case 'deleteQuestion':
-        deleteQuestion();
+        removeQuestionHandler();
 
         break;
 
@@ -96,7 +92,7 @@ const AnswerBoxContainer = ({ question, profile }) => {
     }
   };
   const removeQuestionHandler = () => {
-    deleteQuestion();
+    removeQuestion();
   };
   const removeAnswerHandler = () => {
     if (!question.isRejected && question.answer !== null) {
@@ -114,7 +110,7 @@ const AnswerBoxContainer = ({ question, profile }) => {
     <AnswerBox
       question={question}
       profile={profile}
-      meatballMenuHandlers={meatballMenuHandlers}
+      meatballMenuHandlers={meatballMenuHandler}
     />
   );
 };

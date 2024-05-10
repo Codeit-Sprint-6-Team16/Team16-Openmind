@@ -69,6 +69,26 @@ const AnswerBoxContainer = ({ question, profile }) => {
     REJECT_ANSWER: { label: '답변 거절', value: 'rejectAnswer' },
     DELETE_QUESTION: { label: '질문 삭제', value: 'deleteQuestion' },
   };
+  const meatballMenuHandlers = (optionsValue) => {
+    switch (optionsValue) {
+      case 'edit':
+        editAnswerHandler();
+        break;
+      case 'deleteAnswer':
+        rejectAnswer();
+        break;
+      case 'rejectAnswer':
+        rejectQuestionHandler();
+        break;
+      case 'deleteQuestion':
+        deleteQuestion();
+
+        break;
+
+      default:
+        break;
+    }
+  };
 
   const editAnswerHandler = () => {
     if (!question.isRejected && question.answer !== null) {
@@ -94,9 +114,7 @@ const AnswerBoxContainer = ({ question, profile }) => {
     <AnswerBox
       question={question}
       profile={profile}
-      editAnswerHandler={editAnswerHandler}
-      removeAnswerHandler={removeAnswerHandler}
-      rejectQuestionHandler={rejectQuestionHandler}
+      meatballMenuHandlers={meatballMenuHandlers}
     />
   );
 };

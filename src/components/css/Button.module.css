@@ -67,7 +67,7 @@
     font-size: 14px;
     line-height: 18px;
     height: 34px;
-    padding: 0;
+
     gap: 4px;
     margin: 24px auto;
   }
@@ -75,7 +75,7 @@
   .outline.large {
     width: 127px;
     height: 34px;
-    padding: 0;
+
     margin-top: 20px;
   }
 
@@ -87,5 +87,12 @@
     width: 70px;
     height: 25px;
     font-size: 10px;
+  }
+
+  .outline.small,
+  .outline.large,
+  .round.large,
+  .round.small {
+    padding: 0;
   }
 }

@@ -7,8 +7,9 @@ import AnswerBox from '@ui/AnswerBox';
 import { ButtonClickedContext } from '@utils/ButtonClickedContext';
 
 const AnswerBoxContainer = ({ question, profile }) => {
+  const [editMode, setEditMode] = useState(false);
   const setButtonClicked = useContext(ButtonClickedContext);
-
+  console.log(question);
   // const [isLoading, setIsLoading] = useState(false);
   /* 
   받아야 될 데이터
@@ -53,11 +54,7 @@ const AnswerBoxContainer = ({ question, profile }) => {
 
   const rejectAnswer = async () => {
     try {
-      const result = await postAnswer(
-        question.id,
-        '미답변처리되었습니다.',
-        true,
-      );
+      const result = await postAnswer(question.id, '답변거절되었습니다.', true);
     } catch (error) {
       if (error.name === 'TypeError') alert(error.message);
       else if (error.name === 'HttpError') alert(error.status);
@@ -83,7 +80,6 @@ const AnswerBoxContainer = ({ question, profile }) => {
       case 'deleteQuestion':
         console.log('removeQuestion');
         removeQuestionHandler();
-
         break;
 
       default:
@@ -92,8 +88,8 @@ const AnswerBoxContainer = ({ question, profile }) => {
   };
 
   const editAnswerHandler = () => {
-    if (!question.isRejected && question.answer !== null) {
-      setContent(question.answer.content);
+    if (!question.answer.isRejected && question.answer !== null) {
+      setEditMode(true);
     }
   };
   const removeQuestionHandler = () => {
@@ -105,7 +101,7 @@ const AnswerBoxContainer = ({ question, profile }) => {
     }
   };
   const rejectQuestionHandler = () => {
-    if (!question.isRejected) {
+    if (!question.answer.content) {
       rejectAnswer();
     }
   };
@@ -113,6 +109,8 @@ const AnswerBoxContainer = ({ question, profile }) => {
   // answer 데이터의 여부에 따라 조건부 렌더링
   return (
     <AnswerBox
+      setEditMode={setEditMode}
+      editMode={editMode}
       question={question}
       profile={profile}
       meatballMenuHandler={meatballMenuHandler}

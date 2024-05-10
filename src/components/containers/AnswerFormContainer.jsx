@@ -1,13 +1,12 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import { postAnswer } from '@services/api/post';
 import { patchAnswer } from '@services/api/putch';
 import AnswerForm from '@ui/AnswerForm';
 import { ButtonClickedContext } from '@utils/ButtonClickedContext';
 
-const AnswerFormContainer = ({ question, profile }) => {
+const AnswerFormContainer = ({ question, profile, editMode, setEditMode }) => {
   const setButtonClicked = useContext(ButtonClickedContext);
-
   const [content, setContent] = useState('');
   const onChangeTextAreaHandler = (e) => {
     setContent(e.target.value);
@@ -26,7 +25,7 @@ const AnswerFormContainer = ({ question, profile }) => {
   const submitEditedAnswer = async () => {
     try {
       const result = await patchAnswer({
-        ...question.answer,
+        answerId: question.answer.id,
         content: content,
       });
     } catch (error) {
@@ -34,6 +33,7 @@ const AnswerFormContainer = ({ question, profile }) => {
       else if (error.name === 'HttpError') alert(error.status);
     } finally {
       setButtonClicked(true);
+      setEditMode(false);
     }
   };
   const submitEditedAnswerHandler = () => {
@@ -42,15 +42,31 @@ const AnswerFormContainer = ({ question, profile }) => {
   const submitAnswerHandler = () => {
     submitAnswer();
   };
+  useEffect(() => {
+    if (editMode) {
+      setContent(question.answer.content);
+    }
+  }, [editMode]);
   //  조건부 렌더링
   return (
     <div>
-      <AnswerForm
-        profile={profile}
-        content={content}
-        onChange={onChangeTextAreaHandler}
-        onClick={submitAnswerHandler}
-      />
+      {!question?.answer && (
+        <AnswerForm
+          profile={profile}
+          content={content}
+          onChange={onChangeTextAreaHandler}
+          onClick={submitAnswerHandler}
+        />
+      )}
+      {question.answer && !editMode && <div>{question.answer.content}</div>}
+      {editMode && (
+        <AnswerForm
+          profile={profile}
+          content={content}
+          onChange={onChangeTextAreaHandler}
+          onClick={submitEditedAnswerHandler}
+        />
+      )}
     </div>
   );
 };

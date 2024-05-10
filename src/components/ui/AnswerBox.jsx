@@ -6,7 +6,7 @@ import AnswerFormContainer from '@containers/AnswerFormContainer';
 import MeatballMenuContainer from '@containers/MeatballMenuContainer';
 import styles from '@css/AnswerBox.module.css';
 
-const AnswerBox = ({ question = {}, meatballMenuHandler }) => {
+const AnswerBox = ({ profile, question = {}, meatballMenuHandler }) => {
   return (
     <FeedCard>
       <div className={styles.answerTop}>
@@ -14,7 +14,7 @@ const AnswerBox = ({ question = {}, meatballMenuHandler }) => {
         <MeatballMenuContainer onClick={meatballMenuHandler} />
       </div>
       <QuestionName question={question} />
-      <AnswerFormContainer />
+      <AnswerFormContainer question={question} profile={profile} />
       <ReactionPresenter question={question} />
     </FeedCard>
   );

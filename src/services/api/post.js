@@ -61,7 +61,7 @@ const postQuestion = async (answererId = 0, content = '') => {
   }
 };
 
-const postAnswer = async (questionId, contentData = '') => {
+const postAnswer = async (questionId, contentData = '', isRejected = false) => {
   if (!contentData) return;
 
   let response;
@@ -71,7 +71,7 @@ const postAnswer = async (questionId, contentData = '') => {
       headers: {
         'Content-Type': 'application/json', // JSON 콘텐츠임을 명시
       },
-      body: JSON.stringify({ content: contentData, isRejected: false }),
+      body: JSON.stringify({ content: contentData, isRejected: isRejected }),
     });
   } catch (error) {
     console.error(error);

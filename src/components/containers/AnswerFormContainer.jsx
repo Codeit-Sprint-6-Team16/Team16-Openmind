@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 import { postAnswer } from '@services/api/post';
-import AnswerForm from '@ui/AnswerForm';
 import { patchAnswer } from '@services/api/putch';
+import AnswerForm from '@ui/AnswerForm';
+import { ButtonClickedContext } from '@utils/ButtonClickedContext';
 
-const AnswerFormContainer = ({ question }) => {
+const AnswerFormContainer = ({ question, profile }) => {
+  const setButtonClicked = useContext(ButtonClickedContext);
+
   const [content, setContent] = useState('');
+  const onChangeTextAreaHandler = (e) => {
+    setContent(e.target.value);
+  };
   const submitAnswer = async () => {
     try {
       const result = postAnswer(question.id, content);
@@ -14,7 +20,7 @@ const AnswerFormContainer = ({ question }) => {
       if (error.name === 'TypeError') alert(error.message);
       else if (error.name === 'HttpError') alert(error.status);
     } finally {
-      window.location.reload();
+      setButtonClicked(true);
     }
   };
   const submitEditedAnswer = async () => {
@@ -27,7 +33,7 @@ const AnswerFormContainer = ({ question }) => {
       if (error.name === 'TypeError') alert(error.message);
       else if (error.name === 'HttpError') alert(error.status);
     } finally {
-      window.location.reload();
+      setButtonClicked(true);
     }
   };
   const submitEditedAnswerHandler = () => {
@@ -36,10 +42,15 @@ const AnswerFormContainer = ({ question }) => {
   const submitAnswerHandler = () => {
     submitAnswer();
   };
-
+  //  조건부 렌더링
   return (
     <div>
-      <AnswerForm />
+      <AnswerForm
+        profile={profile}
+        content={content}
+        onChange={onChangeTextAreaHandler}
+        onClick={submitAnswerHandler}
+      />
     </div>
   );
 };

@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import likeGray from '@assets/images/image_like_gray.svg';
 import likeSkyblue from '@assets/images/image_like_skyblue.svg';
 import dislikeBlack from '@assets/images/image_unlike_black.svg';
@@ -23,8 +21,7 @@ const Reaction = ({ like, dislike, isLiked, isDisLiked, onClick }) => {
         onClick={onClickLikeHandler}
       >
         <img src={isLiked ? likeSkyblue : likeGray} alt="좋아요" />
-        {/* <p>좋아요 {like > 0 ? like : ''}</p> */}
-        <p>좋아요 {like}</p>
+        <p>좋아요 {like > 0 ? like : ''}</p>
       </button>
       <button
         type="button"
@@ -32,8 +29,7 @@ const Reaction = ({ like, dislike, isLiked, isDisLiked, onClick }) => {
         onClick={onClickDislikeHandler}
       >
         <img src={isDisLiked ? dislikeBlack : dislikeGray} alt="싫어요" />
-        {/* <p>싫어요 {dislike > 0 ? dislike : ''}</p> */}
-        <p>싫어요 {dislike}</p>
+        <p>싫어요 {dislike > 0 ? dislike : ''}</p>
       </button>
     </div>
   );

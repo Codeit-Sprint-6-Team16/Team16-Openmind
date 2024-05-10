@@ -63,7 +63,7 @@ function QuestionModalContainer() {
 
   return (
     <>
-      <Button variant={'round'} onClick={openModalHandler}>
+      <Button variant={'round'} size={'large'} onClick={openModalHandler}>
         질문 작성하기
       </Button>
       {isOpen && (

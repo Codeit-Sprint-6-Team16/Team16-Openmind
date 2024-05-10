@@ -21,7 +21,7 @@ const Reaction = ({ like, dislike, isLiked, isDisLiked, onClick }) => {
         onClick={onClickLikeHandler}
       >
         <img src={isLiked ? likeSkyblue : likeGray} alt="좋아요" />
-        <p>좋아요 {like > 0 ? like : ' '}</p>
+        <p>좋아요 {like > 0 ? like : ''}</p>
       </button>
       <button
         type="button"

@@ -31,7 +31,6 @@ function ReactionContainer({ question }) {
     }
   };
 
-  console.log(like, dislike);
   return (
     typeof like === 'number' &&
     typeof dislike === 'number' && (

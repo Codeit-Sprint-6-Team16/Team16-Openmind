@@ -7,11 +7,11 @@ const ReactionPresenter = ({ question }) => {
     <div className={styles.LikeDislike}>
       <button className={styles.reactionButton}>
         <img src={likeGray} alt="좋아요" />
-        <p>좋아요 {question.like}</p>
+        <p>좋아요 {question.like > 0 ? question.like : ''}</p>
       </button>
       <button className={styles.reactionButton}>
         <img src={dislikeGray} alt="싫어요" />
-        <p>싫어요 {question.dislike}</p>
+        <p>싫어요 {question.dislike > 0 ? question.dislike : ''}</p>
       </button>
     </div>
   );

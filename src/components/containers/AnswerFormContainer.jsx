@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { postAnswer } from '@services/api/post';
+import AnswerForm from '@ui/AnswerForm';
 import { patchAnswer } from '@services/api/putch';
 
 const AnswerFormContainer = ({ question }) => {
@@ -36,7 +37,11 @@ const AnswerFormContainer = ({ question }) => {
     submitAnswer();
   };
 
-  return <div></div>;
+  return (
+    <div>
+      <AnswerForm />
+    </div>
+  );
 };
 
 export default AnswerFormContainer;

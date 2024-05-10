@@ -1,5 +1,4 @@
 import FeedBox from './FeedBox';
-import FeedCard from './FeedCard';
 import QuestionBox from './QuestionBox';
 import QuestionCount from './QuestionCount';
 import styles from '@css/QuestionFeed.module.css';
@@ -10,15 +9,13 @@ function QuestionFeed({ questionList, profile }) {
     <FeedBox>
       <Feed>
         <QuestionCount profile={profile} />
-        <FeedCard>
-          {questionList.map((question) => (
-            <QuestionBox
-              question={question}
-              profile={profile}
-              key={question.id}
-            />
-          ))}
-        </FeedCard>
+        {questionList.map((question) => (
+          <QuestionBox
+            question={question}
+            profile={profile}
+            key={question.id}
+          />
+        ))}
       </Feed>
     </FeedBox>
   );

@@ -6,7 +6,14 @@ import QuestionCount from './QuestionCount';
 import AnswerBoxContainer from '@containers/AnswerBoxContainer';
 import styles from '@css/AnswerFeed.module.css';
 
-function AnswerFeed({ questionList, profile, removeIDhandler }) {
+function AnswerFeed({
+  questionList,
+  profile,
+  removeIDhandler,
+  setIsLoading,
+  setButtonClicked,
+}) {
+  console.log(questionList);
   const count = {
     questionCount: 5,
   };
@@ -23,9 +30,11 @@ function AnswerFeed({ questionList, profile, removeIDhandler }) {
         <FeedCard>
           {questionList?.map((question) => (
             <AnswerBoxContainer
+              setIsLoading={setIsLoading}
               question={question}
               profile={profile}
               key={question.id}
+              setButtonClicked={setButtonClicked}
             />
           ))}
         </FeedCard>

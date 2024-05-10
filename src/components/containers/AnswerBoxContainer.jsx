@@ -4,8 +4,8 @@ import { deleteAnswer, deleteQuestion } from '@services/api/delete';
 import { patchAnswer } from '@services/api/putch';
 import AnswerBox from '@ui/AnswerBox';
 
-const AnswerBoxContainer = ({ question, profile }) => {
-  const [isLoading, setIsLoading] = useState(false);
+const AnswerBoxContainer = ({ question, profile, setButtonClicked }) => {
+  // const [isLoading, setIsLoading] = useState(false);
   /* 
   받아야 될 데이터
   id": 9937,
@@ -27,31 +27,35 @@ const AnswerBoxContainer = ({ question, profile }) => {
   // Loading이 끝나면 이 컴퍼너트 부터 재 렌더링
   const removeQuestion = async () => {
     try {
-      setIsLoading(true);
+      // setIsLoading(true);
       const result = await deleteQuestion(question.id);
     } catch (error) {
       if (error.name === 'TypeError') alert(error.message);
       else if (error.name === 'HttpError') alert(error.status);
     } finally {
-      setIsLoading(false);
+      setButtonClicked(true);
+      // window.location.reload();
+      // setIsLoading(false);
     }
   };
 
   const removeAnswer = async () => {
     try {
-      setIsLoading(true);
+      // setIsLoading(true);
       const result = await deleteAnswer(question.answer.id);
     } catch (error) {
       if (error.name === 'TypeError') alert(error.message);
       else if (error.name === 'HttpError') alert(error.status);
     } finally {
-      setIsLoading(false);
+      setButtonClicked(true);
+      // window.location.reload();
+      // setIsLoading(false);
     }
   };
 
   const rejectAnswer = async () => {
     try {
-      setIsLoading(true);
+      // setIsLoading(true);
       const result = await patchAnswer({
         answerId: question.id,
         content: question.content,
@@ -61,22 +65,28 @@ const AnswerBoxContainer = ({ question, profile }) => {
       if (error.name === 'TypeError') alert(error.message);
       else if (error.name === 'HttpError') alert(error.status);
     } finally {
-      setIsLoading(false);
+      setButtonClicked(true);
+      // window.location.reload();
+      // setIsLoading(false);
     }
   };
 
   const meatballMenuHandler = (optionsValue) => {
     switch (optionsValue) {
       case 'edit':
+        console.log('edit');
         editAnswerHandler();
         break;
       case 'deleteAnswer':
+        console.log('removeAnswer');
         removeAnswerHandler();
         break;
       case 'rejectAnswer':
+        console.log('rejectQuestion');
         rejectQuestionHandler();
         break;
       case 'deleteQuestion':
+        console.log('removeQuestion');
         removeQuestionHandler();
 
         break;
@@ -110,7 +120,7 @@ const AnswerBoxContainer = ({ question, profile }) => {
     <AnswerBox
       question={question}
       profile={profile}
-      meatballMenuHandlers={meatballMenuHandler}
+      meatballMenuHandler={meatballMenuHandler}
     />
   );
 };

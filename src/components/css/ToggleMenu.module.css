@@ -1,9 +1,9 @@
-.toggleMenu {
+.orderMenu {
   display: flex;
   justify-content: center;
 }
 
-.iconButton {
+.orderButton {
   border: 1px solid var(--color-gray40);
   background-color: var(--color-white);
   cursor: pointer;
@@ -17,25 +17,30 @@
   margin: 12px 0 30px 0;
 }
 
-.iconButton:hover {
+.orderButton:hover {
   border: 1px solid var(--color-black);
 }
 
-ul.popup {
-  background-color: var(--color-white);
+.orderMenu .popup {
   width: 79px;
-  padding: 4px 0px 4px 0px;
   margin-top: 50px;
-  position: absolute;
-  border: 1px solid var(--color-gray30);
-  border-radius: 8px;
   text-align: center;
 }
 
-ul.popup li {
+.orderMenu li {
   cursor: pointer;
   font-weight: 500;
   font-size: 14px;
+}
+
+.orderMenu .popup,
+.meatballMenu .popup {
+  background-color: var(--color-white);
+  padding: 4px 0px 4px 0px;
+  position: absolute;
+  border: 1px solid var(--color-gray30);
+  border-radius: 8px;
+  box-shadow: 0px 4px 4px 0px rgba(140, 140, 140, 0.25);
 }
 
 li.disabled {
@@ -47,11 +52,7 @@ li:hover {
   color: var(--color-blue);
 }
 
-.toggleMenu ul.popup a:hover {
-  text-decoration: none;
-}
-
-.iconButton img {
+.orderButton img {
   position: absolute;
   right: 12px;
 }
@@ -62,11 +63,11 @@ li:hover {
 }
 
 @media (min-width: 375px) and (max-width: 767px) {
-  .iconButton {
+  .orderButton {
     margin: 0;
   }
 
-  ul.popup {
+  .orderMenu .popup {
     margin-top: 38px;
   }
 }

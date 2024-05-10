@@ -2,7 +2,6 @@ import FeedBox from './FeedBox';
 import FeedCard from './FeedCard';
 import QuestionBox from './QuestionBox';
 import QuestionCount from './QuestionCount';
-import styles from '@css/QuestionFeed.module.css';
 import Feed from '@ui/Feed';
 
 function QuestionFeed({ questionList, profile }) {

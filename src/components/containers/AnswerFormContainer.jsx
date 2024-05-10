@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { postAnswer } from '@services/api/post';
+import AnswerForm from '@ui/AnswerForm';
 
 const AnswerFormContainer = ({}) => {
   /*
@@ -23,7 +24,11 @@ const AnswerFormContainer = ({}) => {
     submitAnswer();
   };
 
-  return <div></div>;
+  return (
+    <div>
+      <AnswerForm />
+    </div>
+  );
 };
 
 export default AnswerFormContainer;

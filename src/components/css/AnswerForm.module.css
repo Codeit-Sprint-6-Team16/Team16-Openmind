@@ -1,0 +1,49 @@
+.AnswerForm {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.section_image {
+  display: flex;
+  flex-direction: column;
+  width: 48px;
+  height: 48px;
+}
+
+.section_image > img {
+  border-radius: 100%;
+}
+
+.section_name {
+  font-size: 18px;
+  font-family: 'Actor';
+}
+
+.formBox {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 4px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media all and (max-width: 767px) {
+  .AnswerForm {
+    margin-bottom: 24px;
+  }
+
+  .section_image {
+    width: 32px;
+    height: 32px;
+  }
+
+  .section_name {
+    font-size: 14px;
+  }
+}

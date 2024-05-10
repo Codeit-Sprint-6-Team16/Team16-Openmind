@@ -9,7 +9,7 @@ const AnswerFeedContainer = () => {
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(false);
   const [questionList, setQuestionList] = useState([]); // questionList로 통일!
-  const [profile, setProfile] = useState();
+  const [profile, setProfile] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
   const [buttonClicked, setButtonClicked] = useState(false);
   const navigation = useNavigate();

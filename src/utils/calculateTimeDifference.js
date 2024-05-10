@@ -1,13 +1,24 @@
-export const timeDifference = (createdAt) => {
-  const now = new Date();
-  const before = new Date(createdAt);
-  const time = now - before; //getTime차이
-  const timeDifferenceInSeconds = Math.floor(time / 1000);
-  // 초를 시, 분, 초로 변환
-  const hours = Math.floor((timeDifferenceInSeconds % 86400) / 3600);
-  const day = Math.floor(timeDifferenceInSeconds / 86400);
-  return { day: day, hours: hours };
+export const elapsedTime = (createdAt) => {
+  const createdMoment = new Date(createdAt);
+  const timeDifference = Date.now() - createdMoment;
+
+  const seconds = Math.floor(timeDifference / 1000);
+  if (seconds < 60) return '방금전';
+
+  const minutes = seconds / 60;
+  if (minutes < 60) return `${Math.floor(minutes)}분전`;
+
+  const hours = minutes / 60;
+  if (hours < 24) return `${Math.floor(hours)}시간전`;
+
+  const days = hours / 24;
+  if (days < 7) return `${Math.floor(days)}일전`;
+
+  const weeks = days / 7;
+  if (weeks < 52) return `${Math.floor(weeks)}주전`;
+
+  const years = weeks / 52;
+  if (years < 10) return `${Math.floor(years)}년전`;
+
+  return `${createdMoment.toLocaleDateString()}`;
 };
-// 년, 주, 일, 시, 분, 초
-//
-// `${day}일전` `${hours}시간전`

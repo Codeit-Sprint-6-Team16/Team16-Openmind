@@ -1,6 +1,5 @@
 import styles from '@css/AnswerPresenter.module.css';
-
-// import { timeDifference } from '@utils/calculateTimeDifference';
+import { elapsedTime } from '@utils/calculateTimeDifference';
 
 const AnswerPresenter = ({ question, profile }) => {
   const { imageSource, name, createdAt } = profile;
@@ -13,7 +12,7 @@ const AnswerPresenter = ({ question, profile }) => {
       <div>
         <div className={styles.section_profile}>
           <div className={styles.section_profile_name}>{name}</div>
-          <p className={styles.section_weeks}>{createdAt}일전</p>
+          <p className={styles.section_weeks}>{elapsedTime(createdAt)}</p>
         </div>
         <div className={styles.section_content}>{question.answer?.content}</div>
       </div>

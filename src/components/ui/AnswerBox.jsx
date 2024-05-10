@@ -1,6 +1,5 @@
 import AnswerState from './AnswerState';
 import FeedCard from './FeedCard';
-import MeatballMenu from './MeatballMenu';
 import QuestionName from './QuestionName';
 import ReactionPresenter from './ReactionPresenter';
 import AnswerFormContainer from '@containers/AnswerFormContainer';

@@ -31,7 +31,7 @@ const Reaction = ({ like, dislike, isLiked, isDisLiked, onClick }) => {
         className={`${styles.reactionButton} ${isDisLiked ? styles.black : ''}`}
         onClick={onClickDislikeHandler}
       >
-        <img src={isDisLiked ? unlikeBlack : unlikeGray} alt="싫어요" />
+        <img src={isDisLiked ? dislikeBlack : dislikeGray} alt="싫어요" />
         {/* <p>싫어요 {dislike > 0 ? dislike : ''}</p> */}
         <p>싫어요 {dislike}</p>
       </button>

@@ -6,6 +6,7 @@ import AnswerBoxContainer from '@containers/AnswerBoxContainer';
 import styles from '@css/AnswerFeed.module.css';
 
 function AnswerFeed({ questionList, profile, removeIdHandler }) {
+  console.log(questionList);
   return (
     <FeedBox>
       <div className={styles.right}>

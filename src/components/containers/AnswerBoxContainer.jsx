@@ -81,7 +81,7 @@ const AnswerBoxContainer = ({ question, profile }) => {
   };
   const rejectQuestionHandler = () => {
     if (!question.answer) {
-      rejectAnswer();
+      return rejectAnswer();
     }
     alert('답변이 존재 합니다.');
   };

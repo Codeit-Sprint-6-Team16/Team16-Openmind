@@ -4,7 +4,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { getProfile, getQuestionList } from '@api/get.js';
 import { deleteProfile } from '@services/api/delete';
 import AnswerFeed from '@ui/AnswerFeed';
-import Loading from '@ui/Loading';
 import { ButtonClickedContext } from '@utils/ButtonClickedContext';
 
 const options = {
@@ -71,8 +70,7 @@ const AnswerFeedContainer = () => {
   };
 
   const callback = (entry) => {
-    console.log(entry);
-    if (!isLoading && entry[0].isIntersecting) {
+    if (!isLoading && entry[0].isIntersecting && num > 0) {
       setLimit((prev) => prev + 3);
     }
     num++;
@@ -88,6 +86,7 @@ const AnswerFeedContainer = () => {
       getQuestions(limit);
     }
   }, [limit]);
+
   useEffect(() => {
     loadProfile();
     const observer = new IntersectionObserver(callback, options);
@@ -98,7 +97,7 @@ const AnswerFeedContainer = () => {
     };
   }, []);
 
-  return !isLoading ? (
+  return (
     <>
       {errorMessage && <div>{errorMessage}</div>}
       <ButtonClickedContext.Provider value={setButtonClicked}>
@@ -109,10 +108,8 @@ const AnswerFeedContainer = () => {
           removeIdHandler={removeIdHandler}
         />
       </ButtonClickedContext.Provider>
-      <div ref={target}>target</div>
+      <div ref={target}></div>
     </>
-  ) : (
-    <Loading />
   );
 };
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import { getProfile, getQuestionList } from '@api/get.js';
@@ -7,6 +7,9 @@ import AnswerFeed from '@ui/AnswerFeed';
 import Loading from '@ui/Loading';
 import { ButtonClickedContext } from '@utils/ButtonClickedContext';
 
+const options = {
+  threshold: 0,
+};
 const AnswerFeedContainer = () => {
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(false);
@@ -14,12 +17,16 @@ const AnswerFeedContainer = () => {
   const [profile, setProfile] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
   const [buttonClicked, setButtonClicked] = useState(false);
+  const [limit, setLimit] = useState(3);
+  const target = useRef();
+
+  let num = 0;
   const navigation = useNavigate();
 
-  const getQuestions = async () => {
+  const getQuestions = async (limit) => {
     try {
       setIsLoading(true);
-      const questionsData = await getQuestionList(id);
+      const questionsData = await getQuestionList(id, 0, limit);
       setQuestionList(questionsData);
     } catch (error) {
       if (error.name === 'TypeError') {
@@ -63,10 +70,33 @@ const AnswerFeedContainer = () => {
     }
   };
 
+  const callback = (entry) => {
+    console.log(entry);
+    if (!isLoading && entry[0].isIntersecting) {
+      setLimit((prev) => prev + 3);
+    }
+    num++;
+  };
+
   useEffect(() => {
-    getQuestions();
+    getQuestions(limit);
     loadProfile();
   }, [buttonClicked]);
+
+  useEffect(() => {
+    if (!isLoading) {
+      getQuestions(limit);
+    }
+  }, [limit]);
+  useEffect(() => {
+    loadProfile();
+    const observer = new IntersectionObserver(callback, options);
+    observer.observe(target.current);
+
+    return () => {
+      observer.disconnect(); // 컴포넌트가 언마운트될 때 관찰자 해제
+    };
+  }, []);
 
   return !isLoading ? (
     <>
@@ -79,6 +109,7 @@ const AnswerFeedContainer = () => {
           removeIdHandler={removeIdHandler}
         />
       </ButtonClickedContext.Provider>
+      <div ref={target}>target</div>
     </>
   ) : (
     <Loading />

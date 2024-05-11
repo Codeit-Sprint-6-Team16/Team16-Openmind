@@ -7,7 +7,6 @@ import AnswerPresenter from '@ui/AnswerPresenter';
 import { ButtonClickedContext } from '@utils/ButtonClickedContext';
 
 const AnswerFormContainer = ({ question, profile, editMode, setEditMode }) => {
-  console.log(question);
   const setButtonClicked = useContext(ButtonClickedContext);
   const [content, setContent] = useState('');
   const onChangeTextAreaHandler = (e) => {
@@ -47,7 +46,6 @@ const AnswerFormContainer = ({ question, profile, editMode, setEditMode }) => {
   };
   useEffect(() => {
     if (editMode) {
-      console.log(editMode);
       setContent(question.answer.content);
     }
   }, [editMode]);
@@ -64,7 +62,7 @@ const AnswerFormContainer = ({ question, profile, editMode, setEditMode }) => {
         />
       )}
       {question.answer && !editMode && (
-        <AnswerPresenter question={question} profile={profile} />
+        <AnswerPresenter profile={profile} question={question} />
       )}
       {editMode && (
         <AnswerForm

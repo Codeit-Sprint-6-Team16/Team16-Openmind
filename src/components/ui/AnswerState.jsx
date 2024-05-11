@@ -5,7 +5,7 @@ const AnswerState = ({ question }) => {
 
   return (
     <div
-      className={`${styles.AnswerState} ${answer === null ? styles.gray : styles.brown}`}
+      className={`${styles.AnswerState} ${answer === null ? styles.gray : question.answer.isRejected ? styles.red : styles.brown}`}
     >
       <p>
         {answer === null

@@ -2,7 +2,6 @@ import { useContext, useState } from 'react';
 
 import { deleteAnswer, deleteQuestion } from '@services/api/delete';
 import { postAnswer } from '@services/api/post';
-import { patchAnswer } from '@services/api/putch';
 import AnswerBox from '@ui/AnswerBox';
 import { ButtonClickedContext } from '@utils/ButtonClickedContext';
 
@@ -10,26 +9,6 @@ const AnswerBoxContainer = ({ question, profile }) => {
   const [editMode, setEditMode] = useState(false);
   const setButtonClicked = useContext(ButtonClickedContext);
 
-  // const [isLoading, setIsLoading] = useState(false);
-  /* 
-  받아야 될 데이터
-  id": 9937,
-  "subjectId": 6023,
-  "content": "무슨색깔이야",
-  "like": 2147483647,
-  "dislike": 2147483647,
-  "createdAt": "2024-05-08T05:36:04.711508Z",
-  "answer": {        
-        "id": 4442,
-        "questionId": 9937,
-        "content": "파란색",
-        "isRejected": false,
-        "createdAt": "2024-05-08T07:44:04.230049Z"
-      }
-  "rejected"
-  */
-
-  // Loading이 끝나면 이 컴퍼너트 부터 재 렌더링
   const removeQuestion = async () => {
     try {
       const result = await deleteQuestion(question.id);
@@ -107,7 +86,6 @@ const AnswerBoxContainer = ({ question, profile }) => {
     alert('답변이 존재 합니다.');
   };
 
-  // answer 데이터의 여부에 따라 조건부 렌더링
   return (
     <AnswerBox
       setEditMode={setEditMode}

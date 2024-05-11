@@ -22,10 +22,8 @@ function QuestionFeedContainer() {
       setIsLoading(true);
       const response = await getQuestionList(id, offset, limit);
       if (offset === 0) {
-        console.log('if', response);
         setQuestionList(response);
       } else {
-        console.log('else', response);
         setQuestionList((prevList) => [...prevList, ...response]);
       }
     } catch (error) {
@@ -56,14 +54,8 @@ function QuestionFeedContainer() {
   };
 
   const callback = (entry) => {
-    console.log(offset, 'callback executed');
-    console.log('entry[0]', entry[0]);
     if (!isLoading && Math.floor(entry[0].intersectionRatio) > 0 && num > 0) {
-      console.log(offset, 'callback if executed');
-      setOffset((prevOffset) => {
-        console.log('prevOffset', prevOffset);
-        return prevOffset + 5;
-      });
+      setOffset((prevOffset) => prevOffset + 5);
     }
     num++;
   };

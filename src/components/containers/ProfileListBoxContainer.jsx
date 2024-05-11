@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { getAnswerers } from '@services/api/get.js';
+import Loading from '@ui/Loading';
 import ProfileListBox from '@ui/ProfileListBox';
 import { isTabletMini } from '@utils/windowSize';
 
@@ -78,7 +79,7 @@ function ProfileListBoxContainer() {
       order={order}
     />
   ) : (
-    <div>로딩중</div>
+    <Loading />
   );
 }
 

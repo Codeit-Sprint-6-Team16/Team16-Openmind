@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { getProfile, getQuestionList } from '@api/get.js';
 import { deleteProfile } from '@services/api/delete';
 import AnswerFeed from '@ui/AnswerFeed';
+import Loading from '@ui/Loading';
 import { ButtonClickedContext } from '@utils/ButtonClickedContext';
 
 const AnswerFeedContainer = () => {
@@ -80,7 +81,7 @@ const AnswerFeedContainer = () => {
       </ButtonClickedContext.Provider>
     </>
   ) : (
-    <div>로딩중</div>
+    <Loading />
   );
 };
 

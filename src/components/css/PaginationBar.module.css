@@ -40,6 +40,10 @@
 
 @media (max-width: 767px) {
   .paginationBar {
-    top: 820px;
+    position: static;
+    margin-top: 31px;
+    margin-bottom: 20px;
+    justify-content: center;
+    transform: none;
   }
 }

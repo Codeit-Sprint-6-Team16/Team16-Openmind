@@ -24,6 +24,7 @@
 @media (max-width: 767px) {
   .mainWrap {
     background-size: 130%;
+    padding-bottom: 220px;
   }
   .right {
     order: 2;

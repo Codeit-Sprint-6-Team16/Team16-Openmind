@@ -56,7 +56,7 @@ const AnswerFormContainer = ({ question, profile, editMode, setEditMode }) => {
       {!question?.answer && (
         <AnswerForm
           profile={profile}
-          isRejected={question.answer.isRejected}
+          isRejected={question.answer?.isRejected}
           content={content}
           onChange={onChangeTextAreaHandler}
           onClick={submitAnswerHandler}

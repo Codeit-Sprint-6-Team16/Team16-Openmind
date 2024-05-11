@@ -10,7 +10,7 @@ const AnswerState = ({ question }) => {
       <p>
         {answer === null
           ? '미답변'
-          : question.answer.isRejected
+          : answer.isRejected
             ? '답변 거절'
             : '답변 완료'}
       </p>

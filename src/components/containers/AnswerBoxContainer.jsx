@@ -1,10 +1,15 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
 import { deleteAnswer, deleteQuestion } from '@services/api/delete';
+import { postAnswer } from '@services/api/post';
 import { patchAnswer } from '@services/api/putch';
 import AnswerBox from '@ui/AnswerBox';
+import { ButtonClickedContext } from '@utils/ButtonClickedContext';
 
-const AnswerBoxContainer = ({ question, profile, setButtonClicked }) => {
+const AnswerBoxContainer = ({ question, profile }) => {
+  const [editMode, setEditMode] = useState(false);
+  const setButtonClicked = useContext(ButtonClickedContext);
+  console.log(question);
   // const [isLoading, setIsLoading] = useState(false);
   /* 
   받아야 될 데이터
@@ -27,47 +32,34 @@ const AnswerBoxContainer = ({ question, profile, setButtonClicked }) => {
   // Loading이 끝나면 이 컴퍼너트 부터 재 렌더링
   const removeQuestion = async () => {
     try {
-      // setIsLoading(true);
       const result = await deleteQuestion(question.id);
     } catch (error) {
       if (error.name === 'TypeError') alert(error.message);
       else if (error.name === 'HttpError') alert(error.status);
     } finally {
       setButtonClicked(true);
-      // window.location.reload();
-      // setIsLoading(false);
     }
   };
 
   const removeAnswer = async () => {
     try {
-      // setIsLoading(true);
       const result = await deleteAnswer(question.answer.id);
     } catch (error) {
       if (error.name === 'TypeError') alert(error.message);
       else if (error.name === 'HttpError') alert(error.status);
     } finally {
       setButtonClicked(true);
-      // window.location.reload();
-      // setIsLoading(false);
     }
   };
 
   const rejectAnswer = async () => {
     try {
-      // setIsLoading(true);
-      const result = await patchAnswer({
-        answerId: question.id,
-        content: question.content,
-        isRejected: true,
-      });
+      const result = await postAnswer(question.id, '답변거절되었습니다.', true);
     } catch (error) {
       if (error.name === 'TypeError') alert(error.message);
       else if (error.name === 'HttpError') alert(error.status);
     } finally {
       setButtonClicked(true);
-      // window.location.reload();
-      // setIsLoading(false);
     }
   };
 
@@ -88,7 +80,6 @@ const AnswerBoxContainer = ({ question, profile, setButtonClicked }) => {
       case 'deleteQuestion':
         console.log('removeQuestion');
         removeQuestionHandler();
-
         break;
 
       default:
@@ -97,8 +88,8 @@ const AnswerBoxContainer = ({ question, profile, setButtonClicked }) => {
   };
 
   const editAnswerHandler = () => {
-    if (!question.isRejected && question.answer !== null) {
-      setContent(question.answer.content);
+    if (!question.answer.isRejected && question.answer !== null) {
+      setEditMode(true);
     }
   };
   const removeQuestionHandler = () => {
@@ -110,7 +101,7 @@ const AnswerBoxContainer = ({ question, profile, setButtonClicked }) => {
     }
   };
   const rejectQuestionHandler = () => {
-    if (!question.isRejected) {
+    if (!question.answer.content) {
       rejectAnswer();
     }
   };
@@ -118,6 +109,8 @@ const AnswerBoxContainer = ({ question, profile, setButtonClicked }) => {
   // answer 데이터의 여부에 따라 조건부 렌더링
   return (
     <AnswerBox
+      setEditMode={setEditMode}
+      editMode={editMode}
       question={question}
       profile={profile}
       meatballMenuHandler={meatballMenuHandler}

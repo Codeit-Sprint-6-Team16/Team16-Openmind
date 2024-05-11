@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { getProfile, getQuestionList } from '@api/get.js';
 import { deleteProfile } from '@services/api/delete';
 import AnswerFeed from '@ui/AnswerFeed';
+import { ButtonClickedContext } from '@utils/ButtonClickedContext';
 
 const AnswerFeedContainer = () => {
   const { id } = useParams();
@@ -69,14 +70,14 @@ const AnswerFeedContainer = () => {
   return !isLoading ? (
     <>
       {errorMessage && <div>{errorMessage}</div>}
-
-      <AnswerFeed
-        setIsLoading={setIsLoading}
-        questionList={questionList}
-        profile={profile}
-        setButtonClicked={setButtonClicked}
-        removeIdHandler={removeIdHandler}
-      />
+      <ButtonClickedContext.Provider value={setButtonClicked}>
+        <AnswerFeed
+          questionList={questionList}
+          profile={profile}
+          setButtonClicked={setButtonClicked}
+          removeIdHandler={removeIdHandler}
+        />
+      </ButtonClickedContext.Provider>
     </>
   ) : (
     <div>로딩중</div>

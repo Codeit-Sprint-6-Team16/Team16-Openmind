@@ -6,7 +6,6 @@ import Button from '@ui/Button';
 const ReplyButtonContainer = () => {
   const navigate = useNavigate();
   const onClickHandler = () => {
-    console.log(localStorage.getItem('ID'));
     if (localStorage.getItem('ID')) {
       return navigate(`/post/${localStorage.getItem('ID')}/answer`);
     }

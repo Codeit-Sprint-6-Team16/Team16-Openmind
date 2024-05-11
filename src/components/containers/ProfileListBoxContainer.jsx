@@ -11,9 +11,11 @@ function ProfileListBoxContainer() {
   const [offset, setOffset] = useState(0);
   const [pages, setPages] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(false);
 
   const loadProfiles = async (options) => {
     try {
+      setIsLoading(true);
       const response = await getAnswerers(options);
       setProfileList(response.results);
       loadPagination(response.count);
@@ -23,6 +25,8 @@ function ProfileListBoxContainer() {
       } else if (error.name) {
         console.log(error.status);
       }
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -64,7 +68,7 @@ function ProfileListBoxContainer() {
     };
   }, []);
 
-  return (
+  return !isLoading ? (
     <ProfileListBox
       profileList={profileList}
       onOrderClick={orderClickHandler}
@@ -73,6 +77,8 @@ function ProfileListBoxContainer() {
       currentPage={currentPage}
       order={order}
     />
+  ) : (
+    <div>로딩중</div>
   );
 }
 

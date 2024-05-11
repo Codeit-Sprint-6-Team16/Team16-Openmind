@@ -14,7 +14,7 @@ function AnswerFeed({ questionList, profile, removeIdHandler }) {
         </Button>
       </div>
       <Feed>
-        <QuestionCount profile={profile} />
+        {profile && <QuestionCount profile={profile} />}
         {questionList?.map((question) => (
           <AnswerBoxContainer
             question={question}

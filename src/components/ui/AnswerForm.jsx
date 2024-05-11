@@ -7,7 +7,6 @@ import styles from '@css/AnswerForm.module.css';
 
 function AnswerForm({ profile = {}, onClick, onChange, content }) {
   const { imageSource, name } = profile;
-  // const [value, setValue] = useState();
 
   return (
     <div className={styles.AnswerForm}>

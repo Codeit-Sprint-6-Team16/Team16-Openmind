@@ -54,7 +54,7 @@ const AnswerBoxContainer = ({ question, profile }) => {
 
   const rejectAnswer = async () => {
     try {
-      const result = await postAnswer(question.id, '답변거절되었습니다.', true);
+      const result = await postAnswer(question.id, '답변 거절', true);
     } catch (error) {
       if (error.name === 'TypeError') alert(error.message);
       else if (error.name === 'HttpError') alert(error.status);
@@ -104,6 +104,7 @@ const AnswerBoxContainer = ({ question, profile }) => {
     if (!question.answer) {
       rejectAnswer();
     }
+    alert('답변이 존재 합니다.');
   };
 
   // answer 데이터의 여부에 따라 조건부 렌더링

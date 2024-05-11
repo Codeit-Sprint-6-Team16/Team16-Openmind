@@ -6,7 +6,7 @@ import Textarea from './Textarea';
 import styles from '@css/AnswerForm.module.css';
 
 function AnswerForm({ profile = {}, onClick, onChange, content }) {
-  const { imageSource , name = '아초는고양이' } = profile;
+  const { imageSource, name = '아초는고양이' } = profile;
   // const [value, setValue] = useState();
 
   return (
@@ -17,8 +17,8 @@ function AnswerForm({ profile = {}, onClick, onChange, content }) {
       <div className={styles.formBox}>
         <div className={styles.section_name}>{name}</div>
         <div className={styles.form}>
-          <Textarea value={} placeholder="답변을 입력해주세요" />
-          <Button variant={'fill'} isDisabled={}>
+          <Textarea value={content} placeholder="답변을 입력해주세요" />
+          <Button variant={'fill'} isDisabled={content ? false : true}>
             답변 완료
           </Button>
         </div>

@@ -8,7 +8,7 @@ import styles from '@css/AnswerFeed.module.css';
 function AnswerFeed({
   questionList,
   profile,
-  removeIDhandler,
+  removeIdHandler,
   setIsLoading,
   setButtonClicked,
 }) {
@@ -20,7 +20,7 @@ function AnswerFeed({
         </Button>
       </div>
       <Feed>
-        <QuestionCount profile={profile} />
+        {profile && <QuestionCount profile={profile} />}
         {questionList?.map((question) => (
           <AnswerBoxContainer
             setIsLoading={setIsLoading}

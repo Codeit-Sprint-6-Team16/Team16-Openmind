@@ -29,6 +29,7 @@ function QuestionModalContainer() {
     try {
       const response = await postQuestion(profile.id, value);
       alert('질문 추가됨');
+      setIsOpen(false);
     } catch (error) {
       if (error.name === 'TypeError') {
         return console.log(error.name);

@@ -81,6 +81,14 @@
 
   .round.large {
     width: 123px;
+    font-size: 0px;
+    position: relative;
+  }
+
+  .round.large::after {
+    content: '질문작성';
+    font-size: 14px;
+    position: absolute;
   }
 
   .round.small {

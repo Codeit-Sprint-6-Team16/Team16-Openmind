@@ -11,7 +11,7 @@ function MainPage() {
   return (
     <main className="wrapper">
       <div className={styles.mainWrap}>
-        <div className="inner">
+        <div className="inner inner_main">
           <div className={styles.inner_order}>
             <div className={styles.right}>
               <Button

@@ -14,7 +14,7 @@
   align-items: center;
   width: 79px;
   font-weight: 500;
-  margin: 12px 0 30px 0;
+  margin: 30px 0 30px 0;
 }
 
 .orderButton:hover {
@@ -23,11 +23,12 @@
 
 .orderMenu .popup {
   width: 79px;
-  margin-top: 50px;
+  margin-top: 66px;
   text-align: center;
 }
 
-.orderMenu li {
+.orderMenu li,
+.meatballMenu li {
   cursor: pointer;
   font-weight: 500;
   font-size: 14px;

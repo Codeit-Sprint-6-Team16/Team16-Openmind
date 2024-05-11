@@ -18,6 +18,12 @@
   border: 1px solid var(--color-gray40);
 }
 
+.AnswerState.red {
+  width: 78px;
+  color: var(--color-red);
+  border: 1px solid var(--color-red);
+}
+
 @media all and (max-width: 767px) {
   .AnswerState {
     margin-bottom: 24px;

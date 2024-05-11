@@ -8,6 +8,7 @@
   border: 1px solid #818181;
   border-radius: 16px;
   padding: 20px;
+  box-shadow: 0px 2px 5px 0px #cfcfcf;
 }
 
 .card_profile {

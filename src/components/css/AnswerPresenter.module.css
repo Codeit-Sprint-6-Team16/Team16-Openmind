@@ -35,6 +35,10 @@
   font-size: 16px;
 }
 
+.isRejected {
+  color: red;
+}
+
 @media all and (max-width: 767px) {
   .FeedAnswerContent {
     margin-bottom: 24px;

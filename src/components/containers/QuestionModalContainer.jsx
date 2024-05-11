@@ -27,9 +27,10 @@ function QuestionModalContainer() {
 
   const sendQuestion = async (value) => {
     try {
-      const response = await postQuestion(profile.id, value);
+      const response = await postQuestion(id, value);
       alert('질문 추가됨');
       setIsOpen(false);
+      window.location.reload();
     } catch (error) {
       if (error.name === 'TypeError') {
         return console.log(error.name);
@@ -38,9 +39,6 @@ function QuestionModalContainer() {
       }
     }
   };
-
-  // let { id } = useParams();
-  // console.log(id);
 
   const openModalHandler = () => {
     setIsOpen(true);

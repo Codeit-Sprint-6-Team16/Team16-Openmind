@@ -33,6 +33,10 @@
   gap: 8px;
 }
 
+.isRejected {
+  color: var(--color-red);
+}
+
 @media all and (max-width: 767px) {
   .AnswerForm {
     margin-bottom: 24px;

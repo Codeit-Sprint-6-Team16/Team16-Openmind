@@ -4,7 +4,7 @@ import styles from '@css/Reaction.module.css';
 
 const ReactionPresenter = ({ question }) => {
   return (
-    <div className={styles.LikeDislike}>
+    <div className={styles.Reaction}>
       <button className={styles.reactionButton}>
         <img src={likeGray} alt="좋아요" />
         <p>좋아요 {question.like > 0 ? question.like : ''}</p>

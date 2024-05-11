@@ -4,10 +4,10 @@ import styles from '@css/Loading.module.css';
 function Loading() {
   return (
     <div className={styles.loading}>
-      <p className={styles.text}>
+      <div className={styles.text}>
         Loading&nbsp;
         <div className={styles.loader}></div>
-      </p>
+      </div>
       <img className={styles.spinner} src={spinner} alt="로딩중"></img>
     </div>
   );

@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { postAnswer } from '@services/api/post';
 import { patchAnswer } from '@services/api/putch';
 import AnswerForm from '@ui/AnswerForm';
+import AnswerPresenter from '@ui/AnswerPresenter';
 import { ButtonClickedContext } from '@utils/ButtonClickedContext';
 
 const AnswerFormContainer = ({ question, profile, editMode, setEditMode }) => {
@@ -56,13 +57,15 @@ const AnswerFormContainer = ({ question, profile, editMode, setEditMode }) => {
       {!question?.answer && (
         <AnswerForm
           profile={profile}
-          isRejected={question.answer.isRejected}
+          isRejected={question.answer?.isRejected}
           content={content}
           onChange={onChangeTextAreaHandler}
           onClick={submitAnswerHandler}
         />
       )}
-      {question.answer && !editMode && <div>{question.answer.content}</div>}
+      {question.answer && !editMode && (
+        <AnswerPresenter question={question} profile={profile} />
+      )}
       {editMode && (
         <AnswerForm
           profile={profile}

@@ -7,7 +7,13 @@ const AnswerState = ({ question }) => {
     <div
       className={`${styles.AnswerState} ${answer === null ? styles.gray : styles.brown}`}
     >
-      <p>{answer === null ? '미답변' : '답변 완료'}</p>
+      <p>
+        {answer === null
+          ? '미답변'
+          : answer.isRejected
+            ? '답변 거절'
+            : '답변 완료'}
+      </p>
     </div>
   );
 };

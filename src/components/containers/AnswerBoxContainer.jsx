@@ -54,7 +54,7 @@ const AnswerBoxContainer = ({ question, profile }) => {
 
   const rejectAnswer = async () => {
     try {
-      const result = await postAnswer(question.id, '답변거절되었습니다.', true);
+      const result = await postAnswer(question.id, '답변 거절', true);
     } catch (error) {
       if (error.name === 'TypeError') alert(error.message);
       else if (error.name === 'HttpError') alert(error.status);

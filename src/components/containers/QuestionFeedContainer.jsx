@@ -83,7 +83,12 @@ function QuestionFeedContainer() {
   return (
     <>
       {questionList && profile && (
-        <QuestionFeed questionList={questionList} profile={profile} />
+        <QuestionFeed
+          questionList={questionList}
+          profile={profile}
+          loadProfile={loadProfile}
+          loadQuestions={loadQuestions}
+        />
       )}
       <div ref={target}></div>
     </>

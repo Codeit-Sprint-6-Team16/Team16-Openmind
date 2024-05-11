@@ -9,7 +9,7 @@ import { ButtonClickedContext } from '@utils/ButtonClickedContext';
 const AnswerBoxContainer = ({ question, profile }) => {
   const [editMode, setEditMode] = useState(false);
   const setButtonClicked = useContext(ButtonClickedContext);
-  console.log(question);
+
   // const [isLoading, setIsLoading] = useState(false);
   /* 
   받아야 될 데이터
@@ -88,7 +88,7 @@ const AnswerBoxContainer = ({ question, profile }) => {
   };
 
   const editAnswerHandler = () => {
-    if (!question.answer.isRejected && question.answer !== null) {
+    if (question.answer !== null) {
       setEditMode(true);
     }
   };
@@ -101,7 +101,7 @@ const AnswerBoxContainer = ({ question, profile }) => {
     }
   };
   const rejectQuestionHandler = () => {
-    if (!question.answer.content) {
+    if (!question.answer) {
       rejectAnswer();
     }
   };

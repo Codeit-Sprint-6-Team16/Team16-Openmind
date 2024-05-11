@@ -6,6 +6,7 @@ import AnswerForm from '@ui/AnswerForm';
 import { ButtonClickedContext } from '@utils/ButtonClickedContext';
 
 const AnswerFormContainer = ({ question, profile, editMode, setEditMode }) => {
+  console.log(question);
   const setButtonClicked = useContext(ButtonClickedContext);
   const [content, setContent] = useState('');
   const onChangeTextAreaHandler = (e) => {
@@ -27,6 +28,7 @@ const AnswerFormContainer = ({ question, profile, editMode, setEditMode }) => {
       const result = await patchAnswer({
         answerId: question.answer.id,
         content: content,
+        isRejected: false,
       });
     } catch (error) {
       if (error.name === 'TypeError') alert(error.message);
@@ -44,6 +46,7 @@ const AnswerFormContainer = ({ question, profile, editMode, setEditMode }) => {
   };
   useEffect(() => {
     if (editMode) {
+      console.log(editMode);
       setContent(question.answer.content);
     }
   }, [editMode]);

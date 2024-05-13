@@ -1,7 +1,7 @@
 .box {
   width: 720px;
   margin: 0 auto;
-  padding: 145px 0 24px;
+  padding-top: 145px;
 }
 
 @media all and (max-width: 767px) {

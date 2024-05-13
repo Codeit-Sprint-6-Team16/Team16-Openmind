@@ -7,7 +7,7 @@ import { isTabletMini } from '@utils/windowSize';
 
 function ProfileListBoxContainer() {
   const [profileList, setProfileList] = useState([]);
-  const [order, setOrder] = useState('name');
+  const [order, setOrder] = useState('time');
   const [limit, setLimit] = useState(() => (isTabletMini() ? 6 : 8));
   const [offset, setOffset] = useState(0);
   const [pages, setPages] = useState([]);

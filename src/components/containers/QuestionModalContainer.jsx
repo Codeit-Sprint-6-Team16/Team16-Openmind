@@ -13,7 +13,7 @@ function QuestionModalContainer({ profile, loadProfile, loadQuestions }) {
   const sendQuestion = async (value) => {
     try {
       const response = await postQuestion(id, value);
-      alert('질문 추가됨');
+      // alert('질문 추가됨');
       setIsOpen(false);
       loadProfile();
       loadQuestions({

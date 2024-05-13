@@ -4,9 +4,8 @@
   padding: 145px 0 24px;
 }
 
-@media all and (max-width: 719px) {
+@media all and (max-width: 767px) {
   .box {
-    width: auto;
-    margin: 0 24px;
+    width: 100%;
   }
 }

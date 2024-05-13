@@ -1,4 +1,5 @@
 import Button from './Button';
+import EmptyItemImage from './EmptyItemImage';
 import Feed from './Feed';
 import FeedBox from './FeedBox';
 import QuestionCount from './QuestionCount';
@@ -23,6 +24,7 @@ function AnswerFeed({ questionList, profile, removeIdHandler }) {
             key={question.id}
           />
         ))}
+        {!profile.questionCount ? <EmptyItemImage /> : null}
       </Feed>
     </FeedBox>
   );

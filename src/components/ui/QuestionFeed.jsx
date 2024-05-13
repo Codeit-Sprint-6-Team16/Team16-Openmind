@@ -1,3 +1,4 @@
+import EmptyItemImage from './EmptyItemImage';
 import FeedBox from './FeedBox';
 import QuestionBox from './QuestionBox';
 import QuestionCount from './QuestionCount';
@@ -24,6 +25,7 @@ function QuestionFeed({ questionList, profile, loadProfile, loadQuestions }) {
             key={question.id}
           />
         ))}
+        {!profile.questionCount ? <EmptyItemImage /> : null}
       </Feed>
     </FeedBox>
   );

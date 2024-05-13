@@ -1,5 +1,5 @@
-import spinner from '@assets/spinner.gif';
 import styles from '@css/Loading.module.css';
+import spinner from '@assets/spinner.gif';
 
 function Loading() {
   return (

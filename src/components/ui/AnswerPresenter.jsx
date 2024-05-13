@@ -1,5 +1,5 @@
-import styles from '@css/AnswerPresenter.module.css';
 import { elapsedTime } from '@utils/calculateTimeDifference';
+import styles from '@css/AnswerPresenter.module.css';
 
 const AnswerPresenter = ({ question, profile }) => {
   const { imageSource, name, createdAt } = profile;

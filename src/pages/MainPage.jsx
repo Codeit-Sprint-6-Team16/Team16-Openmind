@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-
-import IdFormContainer from '@containers/IdFormContainer';
 import styles from '@pages/MainPage.module.css';
+import IdFormContainer from '@containers/IdFormContainer';
 import Button from '@ui/Button';
 import Logo from '@ui/Logo';
 

@@ -1,5 +1,5 @@
-import arrowRightIcon from '@assets/ic_arrow_right.svg';
 import styles from '@css/Button.module.css';
+import arrowRightIcon from '@assets/ic_arrow_right.svg';
 
 const Button = ({ onClick, isDisabled, children, variant, type, size }) => {
   const buttonClassName = `${styles.button} ${styles[variant] || ''}`;

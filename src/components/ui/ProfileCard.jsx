@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
-
-import messageIcon from '@assets/image_messages_icon.svg';
 import styles from '@css/ProfileCard.module.css';
+import messageIcon from '@assets/image_messages_icon.svg';
 
 const ProfileCard = ({ profile }) => {
   return (

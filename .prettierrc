@@ -8,7 +8,6 @@
   "importOrder": [
     "^react",
     "<THIRD_PARTY_MODULES>",
-    "^(.*)$",
     "^@pages/(.*)$",
     "^@containers/(.*)$",
     "^@ui/(.*)$",
@@ -18,6 +17,5 @@
     "^@assets/(.*)$",
     "^[./]"
   ],
-  "importOrderSeparation": true,
-  "importOrderSortSpecifiers": true
+  "importOrderSeparation": false
 }

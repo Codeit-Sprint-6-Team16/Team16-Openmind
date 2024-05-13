@@ -1,5 +1,5 @@
-import styles from '@css/ProfileList.module.css';
 import ProfileCard from '@ui/ProfileCard';
+import styles from '@css/ProfileList.module.css';
 
 const ProfileList = ({ profileList }) => {
   return (

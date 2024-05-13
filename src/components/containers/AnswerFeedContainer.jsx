@@ -1,10 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-
+import AnswerFeed from '@ui/AnswerFeed';
 import { deleteProfile } from '@api/delete';
 import { alertError } from '@api/error';
 import { getProfile, getQuestionList } from '@api/get.js';
-import AnswerFeed from '@ui/AnswerFeed';
 import { ButtonClickedContext } from '@utils/ButtonClickedContext';
 
 const AnswerFeedContainer = () => {

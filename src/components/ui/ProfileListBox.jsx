@@ -1,7 +1,7 @@
 import OrderMenuContainer from '@containers/OrderMenuContainer';
-import styles from '@css/ProfileListBox.module.css';
 import PaginationBar from '@ui/PaginationBar';
 import ProfileList from '@ui/ProfileList';
+import styles from '@css/ProfileListBox.module.css';
 
 const ProfileListBox = ({
   profileList,

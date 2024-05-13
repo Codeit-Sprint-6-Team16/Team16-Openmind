@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-import { postId } from '@api/post';
 import Button from '@ui/Button';
 import IdForm from '@ui/IdForm';
 import Input from '@ui/Input';
+import { postId } from '@api/post';
 
 const IdFormContainer = () => {
   const [name, setName] = useState('');

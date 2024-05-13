@@ -1,9 +1,8 @@
 import { useContext, useState } from 'react';
-
+import AnswerBox from '@ui/AnswerBox';
 import { deleteAnswer, deleteQuestion } from '@api/delete';
 import { alertError } from '@api/error';
 import { postAnswer } from '@api/post';
-import AnswerBox from '@ui/AnswerBox';
 import { ButtonClickedContext } from '@utils/ButtonClickedContext';
 
 const AnswerBoxContainer = ({ question, profile }) => {

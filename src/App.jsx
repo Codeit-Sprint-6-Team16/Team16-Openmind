@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
 import AnswerPage from '@pages/AnswerPage';
 import ListPage from '@pages/ListPage';
 import MainPage from '@pages/MainPage';

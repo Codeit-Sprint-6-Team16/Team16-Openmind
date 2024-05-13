@@ -74,7 +74,7 @@ function QuestionFeedContainer() {
 
   useEffect(() => {
     loadProfile();
-    const observer = new IntersectionObserver(callback, { threshold: 1.0 });
+    const observer = new IntersectionObserver(callback, { threshold: 0 });
     observer.observe(target.current);
 
     return () => {
@@ -83,7 +83,7 @@ function QuestionFeedContainer() {
   }, []);
 
   return (
-    <>
+    <div style={{ paddingBottom: 44 }}>
       {errorMessage && <div>{errorMessage}</div>}
       {questionList && profile && (
         <QuestionFeed
@@ -94,7 +94,7 @@ function QuestionFeedContainer() {
         />
       )}
       <div ref={target}></div>
-    </>
+    </div>
   );
 }
 

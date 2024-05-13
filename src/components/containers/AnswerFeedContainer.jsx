@@ -97,7 +97,7 @@ const AnswerFeedContainer = () => {
   }, []);
 
   return (
-    <>
+    <div style={{ paddingBottom: 44 }}>
       {errorMessage && <div>{errorMessage}</div>}
       <ButtonClickedContext.Provider value={setButtonClicked}>
         <AnswerFeed
@@ -108,7 +108,7 @@ const AnswerFeedContainer = () => {
         />
       </ButtonClickedContext.Provider>
       <div ref={target}></div>
-    </>
+    </div>
   );
 };
 

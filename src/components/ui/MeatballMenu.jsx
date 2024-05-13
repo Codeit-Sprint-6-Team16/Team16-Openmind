@@ -1,5 +1,5 @@
-import meatballImg from '../../assets/images/ic_meatball.svg';
-import styles from '../css/ToggleMenu.module.css';
+import meatballImg from '@assets/ic_meatball.svg';
+import styles from '@css/ToggleMenu.module.css';
 
 const MeatballMenu = ({ isOpen, onToggleMenu, onClick }) => {
   return (
@@ -10,23 +10,26 @@ const MeatballMenu = ({ isOpen, onToggleMenu, onClick }) => {
 
       {isOpen && (
         <ul className={styles.popup}>
-          <li className={styles.disabled} onClick={() => onClick('edit')}>
+          <li
+            className={`${styles['disabled-meatball']} ${styles['disabled-edit']}`}
+            onClick={() => onClick('edit')}
+          >
             수정하기
           </li>
           <li
-            className={styles.disabled}
+            className={`${styles['disabled-meatball']} ${styles['disabled-x']}`}
             onClick={() => onClick('deleteAnswer')}
           >
             답변삭제
           </li>
           <li
-            className={styles.disabled}
+            className={`${styles['disabled-meatball']} ${styles['disabled-x']}`}
             onClick={() => onClick('rejectAnswer')}
           >
             답변거절
           </li>
           <li
-            className={styles.disabled}
+            className={`${styles['disabled-meatball']} ${styles['disabled-x']}`}
             onClick={() => onClick('deleteQuestion')}
           >
             질문삭제

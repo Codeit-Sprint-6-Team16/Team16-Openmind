@@ -1,4 +1,4 @@
-import messageIconBrown from '@assets/images/image_messages_icon_brown.svg';
+import messageIconBrown from '@assets/image_messages_icon_brown.svg';
 import styles from '@css/QuestionCount.module.css';
 
 const QuestionCount = ({ profile }) => {

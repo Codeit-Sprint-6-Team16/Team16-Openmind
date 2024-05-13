@@ -1,6 +1,5 @@
 .profileWrap {
-  background: var(--color-white) url('../../assets/images/profile_bg.jpg')
-    no-repeat bottom;
+  background: var(--color-white) url('@assets/profile_bg.jpg') no-repeat bottom;
   padding-top: 234px;
   position: relative;
 }

@@ -49,6 +49,29 @@ li.disabled {
   padding: 6px 16px 6px 16px;
 }
 
+li.disabled-meatball {
+  user-select: none;
+  padding: 6px 16px 6px 38px;
+  background-repeat: no-repeat;
+  background-position: 16px;
+}
+
+li.disabled-edit {
+  background-image: url('@assets/ic_edit_black.svg');
+}
+
+li.disabled-edit:hover {
+  background-image: url('@assets/ic_edit_blue.svg');
+}
+
+li.disabled-x {
+  background-image: url('@assets/ic_x_black.svg');
+}
+
+li.disabled-x:hover {
+  background-image: url('@assets/ic_x_blue.svg');
+}
+
 li:hover {
   color: var(--color-blue);
 }

@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { postQuestion } from '@services/api/post';
+import { alertError } from '@api/error';
+import { postQuestion } from '@api/post';
 import Button from '@ui/Button';
 import QuestionModal from '@ui/QuestionModal';
 
@@ -22,11 +23,7 @@ function QuestionModalContainer({ profile, loadProfile, loadQuestions }) {
       });
       setContent('');
     } catch (error) {
-      if (error.name === 'TypeError') {
-        return console.log(error.name);
-      } else if (error.name) {
-        console.log(error.status);
-      }
+      alertError(error);
     }
   };
 

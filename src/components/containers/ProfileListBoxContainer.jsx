@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { getAnswerers } from '@services/api/get.js';
+import { getAnswerers } from '@api/get.js';
 import Loading from '@ui/Loading';
 import ProfileListBox from '@ui/ProfileListBox';
 import { isTabletMini } from '@utils/windowSize';
@@ -13,6 +13,7 @@ function ProfileListBoxContainer() {
   const [pages, setPages] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const loadProfiles = async (options) => {
     try {
@@ -22,9 +23,9 @@ function ProfileListBoxContainer() {
       loadPagination(response.count);
     } catch (error) {
       if (error.name === 'TypeError') {
-        return console.log(error.name);
-      } else if (error.name) {
-        console.log(error.status);
+        setErrorMessage('네트워크를 확인하세요');
+      } else if (error.name === 'HttpError') {
+        setErrorMessage(error.status);
       }
     } finally {
       setIsLoading(false);
@@ -70,14 +71,17 @@ function ProfileListBoxContainer() {
   }, [order, limit, offset]);
 
   return !isLoading ? (
-    <ProfileListBox
-      profileList={profileList}
-      order={order}
-      onOrderClick={orderClickHandler}
-      onPaginationClick={paginationClickHandler}
-      pages={pages}
-      currentPage={currentPage}
-    />
+    <>
+      {errorMessage && <div>{errorMessage}</div>}
+      <ProfileListBox
+        profileList={profileList}
+        order={order}
+        onOrderClick={orderClickHandler}
+        onPaginationClick={paginationClickHandler}
+        pages={pages}
+        currentPage={currentPage}
+      />
+    </>
   ) : (
     <Loading />
   );

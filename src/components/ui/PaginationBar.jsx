@@ -1,4 +1,4 @@
-import styles from '../css/PaginationBar.module.css';
+import styles from '@css/PaginationBar.module.css';
 
 const PaginationBar = ({ onClick, pages, currentPage }) => {
   return (

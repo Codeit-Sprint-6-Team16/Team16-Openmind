@@ -1,8 +1,8 @@
-import AnswerPresenter from './AnswerPresenter';
-import AnswerState from './AnswerState';
-import FeedCard from './FeedCard';
-import QuestionName from './QuestionName';
 import ReactionContainer from '@containers/ReactionContainer';
+import AnswerPresenter from '@ui/AnswerPresenter';
+import AnswerState from '@ui/AnswerState';
+import FeedCard from '@ui/FeedCard';
+import QuestionName from '@ui/QuestionName';
 
 const QuestionBox = ({ question, profile }) => {
   return (

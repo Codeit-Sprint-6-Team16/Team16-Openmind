@@ -1,28 +1,26 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
+import { deleteProfile } from '@api/delete';
+import { alertError } from '@api/error';
 import { getProfile, getQuestionList } from '@api/get.js';
-import { deleteProfile } from '@services/api/delete';
 import AnswerFeed from '@ui/AnswerFeed';
 import { ButtonClickedContext } from '@utils/ButtonClickedContext';
 
-const options = {
-  threshold: 0,
-};
 const AnswerFeedContainer = () => {
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(false);
-  const [questionList, setQuestionList] = useState([]); // questionList로 통일!
+  const [questionList, setQuestionList] = useState([]);
   const [profile, setProfile] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
   const [buttonClicked, setButtonClicked] = useState(false);
   const [limit, setLimit] = useState(3);
   const target = useRef();
-
-  let num = 0;
   const navigation = useNavigate();
 
-  const getQuestions = async (limit) => {
+  let preventFirst = 0;
+
+  const loadQuestions = async (limit) => {
     try {
       setIsLoading(true);
       const questionsData = await getQuestionList(id, 0, limit);
@@ -39,61 +37,62 @@ const AnswerFeedContainer = () => {
     }
   };
 
-  const deleteAnswerer = async () => {
-    try {
-      const result = await deleteProfile(id);
-      localStorage.removeItem('ID');
-      navigation('/');
-    } catch (error) {
-      if (error.name === 'TypeError') alert(error.message);
-      else if (error.name === 'HttpError') alert(error.status);
-    }
-  };
-  const removeIdHandler = () => {
-    if (!confirm('ID를 정말로 삭제 하시겠습니까?')) {
-    } else {
-      deleteAnswerer();
-    }
-  };
-
   const loadProfile = async () => {
     try {
       const response = await getProfile(id);
       setProfile(response);
     } catch (error) {
       if (error.name === 'TypeError') {
-        return console.log(error.name);
-      } else if (error.name) {
-        console.log(error.status);
+        setErrorMessage('네트워크를 확인하세요');
+      } else if (error.name === 'HttpError') {
+        setErrorMessage(error.status);
       }
     }
   };
 
+  const deleteAnswerer = async () => {
+    try {
+      const result = await deleteProfile(id);
+      localStorage.removeItem('ID');
+      navigation('/');
+    } catch (error) {
+      alertError(error);
+    }
+  };
+
   const callback = (entry) => {
-    if (!isLoading && entry[0].isIntersecting && num > 0) {
+    if (!isLoading && entry[0].isIntersecting && preventFirst > 0) {
       setLimit((prev) => prev + 3);
     }
-    num++;
+    preventFirst++;
+  };
+
+  const removeIdHandler = () => {
+    if (confirm('ID를 정말로 삭제 하시겠습니까?')) {
+      deleteAnswerer();
+    } else {
+      return;
+    }
   };
 
   useEffect(() => {
-    getQuestions(limit);
+    loadQuestions(limit);
     loadProfile();
   }, [buttonClicked]);
 
   useEffect(() => {
     if (!isLoading) {
-      getQuestions(limit);
+      loadQuestions(limit);
     }
   }, [limit]);
 
   useEffect(() => {
     loadProfile();
-    const observer = new IntersectionObserver(callback, options);
+    const observer = new IntersectionObserver(callback, { threshold: 0 });
     observer.observe(target.current);
 
     return () => {
-      observer.disconnect(); // 컴포넌트가 언마운트될 때 관찰자 해제
+      observer.disconnect();
     };
   }, []);
 

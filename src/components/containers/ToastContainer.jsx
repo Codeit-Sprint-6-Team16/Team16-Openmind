@@ -12,7 +12,7 @@ function ToastContainer() {
       setToast(true);
       setTimeout(() => setToast(false), 5000);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 

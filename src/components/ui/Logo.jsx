@@ -1,4 +1,4 @@
-import LogoIcon from '../../assets/images/logo.png';
+import LogoIcon from '@assets/logo.png';
 import styles from '@css/Logo.module.css';
 
 function Logo({ logoSize }) {

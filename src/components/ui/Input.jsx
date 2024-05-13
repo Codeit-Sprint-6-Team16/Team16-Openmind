@@ -1,4 +1,4 @@
-import personIcon from '../../assets/images/icon_person.svg';
+import personIcon from '@assets/ic_person.svg';
 import styles from '@css/Input.module.css';
 
 function Input({ name, onChangeHandler }) {

@@ -1,13 +1,12 @@
-import Button from './Button';
-import EmptyItemImage from './EmptyItemImage';
-import Feed from './Feed';
-import FeedBox from './FeedBox';
-import QuestionCount from './QuestionCount';
 import AnswerBoxContainer from '@containers/AnswerBoxContainer';
 import styles from '@css/AnswerFeed.module.css';
+import Button from '@ui/Button';
+import EmptyItemImage from '@ui/EmptyItemImage';
+import Feed from '@ui/Feed';
+import FeedBox from '@ui/FeedBox';
+import QuestionCount from '@ui/QuestionCount';
 
 function AnswerFeed({ questionList, profile, removeIdHandler }) {
-  console.log(questionList);
   return (
     <FeedBox>
       <div className={styles.right}>

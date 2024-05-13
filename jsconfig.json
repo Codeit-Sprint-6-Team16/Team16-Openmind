@@ -6,8 +6,7 @@
       "@ui/*": ["src/components/ui/*"],
       "@css/*": ["src/components/css/*"],
       "@pages/*": ["src/pages/*"],
-      "@services/*": ["src/services/*"],
-      "@api/*": ["src/services/api/*"],
+      "@api/*": ["src/api/*"],
       "@utils/*": ["src/utils/*"],
       "@assets/*": ["src/assets/*"]
     }

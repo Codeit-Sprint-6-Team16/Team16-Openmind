@@ -1,7 +1,8 @@
 import { useContext, useState } from 'react';
 
-import { deleteAnswer, deleteQuestion } from '@services/api/delete';
-import { postAnswer } from '@services/api/post';
+import { deleteAnswer, deleteQuestion } from '@api/delete';
+import { alertError } from '@api/error';
+import { postAnswer } from '@api/post';
 import AnswerBox from '@ui/AnswerBox';
 import { ButtonClickedContext } from '@utils/ButtonClickedContext';
 
@@ -11,10 +12,9 @@ const AnswerBoxContainer = ({ question, profile }) => {
 
   const removeQuestion = async () => {
     try {
-      const result = await deleteQuestion(question.id);
+      await deleteQuestion(question.id);
     } catch (error) {
-      if (error.name === 'TypeError') alert(error.message);
-      else if (error.name === 'HttpError') alert(error.status);
+      alertError(error);
     } finally {
       setButtonClicked(true);
     }
@@ -22,10 +22,9 @@ const AnswerBoxContainer = ({ question, profile }) => {
 
   const removeAnswer = async () => {
     try {
-      const result = await deleteAnswer(question.answer.id);
+      await deleteAnswer(question.answer.id);
     } catch (error) {
-      if (error.name === 'TypeError') alert(error.message);
-      else if (error.name === 'HttpError') alert(error.status);
+      alertError(error);
     } finally {
       setButtonClicked(true);
     }
@@ -33,10 +32,9 @@ const AnswerBoxContainer = ({ question, profile }) => {
 
   const rejectAnswer = async () => {
     try {
-      const result = await postAnswer(question.id, '답변 거절됨', true);
+      await postAnswer(question.id, '답변 거절됨', true);
     } catch (error) {
-      if (error.name === 'TypeError') alert(error.message);
-      else if (error.name === 'HttpError') alert(error.status);
+      alertError(error);
     } finally {
       setButtonClicked(true);
     }
@@ -45,15 +43,12 @@ const AnswerBoxContainer = ({ question, profile }) => {
   const meatballMenuHandler = (optionsValue) => {
     switch (optionsValue) {
       case 'edit':
-      ;
         editAnswerHandler();
         break;
       case 'deleteAnswer':
-       
         removeAnswerHandler();
         break;
       case 'rejectAnswer':
-        
         rejectQuestionHandler();
         break;
       case 'deleteQuestion':

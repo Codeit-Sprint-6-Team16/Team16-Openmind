@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-import { postReaction } from '@services/api/post';
+import { alertError } from '@api/error';
+import { postReaction } from '@api/post';
 import Reaction from '@ui/Reaction';
 
 function ReactionContainer({ question }) {
@@ -14,12 +15,7 @@ function ReactionContainer({ question }) {
       const response = await postReaction(question.id, type);
       type === 'like' ? setLike(response.like) : setDislike(response.dislike);
     } catch (error) {
-      console.error(error);
-      if (error.name === 'TypeError') {
-        return console.log(error.name);
-      } else if (error.name) {
-        console.log(error.status);
-      }
+      alertError(error);
     }
   };
 

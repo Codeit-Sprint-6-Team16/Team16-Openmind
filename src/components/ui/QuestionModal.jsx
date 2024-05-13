@@ -24,7 +24,7 @@ function QuestionModal({ profile, closeModal, value, onSubmit, onChange }) {
         </div>
         <Textarea
           placeholder={'질문을 입력해주세요'}
-          value={value}
+          content={value}
           onChange={onChange}
         />
         <Button variant={'fill'} onClick={onSubmit} isDisabled={!value}>

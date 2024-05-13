@@ -14,7 +14,7 @@ function AnswerForm({ profile, onClick, onChange, content }) {
         <div className={styles.section_name}>{name}</div>
         <div className={styles.form}>
           <Textarea
-            value={content}
+            content={content}
             placeholder="답변을 입력해주세요"
             onChange={onChange}
           />

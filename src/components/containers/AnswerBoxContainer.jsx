@@ -45,19 +45,18 @@ const AnswerBoxContainer = ({ question, profile }) => {
   const meatballMenuHandler = (optionsValue) => {
     switch (optionsValue) {
       case 'edit':
-        console.log('edit');
+      ;
         editAnswerHandler();
         break;
       case 'deleteAnswer':
-        console.log('removeAnswer');
+       
         removeAnswerHandler();
         break;
       case 'rejectAnswer':
-        console.log('rejectQuestion');
+        
         rejectQuestionHandler();
         break;
       case 'deleteQuestion':
-        console.log('removeQuestion');
         removeQuestionHandler();
         break;
 

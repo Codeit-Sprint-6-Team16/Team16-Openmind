@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
-
-import { getProfile, getQuestionList } from '@api/get.js';
 import QuestionFeed from '@ui/QuestionFeed';
+import { getProfile, getQuestionList } from '@api/get.js';
 
 function QuestionFeedContainer() {
   const [questionList, setQuestionList] = useState([]);

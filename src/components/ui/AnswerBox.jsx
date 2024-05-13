@@ -1,10 +1,10 @@
 import AnswerFormContainer from '@containers/AnswerFormContainer';
 import MeatballMenuContainer from '@containers/MeatballMenuContainer';
-import styles from '@css/AnswerBox.module.css';
 import AnswerState from '@ui/AnswerState';
 import FeedCard from '@ui/FeedCard';
 import QuestionName from '@ui/QuestionName';
 import ReactionPresenter from '@ui/ReactionPresenter';
+import styles from '@css/AnswerBox.module.css';
 
 const AnswerBox = ({
   profile,

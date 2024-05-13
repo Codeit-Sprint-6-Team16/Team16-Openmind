@@ -1,10 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
-
+import AnswerForm from '@ui/AnswerForm';
+import AnswerPresenter from '@ui/AnswerPresenter';
 import { alertError } from '@api/error';
 import { patchAnswer } from '@api/patch';
 import { postAnswer } from '@api/post';
-import AnswerForm from '@ui/AnswerForm';
-import AnswerPresenter from '@ui/AnswerPresenter';
 import { ButtonClickedContext } from '@utils/ButtonClickedContext';
 
 const AnswerFormContainer = ({ question, profile, editMode, setEditMode }) => {

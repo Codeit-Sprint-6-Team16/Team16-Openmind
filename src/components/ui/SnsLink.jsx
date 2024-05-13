@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom';
-
+import styles from '@css/SnsLink.module.css';
 import facebookImage from '@assets/image_facebook.svg';
 import kakaoImage from '@assets/image_kakao.svg';
 import linkImage from '@assets/image_link.svg';
-import styles from '@css/SnsLink.module.css';
 
 const SnsLink = ({ onClick }) => {
   return (

@@ -1,5 +1,5 @@
-import arrowUpImg from '@assets/ic_arrow_up.svg';
 import styles from '@css/ToggleMenu.module.css';
+import arrowUpImg from '@assets/ic_arrow_up.svg';
 
 const OrderMenu = ({ isOpen, onToggleMenu, onClick, order }) => {
   return (

@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
-
+import styles from '@pages/ListPage.module.css';
 import ProfileListBoxContainer from '@containers/ProfileListBoxContainer';
 import ReplyButtonContainer from '@containers/ReplyButtonContainer';
-import styles from '@pages/ListPage.module.css';
 import Logo from '@ui/Logo';
 
 function ListPage() {

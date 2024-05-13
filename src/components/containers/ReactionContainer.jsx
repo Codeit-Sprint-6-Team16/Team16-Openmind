@@ -1,8 +1,7 @@
 import { useState } from 'react';
-
+import Reaction from '@ui/Reaction';
 import { alertError } from '@api/error';
 import { postReaction } from '@api/post';
-import Reaction from '@ui/Reaction';
 
 function ReactionContainer({ question }) {
   const [like, setLike] = useState(question.like);

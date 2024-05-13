@@ -1,10 +1,10 @@
 import QuestionModalContainer from '@containers/QuestionModalContainer';
-import styles from '@css/QuestionFeed.module.css';
 import EmptyItemImage from '@ui/EmptyItemImage';
 import Feed from '@ui/Feed';
 import FeedBox from '@ui/FeedBox';
 import QuestionBox from '@ui/QuestionBox';
 import QuestionCount from '@ui/QuestionCount';
+import styles from '@css/QuestionFeed.module.css';
 
 function QuestionFeed({ questionList, profile, loadProfile, loadQuestions }) {
   return (

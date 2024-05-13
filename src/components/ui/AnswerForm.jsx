@@ -1,6 +1,6 @@
-import styles from '@css/AnswerForm.module.css';
 import Button from '@ui/Button';
 import Textarea from '@ui/Textarea';
+import styles from '@css/AnswerForm.module.css';
 
 function AnswerForm({ profile, onClick, onChange, content }) {
   const { imageSource, name } = profile;

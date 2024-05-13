@@ -1,5 +1,5 @@
-import LogoIcon from '@assets/logo.png';
 import styles from '@css/Logo.module.css';
+import LogoIcon from '@assets/logo.png';
 
 function Logo({ logoSize }) {
   return (

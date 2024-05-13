@@ -1,5 +1,5 @@
-import personIcon from '@assets/ic_person.svg';
 import styles from '@css/Input.module.css';
+import personIcon from '@assets/ic_person.svg';
 
 function Input({ name, onChangeHandler }) {
   return (

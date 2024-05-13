@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
-
-import { getAnswerers } from '@api/get.js';
 import Loading from '@ui/Loading';
 import ProfileListBox from '@ui/ProfileListBox';
+import { getAnswerers } from '@api/get.js';
 import { isTabletMini } from '@utils/windowSize';
 
 function ProfileListBoxContainer() {

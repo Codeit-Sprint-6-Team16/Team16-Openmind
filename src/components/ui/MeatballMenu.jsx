@@ -1,5 +1,5 @@
-import meatballImg from '@assets/ic_meatball.svg';
 import styles from '@css/ToggleMenu.module.css';
+import meatballImg from '@assets/ic_meatball.svg';
 
 const MeatballMenu = ({ isOpen, onToggleMenu, onClick }) => {
   return (

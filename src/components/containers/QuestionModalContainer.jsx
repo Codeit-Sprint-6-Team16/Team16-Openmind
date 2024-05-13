@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
-
-import { alertError } from '@api/error';
-import { postQuestion } from '@api/post';
 import Button from '@ui/Button';
 import QuestionModal from '@ui/QuestionModal';
+import { alertError } from '@api/error';
+import { postQuestion } from '@api/post';
 
 function QuestionModalContainer({ profile, loadProfile, loadQuestions }) {
   const [isOpen, setIsOpen] = useState(false);

@@ -1,8 +1,8 @@
-import EscIcon from '@assets/ic_esc.svg';
-import QuestionIcon from '@assets/ic_question.svg';
-import styles from '@css/QuestionModal.module.css';
 import Button from '@ui/Button';
 import Textarea from '@ui/Textarea';
+import styles from '@css/QuestionModal.module.css';
+import EscIcon from '@assets/ic_esc.svg';
+import QuestionIcon from '@assets/ic_question.svg';
 
 function QuestionModal({ profile, closeModal, content, onSubmit, onChange }) {
   return (

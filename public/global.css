@@ -65,7 +65,6 @@ a {
   min-width: 320px;
   min-height: 100vh;
   margin: 0 auto;
-  padding-bottom: 20px;
   background: var(--color-gray20);
 }
 .inner {
@@ -85,8 +84,5 @@ a {
 @media all and (max-width: 767px) {
   .inner {
     margin: 0 24px;
-  }
-  .inner.inner_main {
-    margin-top: 80px;
   }
 }

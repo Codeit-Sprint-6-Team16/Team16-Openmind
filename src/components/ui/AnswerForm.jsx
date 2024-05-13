@@ -1,7 +1,6 @@
-import Button from './Button';
-import Textarea from './Textarea';
-// import image from '@assets/images/image_profile.svg';
 import styles from '@css/AnswerForm.module.css';
+import Button from '@ui/Button';
+import Textarea from '@ui/Textarea';
 
 function AnswerForm({ profile, onClick, onChange, content }) {
   const { imageSource, name } = profile;
@@ -11,7 +10,7 @@ function AnswerForm({ profile, onClick, onChange, content }) {
       <div className={styles.section_image}>
         <img src={imageSource} />
       </div>
-      <div className={styles.formBox}>
+      <div className={styles.form_box}>
         <div className={styles.section_name}>{name}</div>
         <div className={styles.form}>
           <Textarea

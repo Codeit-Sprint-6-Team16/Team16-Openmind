@@ -12,7 +12,9 @@ const AnswerPresenter = ({ question, profile }) => {
       <div>
         <div className={styles.section_profile}>
           <div className={styles.section_profile_name}>{name}</div>
-          <p className={styles.section_weeks}>{elapsedTime(createdAt)}</p>
+          <p className={styles.section_elapsed_time}>
+            {elapsedTime(createdAt)}
+          </p>
         </div>
         {
           <div

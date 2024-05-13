@@ -25,7 +25,7 @@
   font-family: 'Actor';
 }
 
-.section_weeks {
+.section_elapsed_time {
   font-size: 14px;
   font-weight: 500;
   color: var(--color-gray40);
@@ -53,7 +53,7 @@
     font-size: 14px;
   }
 
-  .section_weeks {
+  .section_elapsed_time {
     font-weight: 500;
   }
 }

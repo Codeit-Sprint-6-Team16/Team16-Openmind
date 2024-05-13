@@ -1,18 +1,18 @@
 import { Link } from 'react-router-dom';
 
-import messageIcon from '../../assets/images/image_messages_icon.svg';
+import messageIcon from '@assets/images/image_messages_icon.svg';
 import styles from '@css/ProfileCard.module.css';
 
 const ProfileCard = ({ profile }) => {
   return (
-    <Link to={`/post/${profile.id}`} className={styles.Card}>
-      <div className={styles.card_profile}>
+    <Link to={`/post/${profile.id}`} className={styles.ProfileCard}>
+      <div className={styles.section_profile}>
         <img src={profile.imageSource} />
         <p>{profile.name}</p>
       </div>
-      <div className={styles.card_content}>
+      <div className={styles.section_content}>
         <img src={messageIcon} />
-        <span className={styles.card_content_text}>받은 질문</span>
+        <span className={styles.section_content_text}>받은 질문</span>
         <span>{profile.questionCount}</span>
       </div>
     </Link>

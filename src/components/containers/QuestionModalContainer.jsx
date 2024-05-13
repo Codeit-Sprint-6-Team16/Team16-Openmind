@@ -6,14 +6,13 @@ import Button from '@ui/Button';
 import QuestionModal from '@ui/QuestionModal';
 
 function QuestionModalContainer({ profile, loadProfile, loadQuestions }) {
-  const [content, setContent] = useState('');
   const [isOpen, setIsOpen] = useState(false);
+  const [content, setContent] = useState('');
   const { id } = useParams();
 
   const sendQuestion = async (value) => {
     try {
-      const response = await postQuestion(id, value);
-      // alert('질문 추가됨');
+      await postQuestion(id, value);
       setIsOpen(false);
       loadProfile();
       loadQuestions({
@@ -54,11 +53,11 @@ function QuestionModalContainer({ profile, loadProfile, loadQuestions }) {
       </Button>
       {isOpen && (
         <QuestionModal
-          closeModal={closeModalHandler}
           profile={profile}
-          value={content}
-          onSubmit={onSubmitHandler}
+          content={content}
+          closeModal={closeModalHandler}
           onChange={onChangeHandler}
+          onSubmit={onSubmitHandler}
         />
       )}
     </>

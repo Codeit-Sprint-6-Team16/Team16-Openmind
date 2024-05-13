@@ -1,4 +1,4 @@
-import styles from '../css/AnswerState.module.css';
+import styles from '@css/AnswerState.module.css';
 
 const AnswerState = ({ question }) => {
   const { answer } = question;

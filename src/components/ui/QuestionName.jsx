@@ -5,7 +5,7 @@ const QuestionName = ({ question }) => {
   const { createdAt, content } = question;
   return (
     <div className={styles.QuestionName}>
-      <div className={styles.weeks_ago}>질문 · {elapsedTime(createdAt)}</div>
+      <div className={styles.elapsed_time}>질문 · {elapsedTime(createdAt)}</div>
       <div className={styles.question_content}>{content}</div>
     </div>
   );

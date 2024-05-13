@@ -20,7 +20,7 @@
   font-family: 'Actor';
 }
 
-.formBox {
+.form_box {
   display: flex;
   flex-direction: column;
   flex: 1;

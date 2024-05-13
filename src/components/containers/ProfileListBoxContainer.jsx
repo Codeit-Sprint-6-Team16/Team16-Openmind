@@ -7,9 +7,9 @@ import { isTabletMini } from '@utils/windowSize';
 
 function ProfileListBoxContainer() {
   const [profileList, setProfileList] = useState([]);
-  const [order, setOrder] = useState('time');
-  const [limit, setLimit] = useState(() => (isTabletMini() ? 6 : 8));
   const [offset, setOffset] = useState(0);
+  const [limit, setLimit] = useState(() => (isTabletMini() ? 6 : 8));
+  const [order, setOrder] = useState('time');
   const [pages, setPages] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
@@ -50,14 +50,6 @@ function ProfileListBoxContainer() {
   };
 
   useEffect(() => {
-    loadProfiles({
-      offset: offset,
-      limit: limit,
-      sort: order,
-    });
-  }, [order, limit, offset]);
-
-  useEffect(() => {
     const resizeHandler = () => {
       isTabletMini() ? setLimit(6) : setLimit(8);
     };
@@ -69,14 +61,22 @@ function ProfileListBoxContainer() {
     };
   }, []);
 
+  useEffect(() => {
+    loadProfiles({
+      offset: offset,
+      limit: limit,
+      sort: order,
+    });
+  }, [order, limit, offset]);
+
   return !isLoading ? (
     <ProfileListBox
       profileList={profileList}
+      order={order}
       onOrderClick={orderClickHandler}
       onPaginationClick={paginationClickHandler}
       pages={pages}
       currentPage={currentPage}
-      order={order}
     />
   ) : (
     <Loading />

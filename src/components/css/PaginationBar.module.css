@@ -1,9 +1,8 @@
 .paginationBar {
   display: flex;
-  top: 695px;
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
 }
 
 .paginationButton,
@@ -26,24 +25,9 @@
   color: var(--color-brown40);
 }
 
-@media (max-width: 1199px) {
-  .paginationBar {
-    top: 701px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 867px) {
-  .paginationBar {
-    top: 716px;
-  }
-}
-
 @media (max-width: 767px) {
   .paginationBar {
-    position: static;
     margin-top: 31px;
     margin-bottom: 20px;
-    justify-content: center;
-    transform: none;
   }
 }

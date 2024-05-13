@@ -14,7 +14,7 @@ const IdFormContainer = () => {
     try {
       result = await postId(name);
       localStorage.setItem('ID', result.id);
-      alert('ID 등록완료');
+      // alert('ID 등록완료');
       navigate(`/post/${localStorage.getItem('ID')}/answer`);
     } catch (error) {
       if (error.name === 'TypeError') alert('네트워크 에러');

@@ -6,7 +6,7 @@ import QuestionFeed from '@ui/QuestionFeed';
 
 function QuestionFeedContainer() {
   const [questionList, setQuestionList] = useState([]);
-  const [profile, setProfile] = useState();
+  const [profile, setProfile] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [offset, setOffset] = useState(0);
   const { id } = useParams();

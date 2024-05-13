@@ -23,7 +23,7 @@
 
 .orderMenu .popup {
   width: 79px;
-  margin-top: 66px;
+  margin-top: 68px;
   text-align: center;
 }
 
@@ -63,7 +63,7 @@ li:hover {
   background-color: var(--color-white);
 }
 
-@media (min-width: 375px) and (max-width: 767px) {
+@media all and (max-width: 767px) {
   .orderButton {
     margin: 0;
   }

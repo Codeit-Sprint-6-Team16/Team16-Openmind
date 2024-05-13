@@ -21,9 +21,10 @@
   flex-direction: column;
 }
 
-@media (max-width: 767px) {
+@media all and (max-width: 767px) {
   .mainWrap {
     background-size: 130%;
+    padding-top: 80px;
     padding-bottom: 220px;
   }
   .right {

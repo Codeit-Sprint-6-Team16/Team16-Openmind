@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 40px;
+  padding-bottom: 20px;
 }
 
 .paginationButton,
@@ -28,6 +29,5 @@
 @media (max-width: 767px) {
   .paginationBar {
     margin-top: 31px;
-    margin-bottom: 20px;
   }
 }

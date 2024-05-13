@@ -11,7 +11,7 @@ function MainPage() {
   return (
     <main className="wrapper">
       <div className={styles.mainWrap}>
-        <div className="inner inner_main">
+        <div className="inner">
           <div className={styles.inner_order}>
             <div className={styles.right}>
               <Button
@@ -23,7 +23,7 @@ function MainPage() {
               </Button>
             </div>
             <Link to="/">
-              <Logo logoSize={'mobileSize'} />
+              <Logo logoSize={'mainLogo'} />
             </Link>
           </div>
           <div className={styles.center}>

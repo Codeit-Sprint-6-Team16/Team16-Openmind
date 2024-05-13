@@ -5,7 +5,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 45px 0;
+  padding: 45px 0 46px;
+}
+
+@media all and (max-width: 1199px) {
+  .header {
+    padding-bottom: 47px;
+  }
 }
 
 @media (max-width: 767px) {

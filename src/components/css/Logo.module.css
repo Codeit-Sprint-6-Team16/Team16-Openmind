@@ -1,14 +1,20 @@
 .small {
   height: 57px;
 }
-.mobileSize {
+.mainLogo {
   display: flex;
-  margin: 0 auto;
+  margin: 69px auto 0;
 }
 
-@media (min-width: 375px) and (max-width: 767px) {
-  .mobileSize {
-    width: 248px;
+@media all and (max-width: 1199px) {
+  .mainLogo {
+    margin-top: 70px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .mainLogo {
+    margin-top: 0;
     height: 98px;
   }
 }

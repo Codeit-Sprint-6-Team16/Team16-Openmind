@@ -1,5 +1,5 @@
 .mainWrap {
-  background: url('../../assets/images/main_bg.jpg') no-repeat center bottom;
+  background: url('@assets/main_bg.jpg') no-repeat center bottom;
   min-height: 100vh;
   padding: 45px 0 300px;
   background-size: 100%;

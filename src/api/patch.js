@@ -1,31 +1,5 @@
 import { BASE_URL } from './api';
 
-const putAnswer = async (answerId, content = '', isRejected = false) => {
-  if (!content) return;
-
-  let response;
-  try {
-    response = await fetch(`${BASE_URL}answers/${answerId}/`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json', // JSON 콘텐츠임을 명시
-      },
-      body: JSON.stringify({ content: content, isRejected: isRejected }),
-    });
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
-
-  if (!response.ok) {
-    const error = new Error(`HTTP error! status: ${response.status}`);
-    error.name = 'HttpError';
-    error.status = response.status;
-    console.error(error);
-    throw error;
-  }
-};
-
 const patchAnswer = async ({ answerId, content = '', isRejected = null }) => {
   if (!content && isRejected === null) return;
 
@@ -56,4 +30,4 @@ const patchAnswer = async ({ answerId, content = '', isRejected = null }) => {
   }
 };
 
-export { putAnswer, patchAnswer };
+export { patchAnswer };

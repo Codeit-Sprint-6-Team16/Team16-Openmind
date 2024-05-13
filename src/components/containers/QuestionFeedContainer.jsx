@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { getProfile, getQuestionList } from '@services/api/get.js';
+import { getProfile, getQuestionList } from '@api/get.js';
 import QuestionFeed from '@ui/QuestionFeed';
 
 function QuestionFeedContainer() {
@@ -9,6 +9,7 @@ function QuestionFeedContainer() {
   const [profile, setProfile] = useState({});
   const [offset, setOffset] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const { id } = useParams();
   const target = useRef();
 
@@ -25,9 +26,9 @@ function QuestionFeedContainer() {
       }
     } catch (error) {
       if (error.name === 'TypeError') {
-        return console.log(error.name);
-      } else if (error.name) {
-        console.log(error.status);
+        setErrorMessage('네트워크를 확인하세요');
+      } else if (error.name === 'HttpError') {
+        setErrorMessage(error.status);
       }
     } finally {
       setIsLoading(false);
@@ -41,9 +42,9 @@ function QuestionFeedContainer() {
       setProfile(response);
     } catch (error) {
       if (error.name === 'TypeError') {
-        return console.log(error.name);
-      } else if (error.name) {
-        console.log(error.status);
+        setErrorMessage('네트워크를 확인하세요');
+      } else if (error.name === 'HttpError') {
+        setErrorMessage(error.status);
       }
     } finally {
       setIsLoading(false);
@@ -83,6 +84,7 @@ function QuestionFeedContainer() {
 
   return (
     <>
+      {errorMessage && <div>{errorMessage}</div>}
       {questionList && profile && (
         <QuestionFeed
           questionList={questionList}

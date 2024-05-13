@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 
-import Logo from './Logo';
 import ProfileContainer from '@containers/ProfileContainer';
 import ToastContainer from '@containers/ToastContainer';
 import styles from '@css/QuestionProfile.module.css';
+import Logo from '@ui/Logo';
 
 function QuestionProfile() {
   return (

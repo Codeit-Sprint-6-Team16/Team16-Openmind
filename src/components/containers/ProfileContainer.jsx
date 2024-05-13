@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { getProfile } from '@services/api/get.js';
+import { getProfile } from '@api/get.js';
 import Profile from '@ui/Profile';
 
 function ProfileContainer() {
   const [profile, setProfile] = useState();
+  const [errorMessage, setErrorMessage] = useState('');
   const { id } = useParams();
 
   const loadProfile = async () => {
@@ -14,9 +15,9 @@ function ProfileContainer() {
       setProfile(response);
     } catch (error) {
       if (error.name === 'TypeError') {
-        return console.log(error.name);
-      } else if (error.name) {
-        console.log(error.status);
+        setErrorMessage('네트워크를 확인하세요');
+      } else if (error.name === 'HttpError') {
+        setErrorMessage(error.status);
       }
     }
   };
@@ -25,7 +26,12 @@ function ProfileContainer() {
     loadProfile();
   }, []);
 
-  return <Profile profile={profile} />;
+  return (
+    <>
+      {errorMessage && <div>{errorMessage}</div>}
+      <Profile profile={profile} />
+    </>
+  );
 }
 
 export default ProfileContainer;

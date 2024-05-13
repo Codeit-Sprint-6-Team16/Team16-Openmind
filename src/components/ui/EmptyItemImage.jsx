@@ -1,4 +1,4 @@
-import emptyImage from '@assets/images/image_empty.png';
+import emptyImage from '@assets/image_empty.png';
 import styles from '@css/EmptyItemImage.module.css';
 
 function EmptyItemImage() {

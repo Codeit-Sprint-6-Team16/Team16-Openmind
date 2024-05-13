@@ -1,10 +1,10 @@
-import EscIcon from '@assets/images/ic_esc.svg';
-import QuestionIcon from '@assets/images/ic_question.svg';
+import EscIcon from '@assets/ic_esc.svg';
+import QuestionIcon from '@assets/ic_question.svg';
 import styles from '@css/QuestionModal.module.css';
 import Button from '@ui/Button';
 import Textarea from '@ui/Textarea';
 
-function QuestionModal({ profile, closeModal, value, onSubmit, onChange }) {
+function QuestionModal({ profile, closeModal, content, onSubmit, onChange }) {
   return (
     <div className={styles.modalWrap}>
       <div className={styles.dim} onClick={closeModal}></div>
@@ -24,10 +24,10 @@ function QuestionModal({ profile, closeModal, value, onSubmit, onChange }) {
         </div>
         <Textarea
           placeholder={'질문을 입력해주세요'}
-          content={value}
+          content={content}
           onChange={onChange}
         />
-        <Button variant={'fill'} onClick={onSubmit} isDisabled={!value}>
+        <Button variant={'fill'} onClick={onSubmit} isDisabled={!content}>
           질문 보내기
         </Button>
       </div>

@@ -1,4 +1,4 @@
-import styles from '../css/Toast.module.css';
+import styles from '@css/Toast.module.css';
 
 function Toast({ children }) {
   return (

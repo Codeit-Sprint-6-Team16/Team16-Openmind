@@ -1,8 +1,8 @@
-import Button from './Button';
-import Textarea from './Textarea';
 import EscIcon from '@assets/images/ic_esc.svg';
 import QuestionIcon from '@assets/images/ic_question.svg';
 import styles from '@css/QuestionModal.module.css';
+import Button from '@ui/Button';
+import Textarea from '@ui/Textarea';
 
 function QuestionModal({ profile, closeModal, value, onSubmit, onChange }) {
   return (
@@ -24,7 +24,7 @@ function QuestionModal({ profile, closeModal, value, onSubmit, onChange }) {
         </div>
         <Textarea
           placeholder={'질문을 입력해주세요'}
-          value={value}
+          content={value}
           onChange={onChange}
         />
         <Button variant={'fill'} onClick={onSubmit} isDisabled={!value}>

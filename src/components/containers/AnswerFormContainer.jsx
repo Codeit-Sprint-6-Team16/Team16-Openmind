@@ -48,6 +48,10 @@ const AnswerFormContainer = ({ question, profile, editMode, setEditMode }) => {
     if (editMode) {
       setContent(question.answer.content);
     }
+
+    return () => {
+      setContent('');
+    };
   }, [editMode]);
   //  조건부 렌더링
   return (

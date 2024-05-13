@@ -14,13 +14,17 @@ const AnswerPresenter = ({ question, profile }) => {
           <div className={styles.section_profile_name}>{name}</div>
           <p className={styles.section_weeks}>{elapsedTime(createdAt)}</p>
         </div>
-        {question.isRejected ? (
-          <div className={styles.isRejected}>답변 거절</div>
-        ) : (
-          <div className={styles.section_content}>
+        {
+          <div
+            className={
+              question.answer.isRejected
+                ? styles.isRejected
+                : styles.section_content
+            }
+          >
             {question.answer?.content}
           </div>
-        )}
+        }
       </div>
     </div>
   );

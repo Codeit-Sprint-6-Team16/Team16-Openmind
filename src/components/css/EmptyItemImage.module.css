@@ -1,2 +1,12 @@
 .image {
+  display: block;
+  width: 150px;
+  margin: 70px auto 65px;
+}
+
+@media all and (max-width: 767px) {
+  .image {
+    width: 114px;
+    margin: 66px auto 106px;
+  }
 }

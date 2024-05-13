@@ -36,7 +36,7 @@
 }
 
 .isRejected {
-  color: red;
+  color: var(--color-red);
 }
 
 @media all and (max-width: 767px) {

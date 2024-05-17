@@ -21,10 +21,18 @@
   border: 1px solid var(--color-black);
 }
 
+.orderText {
+  color: var(--color-black);
+}
+
 .orderMenu .popup {
   width: 79px;
   margin-top: 68px;
   text-align: center;
+}
+
+.meatballMenu {
+  position: relative;
 }
 
 .orderMenu li,
@@ -94,5 +102,9 @@ li:hover {
 
   .orderMenu .popup {
     margin-top: 38px;
+  }
+
+  .meatballMenu .popup {
+    left: -10px;
   }
 }

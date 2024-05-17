@@ -1,0 +1,34 @@
+.mainWrap {
+  background: url('@assets/main_bg.jpg') no-repeat center bottom;
+  min-height: 100vh;
+  padding: 45px 0 300px;
+  background-size: 100%;
+}
+.right {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+.center {
+  text-align: center;
+}
+.center a {
+  display: inline-block;
+  margin-top: 69px;
+}
+.inner_order {
+  display: flex;
+  flex-direction: column;
+}
+
+@media all and (max-width: 767px) {
+  .mainWrap {
+    background-size: 130%;
+    padding-top: 80px;
+    padding-bottom: 220px;
+  }
+  .right {
+    order: 2;
+    align-items: center;
+  }
+}

@@ -10,9 +10,9 @@ export default defineConfig({
       { find: '@ui', replacement: '/src/components/ui' },
       { find: '@css', replacement: '/src/components/css' },
       { find: '@pages', replacement: '/src/pages' },
-      { find: '@services', replacement: '/src/services' },
-      { find: '@api', replacement: '/src/services/api' },
+      { find: '@api', replacement: '/src/api' },
       { find: '@utils', replacement: '/src/utils' },
+      { find: '@assets', replacement: '/src/assets' },
     ],
   },
 });

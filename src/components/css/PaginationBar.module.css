@@ -1,0 +1,33 @@
+.paginationBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  padding-bottom: 20px;
+}
+
+.paginationButton,
+.currentPageButton {
+  border: none;
+  width: 40px;
+  height: 40px;
+  color: var(--color-gray40);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.currentPageButton,
+.paginationButton:hover {
+  color: var(--color-brown40);
+}
+
+@media (max-width: 767px) {
+  .paginationBar {
+    margin-top: 31px;
+  }
+}

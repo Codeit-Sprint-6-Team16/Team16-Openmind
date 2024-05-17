@@ -1,0 +1,20 @@
+.small {
+  height: 57px;
+}
+.mainLogo {
+  display: flex;
+  margin: 69px auto 0;
+}
+
+@media all and (max-width: 1199px) {
+  .mainLogo {
+    margin-top: 70px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .mainLogo {
+    margin-top: 0;
+    height: 98px;
+  }
+}

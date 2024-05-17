@@ -8,17 +8,14 @@
   "importOrder": [
     "^react",
     "<THIRD_PARTY_MODULES>",
-    "^(.*)$",
     "^@pages/(.*)$",
     "^@containers/(.*)$",
     "^@ui/(.*)$",
     "^@api/(.*)$",
-    "^@services/(.*)$",
     "^@utils/(.*)$",
     "^@css/(.*)$",
     "^@assets/(.*)$",
     "^[./]"
   ],
-  "importOrderSeparation": true,
-  "importOrderSortSpecifiers": true
+  "importOrderSeparation": false
 }

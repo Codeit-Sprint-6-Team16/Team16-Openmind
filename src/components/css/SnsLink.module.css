@@ -1,0 +1,11 @@
+.SnsLink {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.SnsLink img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}

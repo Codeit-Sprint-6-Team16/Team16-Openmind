@@ -1,0 +1,12 @@
+.profileWrap {
+  background: var(--color-white) url('@assets/profile_bg.jpg') no-repeat bottom;
+  padding-top: 234px;
+  position: relative;
+}
+.center {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50px;
+}

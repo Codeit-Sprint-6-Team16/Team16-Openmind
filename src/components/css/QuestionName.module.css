@@ -1,0 +1,24 @@
+.QuestionName {
+  margin-bottom: 32px;
+}
+
+.elapsed_time {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-gray40);
+}
+
+.question_content {
+  font-family: 'Actor';
+  font-size: 18px;
+}
+
+@media all and (max-width: 767px) {
+  .QuestionName {
+    margin-bottom: 24px;
+  }
+
+  .question_content {
+    font-size: 16px;
+  }
+}

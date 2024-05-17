@@ -1,0 +1,59 @@
+.AnswerPresenter {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.section_image {
+  display: flex;
+  flex-direction: column;
+  width: 48px;
+  height: 48px;
+}
+
+.section_image > img {
+  border-radius: 100%;
+}
+
+.section_profile {
+  display: flex;
+  gap: 8px;
+}
+
+.section_profile_name {
+  font-size: 18px;
+  font-family: 'Actor';
+}
+
+.section_elapsed_time {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-gray40);
+}
+
+.section_content {
+  font-size: 16px;
+}
+
+.isRejected {
+  color: var(--color-red);
+}
+
+@media all and (max-width: 767px) {
+  .FeedAnswerContent {
+    margin-bottom: 24px;
+  }
+
+  .section_image {
+    width: 32px;
+    height: 32px;
+  }
+
+  .section_profile_name {
+    font-size: 14px;
+  }
+
+  .section_elapsed_time {
+    font-weight: 500;
+  }
+}
